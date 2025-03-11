@@ -1,0 +1,9 @@
+numpy==2.2.6
+pandas==2.2.3
+requests==2.32.3
+pyjwt[crypto]==2.10.1
+portion==2.6.1
+Deprecated==1.2.18
+matplotlib==3.10.3
+httpx==0.28.1
+nest-asyncio==1.6.0

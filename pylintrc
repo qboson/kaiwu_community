@@ -1,0 +1,18 @@
+[FORMAT]
+max-line-length=120
+
+[MISCELLANEOUS]
+# 接受的最大参数数量
+max-args=15
+max-attributes=30
+max-locals=30
+max-branches=15
+
+[MESSAGES CONTROL]
+disable=redefined-outer-name, R0903
+
+[design]
+max-locals = 32
+
+[MASTER]
+init-hook='import sys; sys.path.append("./common")'
