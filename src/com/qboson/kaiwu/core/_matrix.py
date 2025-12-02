@@ -8,6 +8,7 @@ import numpy as np
 from kaiwu.core._binary_expression import quicksum
 from kaiwu.core._expression import Expression
 
+
 def dot(mat_left, mat_right):
     """矩阵乘法
 
@@ -90,6 +91,9 @@ class BinaryExpressionNDArray(np.ndarray):
     is_array_greater_equal = np.vectorize(_is_greater_equal)
     is_array_equal = np.vectorize(_is_equal)
 
+    def __int__(self):
+        super().__int__()
+
     def __lt__(self, other):
         return BinaryExpressionNDArray.is_array_less(self, other)
 
@@ -113,6 +117,7 @@ class BinaryExpressionNDArray(np.ndarray):
 
         Args:
             b (BinaryExpressionNDArray): 另一个矩阵
+
             out：可选输出数组，用于存储结果。需与预期输出形状一致。
         Returns:
             BinaryExpressionNDArray: 乘积
@@ -123,16 +128,21 @@ class BinaryExpressionNDArray(np.ndarray):
             return out
         return dot(self, b)
 
-    # pylint: disable=W0613,R0917
+    # pylint: disable=W0613
     def sum(self, axis=None, dtype=None, out=None, keepdims=False, initial=0, where=True):
         """使用quicksum的求和方法
 
         Args:
             axis：指定求和的轴（维度）。默认为 None，表示对所有元素求和；若为整数或元组，则沿指定轴求和。
+
             dtype：指定输出数据类型。若未提供，则默认使用输入数组的 dtype，但整数类型可能提升为平台整数精度。暂不支持。
+
             out：可选输出数组，用于存储结果。需与预期输出形状一致。
+
             keepdims：布尔值。若为 True，则保留被求和的轴作为长度为1的维度。暂不支持 。
+
             initial：求和的初始值（标量），默认为0。暂不支持。
+
             where：布尔数组，指定哪些元素参与求和（NumPy 1.20+支持）。暂不支持。
 
         Returns:
@@ -254,4 +264,5 @@ def ndarray(shape: Union[int, Tuple[int, ...], List[int]], name, var_func, var_f
 
 if __name__ == '__main__':
     import doctest
+
     doctest.testmod()

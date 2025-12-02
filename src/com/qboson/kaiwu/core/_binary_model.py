@@ -55,8 +55,11 @@ class BinaryModel:
 
         Args:
             constraint_in (ConstraintDefinition or iterable): 约束表达式或其可迭代对象
+
             name (str or list, optional): 约束名称或名称列表，默认自动命名
+
             constr_type (str, optional): 约束类型，可以设置为"soft"或"hard"，默认为"hard"
+
             penalty (float): 缺省惩罚系数
         """
 
@@ -68,13 +71,11 @@ class BinaryModel:
             isinstance(constraint_in, collections.abc.Iterable) and not isinstance(constraint_in, (str, bytes))
         ):
             # If name is a list/tuple, use as names; else auto-generate
-            names = name if isinstance(name, (list, tuple, np.ndarray)) else name
-            if name is None:
-                name = "constraint"
+            names = name if isinstance(name, (list, tuple, np.ndarray)) else None
             for idx, constraint in enumerate(constraint_in):
                 item_name = (
-                    names[idx] if names is not None and isinstance(names, (list, tuple)) and idx < len(names)
-                    else f"{name}{len(self.hard_constraints) + len(self.soft_constraints) + idx}"
+                    names[idx] if names is not None and idx < len(names)
+                    else f"constraint{len(self.hard_constraints) + len(self.soft_constraints) + idx}"
                 )
                 self.add_constraint(constraint, item_name, constr_type, penalty)
             return

@@ -6,11 +6,13 @@
 """
 from kaiwu.core import Expression
 
+
 def _dict_variables(var_dict):
     var_list = [0] * len(var_dict)
     for var in var_dict:
         var_list[var_dict[var]] = var[1:]
     return str(tuple(var_list)).replace("\'", "")[1:-1]
+
 
 class IsingModel(dict):
     """ising模型"""
@@ -92,4 +94,5 @@ class Spin(IsingExpression):
 
 if __name__ == '__main__':
     import doctest
+
     doctest.testmod()

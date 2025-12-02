@@ -96,7 +96,6 @@ class QuboModel(BinaryModel):
                     for k, idx in self.variables.items() if k != '__spin__')
 
 
-
 def calculate_qubo_value(qubo_matrix, offset, binary_configuration):
     """Q值计算器.
 
@@ -148,4 +147,5 @@ def qubo_matrix_to_qubo_model(qubo_mat):
 
 if __name__ == '__main__':
     import doctest
+
     doctest.testmod()

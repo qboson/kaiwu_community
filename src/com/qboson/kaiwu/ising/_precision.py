@@ -74,6 +74,7 @@ def calculate_ising_matrix_bit_width(ising_matrix, bit_width=8):
 
     return {"precision": np.inf, "multiplier": np.inf}
 
+
 def adjust_ising_matrix_precision(ising_matrix, bit_width=8):
     """调整 ising 矩阵精度, 通过此接口调整后矩阵可能会有较大的精度损失，比如矩阵有一个数远大于其它数时，调整后矩阵精度损失严重无法使用
 

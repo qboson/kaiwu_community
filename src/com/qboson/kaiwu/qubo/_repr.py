@@ -20,7 +20,7 @@ def _qubo_check(variables_tuple, quadratic):
             raise QuboError("Conflicting variable types, the QUBO expression contains "
                             "both \"binary\" and \"spin\".")
     for key in quadratic:
-        if len(key) > 2 and key is not None:
+        if len(key) > 2:
             raise QuboError("Items higher than quadratic.")
 
 
