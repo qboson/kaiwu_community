@@ -8,9 +8,6 @@ from decimal import Decimal
 import numpy as np
 
 
-
-
-
 def ising_matrix_to_qubo_matrix(ising_mat, remove_linear_bit=True):
     """Ising矩阵转QUBO矩阵
 
@@ -59,7 +56,6 @@ def ising_matrix_to_qubo_matrix(ising_mat, remove_linear_bit=True):
     np.fill_diagonal(qubo_mat, diag_vec)
     qubo_mat = np.array(qubo_mat, dtype=np.float64)
     return -qubo_mat, -float(bias)
-
 
 
 def qubo_matrix_to_ising_matrix(qubo_mat):

@@ -48,19 +48,14 @@ class PenaltyMethodConstraint:
             expr = constraint.left_operand - constraint.expected_value
         else:
             # 处理不等式约束的方向
-            if constraint.relation in ['>', '>=']:
-                diff_qubo =  - constraint.left_operand
-                expected_value = - constraint.expected_value
-            else:
-                diff_qubo = constraint.left_operand
-                expected_value = constraint.expected_value
-
+            diff_qubo = _adjust_inequality_direction(constraint)
             slack_expr = _create_slack_variable(name, diff_qubo, constraint.relation)
             # 构建最终的约束表达式（等式平方形式）
-            expr = diff_qubo + slack_expr - expected_value
+            expr = diff_qubo + slack_expr - constraint.expected_value
             expr = expr ** 2
 
         logger.debug("Constraint expression: %s", expr)
+
         return PenaltyMethodConstraint(expr, constraint.default_penalty, parent_model)
 
     def set_penalty(self, penalty):
@@ -135,3 +130,10 @@ def _create_slack_variable(name, diff_qubo, relation):
     # 创建整数变量并线性缩放
     slack_var = Integer(f"_slack_{name}", slack_min, precision_steps + slack_min)
     return slack_var * (slack_range / precision_steps)
+
+
+def _adjust_inequality_direction(constraint):
+    """根据不等式方向调整QUBO表达式符号"""
+    if constraint.relation in ['>', '>=']:
+        return -constraint.left_operand
+    return constraint.left_operand

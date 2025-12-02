@@ -4,13 +4,11 @@
 
 功能: QUBO还原变量值
 """
-
+import numbers
 import numpy as np
-
 
 # 构造结果字典
 # 输入：结果向量，从ci.get_variables()得到的字典
-
 def get_sol_dict(solution, vars_dict):
     """根据解向量和变量字典生成结果字典.
 
@@ -41,12 +39,11 @@ def get_sol_dict(solution, vars_dict):
                 for k, _ in vars_dict.items() if k != '__spin__')
 
 
-
-def get_val(expr, sol_dict):
+def get_val(qubo, sol_dict):
     """根据结果字典将spin值带入qubo变量.
 
     Args:
-        expr (QUBO表达式): QUBO表达式
+        qubo (QUBO表达式): QUBO表达式
 
         sol_dict (dict): 由get_sol_dict生成的结果字典。
 
@@ -68,13 +65,12 @@ def get_val(expr, sol_dict):
         >>> kw.core.get_val(d, sol_dict)
         np.float64(5.0)
     """
-    if expr is None:
-        return 0
-
-    value = expr.offset  # 结果加上offset
-    for k, val in expr.coefficient.items():  # 遍历所有键值对
+    if isinstance(qubo, numbers.Number):
+        return qubo
+    value = qubo.offset  # 结果加上offset
+    for k, val in qubo.coefficient.items():  # 遍历所有键值对
         for var in k:  # 对于每个键也遍历元组
-            val *= sol_dict[var[1:]]
+            val *= sol_dict.get(var[1:], 0.0)
         value += val  # 累加一项的结果
     return value
 
