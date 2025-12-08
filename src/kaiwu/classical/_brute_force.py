@@ -19,14 +19,14 @@ class BruteForceOptimizer(OptimizerBase):
         Returns:
             np.ndarray: 1个或者多个能量最低的解向量.
 
-            Examples:
-        >>> import kaiwu as kw
-        >>> import numpy as np
-        >>> mat = np.array([[0, 2, -3],[2, 0, -1],[-3, -1, 0]])
-        >>> optimizer = kw.classical.BruteForceOptimizer()
-        >>> optimizer.solve(mat)
-        array([[-1, -1,  1],
-               [-1, -1,  1]])
+        Examples:
+            >>> import kaiwu as kw
+            >>> import numpy as np
+            >>> mat = np.array([[0, 2, -3],[2, 0, -1],[-3, -1, 0]])
+            >>> optimizer = kw.classical.BruteForceOptimizer()
+            >>> optimizer.solve(mat)
+            array([[-1, -1,  1],
+                   [-1, -1,  1]])
 
         """
         size = ising_matrix.shape[0]

@@ -4,7 +4,6 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kaiwu"
-version = "1.0.0"                  # 由 SDK 代码动态统一管理
 description = "An SDK for CIM or QUBO."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -17,7 +16,7 @@ classifiers = [
 ]
 
 # 依赖写在 requirements.txt 时，这里通过动态方式加载
-dynamic = ["dependencies"]
+dynamic = ["dependencies", "version"]
 
 [tool.setuptools]
 package-dir = { "" = "src" }
@@ -27,3 +26,4 @@ where = ["src"]
 
 [tool.setuptools.dynamic]
 dependencies = { file = ["requirements.txt"] }
+version = { attr = "kaiwu.version.__version__" }

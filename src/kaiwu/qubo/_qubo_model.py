@@ -41,6 +41,7 @@ class QuboModel(BinaryModel):
 
     def make(self):
         """返回合并后的QUBO表达式
+
         Returns:
             BinaryExpression: 合并的约束表达式
         """

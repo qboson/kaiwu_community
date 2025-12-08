@@ -18,6 +18,7 @@ def _to_ising_matrix(qubo_model):
 
 class SimpleSolver(SolverBase):
     """实现用Optimizer直接对QuboModel进行求解
+
     Examples:
         >>> import kaiwu as kw
         >>> n = 10
@@ -48,9 +49,10 @@ class SimpleSolver(SolverBase):
         if solutions is None:
             return None, None
         solution_dicts = get_sol_dict(solutions[0][:-1] * solutions[0][-1], vars_dict)
-        return solution_dicts, hamiltonian(ising_mat,solutions)[0] + bias
+        return solution_dicts, hamiltonian(ising_mat, solutions)[0] + bias
 
 
 if __name__ == '__main__':
     import doctest
+
     doctest.testmod()

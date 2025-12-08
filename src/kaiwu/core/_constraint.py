@@ -27,6 +27,7 @@ ops = {
 
 class ConstraintDefinition:
     """约束定义
+
     Args:
         expr_left (Expression): 约束项左算子
 

@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 class PenaltyMethodConstraint:
     """有约束转无约束的penalty method方法
+
     Args:
         expr (Expression): 编译后的约束项表达式
 
