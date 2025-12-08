@@ -2,7 +2,7 @@ import os
 import sys
 from common.config import BASE_DIR
 
-sys.path.insert(0, os.path.join(BASE_DIR, 'src/com/qboson'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
 import numpy as np
 import kaiwu as kw
 from kaiwu.core import Binary, get_val, get_array_val, get_sol_dict

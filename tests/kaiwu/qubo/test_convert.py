@@ -2,7 +2,8 @@ import os
 import sys
 import numpy as np
 from common.config import BASE_DIR
-sys.path.insert(0, os.path.join(BASE_DIR, 'src/com/qboson'))
+
+sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
 import kaiwu as kw
 from kaiwu.qubo import qubo_matrix_to_qubo_model
 from kaiwu.conversion import qubo_matrix_to_ising_matrix, ising_matrix_to_qubo_matrix

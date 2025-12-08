@@ -28,7 +28,7 @@ class SimpleSolver(SolverBase):
         >>> qubo_model = kw.qubo.QuboModel()
         >>> qubo_model.set_objective(sum(x[i] * p[i] * (-1) for i in range(n)))
         >>> qubo_model.add_constraint(sum(x[i] * w[i] for i in range(n)) <= W, "c", penalty=10)
-        >>> solver = kw.solver.SimpleSolver(kw.classical.SimulatedAnnealingOptimizer(alpha=0.999, iterations_per_t=10))
+        >>> solver = kw.solver.SimpleSolver(kw.classical.BruteForceOptimizer())
         >>> sol_dict, qubo_val = solver.solve_qubo(qubo_model)
         >>> unsatisfied_count, result_dict = qubo_model.verify_constraint(sol_dict)
         >>> unsatisfied_count

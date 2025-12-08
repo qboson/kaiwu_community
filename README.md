@@ -73,7 +73,7 @@ class NewOptimizer(OptimizerBase):
     ...
 ```
 
-As shown in [BruteForceOptimizer](src/com/qboson/kaiwu/classical/_simulated_annealing.py), you can use it with a solver:
+As shown in [BruteForceOptimizer](src/kaiwu/classical/_simulated_annealing.py), you can use it with a solver:
 
 ```python
 solver = kaiwu.solver.SimpleSolver(NewOptimizer())

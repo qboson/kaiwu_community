@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kaiwu"
+version = "1.0.0"                  # 由 SDK 代码动态统一管理
+description = "An SDK for CIM or QUBO."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Qboson Inc" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+
+# 依赖写在 requirements.txt 时，这里通过动态方式加载
+dynamic = ["dependencies"]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }

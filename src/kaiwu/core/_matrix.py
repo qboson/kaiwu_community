@@ -91,9 +91,6 @@ class BinaryExpressionNDArray(np.ndarray):
     is_array_greater_equal = np.vectorize(_is_greater_equal)
     is_array_equal = np.vectorize(_is_equal)
 
-    def __int__(self):
-        super().__int__()
-
     def __lt__(self, other):
         return BinaryExpressionNDArray.is_array_less(self, other)
 
@@ -128,7 +125,7 @@ class BinaryExpressionNDArray(np.ndarray):
             return out
         return dot(self, b)
 
-    # pylint: disable=W0613
+    # pylint: disable=W0613, R0917
     def sum(self, axis=None, dtype=None, out=None, keepdims=False, initial=0, where=True):
         """使用quicksum的求和方法
 

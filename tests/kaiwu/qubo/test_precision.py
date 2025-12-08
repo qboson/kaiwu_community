@@ -5,7 +5,7 @@ import pytest
 from numpy.testing import assert_equal
 from common.config import BASE_DIR
 
-sys.path.insert(0, os.path.join(BASE_DIR, 'src/com/qboson'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
 import kaiwu as kw
 
 

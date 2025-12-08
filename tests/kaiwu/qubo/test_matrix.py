@@ -6,7 +6,7 @@ import numpy as np
 
 from common.config import BASE_DIR
 
-sys.path.insert(0, os.path.join(BASE_DIR, 'src/com/qboson'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
 import numbers
 import kaiwu.core as kc
 from kaiwu.core import Binary, BinaryExpression

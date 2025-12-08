@@ -1,11 +1,11 @@
-CHECK_DIRS=src/com/qboson/kaiwu
+CHECK_DIRS=src/kaiwu
 VENV_PATH = ./.venv
 export PATH := $(VENV_PATH)/Scripts/:$(PATH)
 
 all_tests: test_install pylint docs-test pytest
 
 test_install:
-	pip3 install -i https://mirrors.aliyun.com/pypi/simple -r requirements.txt
+	pip3 install -i https://mirrors.aliyun.com/pypi/simple -r devel.txt
 
 pylint:
 	pylint $(CHECK_DIRS)
