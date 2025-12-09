@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022 Beijing QBoson Quantum Technology Co., Ltd
+# This file is distributed under the same license as the Kaiwu Community
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kaiwu Community 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-09 15:08+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/getting_started/max_cut.rst:2
+msgid "新手教程-Ising建模-Maxcut"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:5
+msgid "问题描述"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:8
+msgid "最大割问题是NP完备问题. 给定一张图, 求一种分割方法, 将所有顶点分割成两部分, 同时使得被切断的边的数量最大,或边的总权重最大."
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:11
+#, python-brace-format
+msgid ""
+"以无向无权图为例. 在图 :math:`G(V,E)`\\ 中, :math:`V`\\为图的顶点集合, :math:`E`\\为图的边集, "
+":math:`w`\\ 为图的邻接矩阵. 对于 :math:`i,j \\in V`\\, :math:`w_{ij}`\\ 表示顶点 "
+":math:`i`\\到顶点 :math:`j`\\是否有边, 有连边关系则取 :math:`1`\\ , 无连边关系则取 "
+":math:`0`\\. 以决策变量 :math:`s_i`\\表示顶点 :math:`i`\\的分类, 其可能的取值为 "
+":math:`{1,-1}`\\ ,分别表示将顶点 :math:`i`\\ 分为A类或B类."
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:16
+msgid "则在给定的无向图中，将所有顶点分割成两群的分割方法所对应割的边的个数为Z，模型表示为:"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:18
+#, python-brace-format
+msgid ""
+"max Z = (\\sum_{i<j,i \\in V}\\sum_{j \\in V}w_{ij}-\\sum_{i<j,i \\in "
+"V}\\sum_{j \\in V}w_{ij}s_is_j)/2\n"
+"\n"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:20
+msgid "以一个四顶点实例说明，如下图所示，通过观察可以发现将1、2分为A类，3、4分为B类的\"割\"法将得到问题的最优解 :math:`Z=4`\\。"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:24
+msgid "通过连边关系可知，邻接矩阵为："
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:28
+#, python-brace-format
+msgid ""
+"\\sum_{i<j,i \\in V}\\sum_{j \\in V}w_{ij} = "
+"w_{12}+w_{13}+w_{14}+w_{23}+w_{24}+w_{34}\n"
+"\n"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:30
+#, python-brace-format
+msgid ""
+"\\sum_{i<j,i \\in V}\\sum_{j \\in V}w_{ij}s_is_j = "
+"w_{12}s_1s_2+w_{13}s_1s_3+w_{14}s_1s_4+w_{23}s_2s_3+w_{24}s_2s_4+w_{34}s_3s_4"
+"\n"
+"\n"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:32
+msgid "当顶点1、2为一组，顶点3、4为另一组时, :math:`s_1=s_2=1, s_3=s_4=-1`. 则上式变为"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:34
+#, python-brace-format
+msgid ""
+"\\sum_{i<j,i \\in V}\\sum_{j \\in V}w_{ij}s_is_j = "
+"w_{12}-w_{13}-w_{14}-w_{23}-w_{24}+w_{34}\n"
+"\n"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:36
+msgid "此时目标函数为："
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:38
+#, python-brace-format
+msgid ""
+"max Z = (\\sum_{i<j,i \\in V}\\sum_{j \\in V}w_{ij}-\\sum_{i<j,i \\in "
+"V}\\sum_{j \\in V}w_{ij}s_is_j)/2= w_{13}+w_{14}+w_{23}+w_{24} = 4\n"
+"\n"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:40
+msgid "最大割数量为4，符合前文通过观察得到的答案。"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:42
+#, python-brace-format
+msgid "注意到，:math:`w_{ij}`\\ 为输入的常量，并不影响模型的计算，所以上式可以简化为："
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:44
+#, python-brace-format
+msgid ""
+"min H = \\sum_{i<j,i \\in V}\\sum_{j \\in V}w_{ij}s_is_j\n"
+"\n"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:46
+msgid ""
+"其中, :math:`H`\\表示哈密尔顿量, :math:`w`\\ 为输入的邻接矩阵,决策变量 :math:`s_i`\\表示顶点 "
+":math:`i`\\的分类,上述式子就是一个最大割问题的Ising模型."
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:51
+msgid "建模代码"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:54
+msgid "输入矩阵"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:55
+msgid "矩阵表示N个节点的连接关系，如果两个点之间有边，就用1表示，没有边，就用0表示。"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:79
+msgid "使用经典求解器进行计算"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:80
+msgid "由于Maxcut问题矩阵就是一个ising矩阵，所以可以调用SDK提供Optimizer直接求解。本例中使用SimulatedAnnealingOptimizer。"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:92
+msgid "输出结果"
+msgstr ""
+
+#: ../../source/getting_started/max_cut.rst:94
+msgid "从输出的多个解中拿到最好的那个解。通过最好解和原来的矩阵算出最大割的值并输出。"
+msgstr ""
+

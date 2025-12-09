@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022 Beijing QBoson Quantum Technology Co., Ltd
+# This file is distributed under the same license as the Kaiwu Community
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kaiwu Community 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-09 15:08+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/advanced/auto_penalty.rst:3
+msgid "自动确定惩罚系数"
+msgstr ""
+
+#: ../../source/advanced/auto_penalty.rst:6
+msgid "1. 惩罚系数"
+msgstr ""
+
+#: ../../source/advanced/auto_penalty.rst:8
+msgid ""
+"在通过QUBO对实际问题建模的过程中，约束条件的一种常见处理方式是将其转化为惩罚项，添加到目标函数中。 "
+"确定约束条件的合适的惩罚系数有时是一个花费时间的事情。"
+msgstr ""
+
+#: ../../source/advanced/auto_penalty.rst:11
+msgid ""
+"对于传统方法，过大的惩罚系数会导致算法忽略了目标函数，导致求到的可行解没有一个较好的目标函数。 对于真机，过大的惩罚系数也可能导致精度方面的问题。"
+" 与此相反，过小的惩罚系数可能会导致约束没有被优先满足。 因此，估计出合适的惩罚系数是有意义的。"
+msgstr ""
+
+#: ../../source/advanced/auto_penalty.rst:17
+msgid "2. 估计方法"
+msgstr ""
+
+#: ../../source/advanced/auto_penalty.rst:19
+msgid ""
+"当某个离散变量的值变化时，如果在目标函数引起的变化量恒小于在惩罚项引起的变化量，则惩罚项能够被优先满足。 "
+"所以只要估计出每个变量引起的变化量的比例，就能得到惩罚系数。"
+msgstr ""
+
+#: ../../source/advanced/auto_penalty.rst:22
+msgid "目标函数的最大变化量可以通过上界来估计"
+msgstr ""
+
+#: ../../source/advanced/auto_penalty.rst:25
+#, python-brace-format
+msgid ""
+"x^\\top Q x = f(x_i) = \\sum_j q_{ij}x_i x_j + \\sum_{k\\neq i,j} q_{kj} "
+"x_k x_j\n"
+"\n"
+msgstr ""
+
+#: ../../source/advanced/auto_penalty.rst:28
+msgid "QUBO表达式中，与 :math:`x_i` 相关的项可以分离出来。"
+msgstr ""
+
+#: ../../source/advanced/auto_penalty.rst:30
+msgid "当x_i从0变化为1时"
+msgstr ""
+
+#: ../../source/advanced/auto_penalty.rst:32
+msgid ""
+"\\Delta f(x_i) = \\sum_j q_{ij} x_j < \\sum_{q_{ij}>0} q_ij\n"
+"\n"
+msgstr ""
+
+#: ../../source/advanced/auto_penalty.rst:35
+msgid "当x_i从1变化为0时"
+msgstr ""
+
+#: ../../source/advanced/auto_penalty.rst:37
+msgid ""
+"\\Delta f(x_i) = -\\sum_j q_{ij} x_j < \\sum_{q_{ij}<0} q_ij\n"
+"\n"
+msgstr ""
+
+#: ../../source/advanced/auto_penalty.rst:40
+msgid "估计惩罚项的最小非零变化量，二者比值可以作为惩罚系数"
+msgstr ""
+
+#: ../../source/advanced/auto_penalty.rst:44
+msgid "3. 例子"
+msgstr ""
+

@@ -1,0 +1,119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022 Beijing QBoson Quantum Technology Co., Ltd
+# This file is distributed under the same license as the Kaiwu Community
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kaiwu Community 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-09 15:08+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/advanced/spin_var.rst:3
+msgid "QUBO转Ising时增加一个变量的解释"
+msgstr "Explanation of Adding a Variable When Converting QUBO to Ising"
+
+#: ../../source/advanced/spin_var.rst:5
+msgid ""
+"并非所有相干伊辛机 (CIM) 都设计用于解决包含线性项的伊辛问题。为了解决这个限制，我们引入一个辅助自旋变量 "
+":math:`s_a`，并将问题重新表述为："
+msgstr ""
+"Not all Coherent Ising Machines (CIMs) are designed to solve Ising problems that include linear terms. To address this limitation, we introduce an auxiliary spin variable :math:`s_a` and reformulate the problem as follows:"
+
+#: ../../source/advanced/spin_var.rst:7
+#, python-brace-format
+msgid ""
+"\\min_{s_a,s_1,s_2,...s_N} -\\sum_{i=1}^N h_{i}s_{i}s_a - \\sum_{i \\neq "
+"j}J_{ij}s_{i}s_{j},"
+msgstr ""
+"\\min_{s_a,s_1,s_2,...s_N} -\\sum_{i=1}^N h_{i}s_{i}s_a - \\sum_{i \\neq "
+"j}J_{ij}s_{i}s_{j},"
+
+#: ../../source/advanced/spin_var.rst:11
+msgid ""
+"这种重新表述消除了线性项，使其适合于不支持偏置项的 "
+"CIM。这导致的辅助伊辛问题有两个简并解：:math:`[\\{\\hat{s_{i}}\\}_{i=1}^N, \\hat{s}_{a} = "
+"1]` 和 :math:`[\\{-\\hat{s_{i}}\\}_{i=1}^N, \\hat{s}_{a} = "
+"-1]`。其中，:math:`\\{\\hat{s_{i}}\\}_{i=1}^N` "
+"表示原始伊辛问题的解。因此，我们可以从辅助问题的解中获得原始问题的解。"
+msgstr ""
+"This reformulation eliminates the linear terms, making it suitable for CIMs that do not support bias terms. The resulting auxiliary Ising problem has two degenerate solutions: :math:`[\\{\\hat{s_{i}}\\}_{i=1}^N, \\hat{s}_{a} = 1]` and :math:`[\\{-\\hat{s_{i}}\\}_{i=1}^N, \\hat{s}_{a} = -1]`. Here, :math:`\\{\\hat{s_{i}}\\}_{i=1}^N` represents the solution to the original Ising problem. Therefore, we can derive the solution to the original problem from the solution of the auxiliary problem."
+
+#: ../../source/advanced/spin_var.rst:13
+msgid "**证明**"
+msgstr "**Proof**"
+
+#: ../../source/advanced/spin_var.rst:15
+msgid "我们要解决的伊辛问题是："
+msgstr "The Ising problem we aim to solve is:"
+
+#: ../../source/advanced/spin_var.rst:17
+msgid ""
+"J(\\mathbf{\\hat{s}}) = \\min_{\\mathbf{s}\\in \\{-1,1\\}^N} "
+"-\\mathbf{h}^T\\mathbf{s} - \\mathbf{s}^T\\mathbf{J}\\mathbf{s},"
+msgstr ""
+"J(\\mathbf{\\hat{s}}) = \\min_{\\mathbf{s}\\in \\{-1,1\\}^N} "
+"-\\mathbf{h}^T\\mathbf{s} - \\mathbf{s}^T\\mathbf{J}\\mathbf{s},"
+
+#: ../../source/advanced/spin_var.rst:21
+msgid "其中 :math:`\\mathbf{\\hat{s}}` 是最优解。辅助伊辛问题定义为："
+msgstr "where :math:`\\mathbf{\\hat{s}}` is the optimal solution. The auxiliary Ising problem is defined as:"
+
+#: ../../source/advanced/spin_var.rst:23
+msgid ""
+"J_a(\\mathbf{\\bar{s}},\\hat{s}_a) = \\min_{\\mathbf{s}\\in "
+"\\{-1,1\\}^N\\text{,~}s_a\\in\\{-1,1\\}} -(\\mathbf{h}^T\\mathbf{s})s_a -"
+" \\mathbf{s}^T\\mathbf{J}\\mathbf{s},"
+msgstr ""
+"J_a(\\mathbf{\\bar{s}},\\hat{s}_a) = \\min_{\\mathbf{s}\\in "
+"\\{-1,1\\}^N\\text{,~}s_a\\in\\{-1,1\\}} -(\\mathbf{h}^T\\mathbf{s})s_a -"
+" \\mathbf{s}^T\\mathbf{J}\\mathbf{s},"
+
+#: ../../source/advanced/spin_var.rst:27
+msgid ""
+"其中 :math:`(\\mathbf{\\bar{s}},\\hat{s}_a)` "
+"表示辅助伊辛问题的最优解。:math:`\\mathbf{\\bar{s}}` 和 :math:`\\mathbf{\\hat{s}}` 都是 "
+":math:`N\\times1` 自旋向量。如果 :math:`\\hat{s_{a}} = 1`，则 "
+":math:`J_a(\\mathbf{\\bar{s}},1)` = :math:`J(\\mathbf{\\hat{s}})`。下面我们证明 "
+":math:`\\hat{s_{a}} = -1` 时, :math:`J_a(\\mathbf{\\bar{s}},-1) = "
+"J(\\mathbf{\\hat{s}})`。假设相反的情况："
+msgstr ""
+"where :math:`(\\mathbf{\\bar{s}},\\hat{s}_a)` represents the optimal solution to the auxiliary Ising problem. Both :math:`\\mathbf{\\bar{s}}` and :math:`\\mathbf{\\hat{s}}` are :math:`N\\times1` spin vectors. If :math:`\\hat{s_{a}} = 1`, then :math:`J_a(\\mathbf{\\bar{s}},1) = J(\\mathbf{\\hat{s}})`. Next, we prove that when :math:`\\hat{s_{a}} = -1`, :math:`J_a(\\mathbf{\\bar{s}},-1) = J(\\mathbf{\\hat{s}})`. Assume the opposite:"
+
+#: ../../source/advanced/spin_var.rst:29
+msgid ""
+"如果 :math:`J_a(\\mathbf{\\bar{s}},-1) < J(\\mathbf{\\hat{s}})`，则 "
+":math:`J(-\\mathbf{\\bar{s}}) < J(\\mathbf{\\hat{s}})`，这与 "
+":math:`\\mathbf{\\hat{s}}` 的最优性相矛盾。"
+msgstr ""
+"If :math:`J_a(\\mathbf{\\bar{s}},-1) < J(\\mathbf{\\hat{s}})`, then :math:`J(-\\mathbf{\\bar{s}}) < J(\\mathbf{\\hat{s}})`, which contradicts the optimality of :math:`\\mathbf{\\hat{s}}`."
+
+#: ../../source/advanced/spin_var.rst:30
+msgid ""
+"如果 :math:`J_a(\\mathbf{\\bar{s}},-1) > J(\\mathbf{\\hat{s}})`，则 "
+":math:`J_a(\\mathbf{\\bar{s}},-1) > J_a(-\\mathbf{\\hat{s}},-1)`，这与 "
+":math:`(\\mathbf{\\bar{s}},-1)` 在辅助问题中的最优性相矛盾。"
+msgstr ""
+"If :math:`J_a(\\mathbf{\\bar{s}},-1) > J(\\mathbf{\\hat{s}})`, then :math:`J_a(\\mathbf{\\bar{s}},-1) > J_a(-\\mathbf{\\hat{s}},-1)`, which contradicts the optimality of :math:`(\\mathbf{\\bar{s}},-1)` in the auxiliary problem."
+
+#: ../../source/advanced/spin_var.rst:32
+msgid ""
+"因此，:math:`J_a(\\mathbf{\\bar{s}},\\hat{s}_a)` = "
+":math:`J(\\mathbf{\\hat{s}})`。注意，辅助伊辛问题有两个简并解 "
+":math:`(\\mathbf{\\bar{s}},1)` 和 :math:`(-\\mathbf{\\bar{s}},-1)`，其中 "
+":math:`\\mathbf{\\bar{s}}` 也是原始伊辛问题的最优解。因此，我们可以从辅助问题的解, 通过 "
+":math:`\\mathbf{\\hat{s}} = \\mathbf{\\bar{s}} \\cdot \\hat{s_{a}}` "
+"得到原始问题的解。"
+msgstr ""
+"Therefore, :math:`J_a(\\mathbf{\\bar{s}},\\hat{s}_a) = J(\\mathbf{\\hat{s}})`. Note that the auxiliary Ising problem has two degenerate solutions: :math:`(\\mathbf{\\bar{s}},1)` and :math:`(-\\mathbf{\\bar{s}},-1)`, where :math:`\\mathbf{\\bar{s}}` is also the optimal solution to the original Ising problem. Thus, we can obtain the solution to the original problem from the solution of the auxiliary problem via :math:`\\mathbf{\\hat{s}} = \\mathbf{\\bar{s}} \\cdot \\hat{s_{a}}`."

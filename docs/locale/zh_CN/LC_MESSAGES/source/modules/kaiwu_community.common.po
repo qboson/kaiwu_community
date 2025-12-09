@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022 Beijing QBoson Quantum Technology Co., Ltd
+# This file is distributed under the same license as the Kaiwu Community
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kaiwu Community 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-09 15:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/modules/kaiwu_community.common.rst:2
+msgid "kaiwu_community.common package"
+msgstr ""
+
+#: ../../source/modules/kaiwu_community.common.rst:5
+msgid "Module contents"
+msgstr ""
+
+#: kaiwu_community.common:1 of
+msgid "通用工具集合"
+msgstr ""
+
+#: kaiwu_community.common._util.check_symmetric:1 of
+msgid "检查矩阵是否为对称矩阵，允许一定误差"
+msgstr ""
+
+#: kaiwu_community.common._util.hamiltonian:1 of
+msgid "计算哈密顿量."
+msgstr ""
+
+#: kaiwu_community.common._logger.set_log_level:5
+#: kaiwu_community.common._logger.set_log_path:3
+#: kaiwu_community.common._util.hamiltonian:3 of
+msgid "Args:"
+msgstr ""
+
+#: kaiwu_community.common._util.hamiltonian:4 of
+msgid "ising_matrix (np.ndarray): CIM Ising 矩阵."
+msgstr ""
+
+#: kaiwu_community.common._util.hamiltonian:6 of
+msgid "c_list (np.ndarray): 要计算哈密顿量的变量组合集合."
+msgstr ""
+
+#: kaiwu_community.common._util.hamiltonian:8 of
+msgid "Returns:"
+msgstr ""
+
+#: kaiwu_community.common._util.hamiltonian:9 of
+msgid "np.ndarray: 哈密顿量集合."
+msgstr ""
+
+#: kaiwu_community.common._logger.set_log_level:8
+#: kaiwu_community.common._logger.set_log_path:6
+#: kaiwu_community.common._util.hamiltonian:11 of
+msgid "Examples:"
+msgstr ""
+
+#: kaiwu_community.common._logger.set_log_level:1 of
+msgid "设置SDK日志输出级别"
+msgstr ""
+
+#: kaiwu_community.common._logger.set_log_level:3 of
+msgid "SDK默认输出INFO级别以上的日志，可通过此函数修改输出级别"
+msgstr ""
+
+#: kaiwu_community.common._logger.set_log_level:6 of
+msgid ""
+"level (str or int): 支持传入 logging.ERROR， logging.INFO、... "
+"、logging.ERROR或字符串ERROR、INFO、... 、ERROR"
+msgstr ""
+
+#: kaiwu_community.common._logger.set_log_path:1 of
+msgid "设置SDK日志输出文件路径, 需要绝对路径."
+msgstr ""
+
+#: kaiwu_community.common._logger.set_log_path:4 of
+msgid "path (str): 自定义日志文件输出路径"
+msgstr ""
+

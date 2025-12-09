@@ -11,11 +11,18 @@ import os, sys
 sys.path.insert(0, os.path.abspath("../src"))
 from kaiwu_community import __version__
 
-project = 'Kaiwu Core'
+project = 'Kaiwu Community'
 release = __version__
 version = __version__
 copyright = '2022 Beijing QBoson Quantum Technology Co., Ltd'
 author = 'QBoson Inc'
+
+# language 默认语言
+language = 'zh_CN'
+
+# 启用 gettext
+locale_dirs = ['locale/']
+gettext_compact = False
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

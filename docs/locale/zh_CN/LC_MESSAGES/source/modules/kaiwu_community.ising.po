@@ -1,0 +1,151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022 Beijing QBoson Quantum Technology Co., Ltd
+# This file is distributed under the same license as the Kaiwu Community
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kaiwu Community 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-09 15:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/modules/kaiwu_community.ising.rst:2
+msgid "kaiwu_community.ising package"
+msgstr ""
+
+#: ../../source/modules/kaiwu_community.ising.rst:5
+msgid "Module contents"
+msgstr ""
+
+#: kaiwu_community.ising:1 of
+msgid "模块: Ising"
+msgstr ""
+
+#: kaiwu_community.ising:3 of
+msgid "功能: 提供Ising模型相关函数"
+msgstr ""
+
+#: kaiwu_community.ising._ising.IsingExpression:1 of
+msgid "基类：:py:class:`~kaiwu_community.core._expression.Expression`"
+msgstr ""
+
+#: kaiwu_community.ising._ising.IsingExpression:1 of
+msgid "Ising 表达式基类，直接继承 Expression，保留扩展点。"
+msgstr ""
+
+#: kaiwu_community.ising._ising.IsingModel:1 of
+msgid "基类：:py:class:`dict`"
+msgstr ""
+
+#: kaiwu_community.ising._ising.IsingModel:1 of
+msgid "ising模型"
+msgstr ""
+
+#: kaiwu_community.ising._ising.IsingModel.get_bias:1 of
+msgid "获取QUBO转化时得到的常数偏置"
+msgstr ""
+
+#: kaiwu_community.ising._ising.IsingModel.get_matrix:1 of
+msgid "获取Ising矩阵"
+msgstr ""
+
+#: kaiwu_community.ising._ising.IsingModel.get_variables:1 of
+msgid "获取模型中的变量"
+msgstr ""
+
+#: kaiwu_community.ising._ising.Spin:1 of
+msgid "基类：:py:class:`~kaiwu_community.ising._ising.IsingExpression`"
+msgstr ""
+
+#: kaiwu_community.ising._ising.Spin:1 of
+msgid "自旋变量, 可能的取值只有-1,1."
+msgstr ""
+
+#: kaiwu_community.ising._ising.Spin:3
+#: kaiwu_community.ising._precision.adjust_ising_matrix_precision:3
+#: kaiwu_community.ising._precision.calculate_ising_matrix_bit_width:3 of
+msgid "Args:"
+msgstr ""
+
+#: kaiwu_community.ising._ising.Spin:4 of
+msgid "name (str): 变量的唯一标识."
+msgstr ""
+
+#: kaiwu_community.ising._ising.Spin:6
+#: kaiwu_community.ising._precision.adjust_ising_matrix_precision:8
+#: kaiwu_community.ising._precision.calculate_ising_matrix_bit_width:8 of
+msgid "Returns:"
+msgstr ""
+
+#: kaiwu_community.ising._ising.Spin:7 of
+msgid "dict: 名称为name的自旋变量."
+msgstr ""
+
+#: kaiwu_community.ising._ising.Spin:9
+#: kaiwu_community.ising._precision.adjust_ising_matrix_precision:11 of
+msgid "Examples:"
+msgstr ""
+
+#: kaiwu_community.ising._precision.adjust_ising_matrix_precision:1 of
+msgid "调整 ising 矩阵精度, 通过此接口调整后矩阵可能会有较大的精度损失，比如矩阵有一个数远大于其它数时，调整后矩阵精度损失严重无法使用"
+msgstr ""
+
+#: kaiwu_community.ising._precision.adjust_ising_matrix_precision:4 of
+msgid "ising_matrix(np.ndarray): 目标矩阵"
+msgstr ""
+
+#: kaiwu_community.ising._precision.adjust_ising_matrix_precision:6 of
+msgid "bit_width(int): 精度范围，目前只支持8位，有一位是符号位"
+msgstr ""
+
+#: kaiwu_community.ising._precision.adjust_ising_matrix_precision:9 of
+msgid "np.ndarray: 符合精度要求的 ising 矩阵"
+msgstr ""
+
+#: kaiwu_community.ising._precision.calculate_ising_matrix_bit_width:1 of
+msgid "计算 ising 矩阵的参数位宽"
+msgstr ""
+
+#: kaiwu_community.ising._precision.calculate_ising_matrix_bit_width:4 of
+msgid "ising_matrix (np.ndarray): ising 矩阵"
+msgstr ""
+
+#: kaiwu_community.ising._precision.calculate_ising_matrix_bit_width:6 of
+msgid "bit_width (int): 最大位宽限制"
+msgstr ""
+
+#: kaiwu_community.ising._precision.calculate_ising_matrix_bit_width:9 of
+msgid "dict: 返回Ising矩阵的精度和缩放因子"
+msgstr ""
+
+#: kaiwu_community.ising._precision.calculate_ising_matrix_bit_width:11 of
+msgid "precision (int): Ising矩阵精度"
+msgstr ""
+
+#: kaiwu_community.ising._precision.calculate_ising_matrix_bit_width:12 of
+msgid "multiplier (float): 缩放因子"
+msgstr ""
+
+#: kaiwu_community.ising._precision.calculate_ising_matrix_bit_width:14 of
+msgid "示例1:"
+msgstr ""
+
+#: kaiwu_community.ising._precision.calculate_ising_matrix_bit_width:24 of
+msgid "示例2（缩放后符合要求）:"
+msgstr ""
+
+#: kaiwu_community.ising._precision.calculate_ising_matrix_bit_width:34 of
+msgid "示例3(缩放后也不符合要求):"
+msgstr ""
+

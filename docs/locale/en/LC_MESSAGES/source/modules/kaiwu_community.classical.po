@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022 Beijing QBoson Quantum Technology Co., Ltd
+# This file is distributed under the same license as the Kaiwu Community
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kaiwu Community 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-09 15:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/modules/kaiwu_community.classical.rst:2
+msgid "kaiwu_community.classical package"
+msgstr ""
+
+#: ../../source/modules/kaiwu_community.classical.rst:5
+msgid "Module contents"
+msgstr ""
+
+#: kaiwu_community.classical:1 of
+msgid "模块: classical"
+msgstr ""
+
+#: kaiwu_community.classical:3 of
+msgid "功能: 提供一系列经典求解器"
+msgstr "Function: Provides a series of classic solvers"
+
+#: kaiwu_community.classical._brute_force.BruteForceOptimizer:1 of
+msgid "基类：:py:class:`~kaiwu_community.core._optimizer_base.OptimizerBase`"
+msgstr ""
+"Base Class: :py:class:`~kaiwu_community.core._optimizer_base.OptimizerBase`"
+
+#: kaiwu_community.classical._brute_force.BruteForceOptimizer:1 of
+msgid "求解Ising模型矩阵的暴力求解器，慢而准."
+msgstr "A brute-force solver for the Ising model matrix, slow but accurate."
+
+#: kaiwu_community.classical._brute_force.BruteForceOptimizer.solve:1 of
+msgid "求解Ising矩阵solve接口"
+msgstr "Solve the Ising matrix using the solve interface"
+
+#: kaiwu_community.classical._brute_force.BruteForceOptimizer.solve:3 of
+msgid "Args:"
+msgstr ""
+
+#: kaiwu_community.classical._brute_force.BruteForceOptimizer.solve:4 of
+msgid "ising_matrix (np.ndarray, optional): Ising矩阵. Defaults to None."
+msgstr "ising_matrix (np.ndarray, optional): Ising Matrix. Defaults to None."
+
+#: kaiwu_community.classical._brute_force.BruteForceOptimizer.solve:6 of
+msgid "Returns:"
+msgstr ""
+
+#: kaiwu_community.classical._brute_force.BruteForceOptimizer.solve:7 of
+msgid "np.ndarray: 1个或者多个能量最低的解向量."
+msgstr "np.ndarray: One or more vectors representing the lowest energy solutions."
+
+#: kaiwu_community.classical._brute_force.BruteForceOptimizer.solve:9 of
+msgid "Examples:"
+msgstr ""
+

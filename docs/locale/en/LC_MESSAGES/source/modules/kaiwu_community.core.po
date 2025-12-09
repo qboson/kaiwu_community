@@ -1,0 +1,623 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022 Beijing QBoson Quantum Technology Co., Ltd
+# This file is distributed under the same license as the Kaiwu Community
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kaiwu Community 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-09 15:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/modules/kaiwu_community.core.rst:2
+msgid "kaiwu_community.core package"
+msgstr "kaiwu_community.core package"
+
+#: ../../source/modules/kaiwu_community.core.rst:5
+msgid "Module contents"
+msgstr "Module contents"
+
+#: kaiwu_community.core:1 of
+msgid "模块: core"
+msgstr "Module: core"
+
+#: kaiwu_community.core:3 of
+msgid "功能: 基础类的定义"
+msgstr "Function: Definition of base classes"
+
+#: kaiwu_community.core._binary_expression.Binary:1
+#: kaiwu_community.core._binary_expression.Integer:1
+#: kaiwu_community.core._binary_expression.Placeholder:1 of
+msgid "基类：:py:class:`~kaiwu_community.core._binary_expression.BinaryExpression`"
+msgstr "Base class: :py:class:`~kaiwu_community.core._binary_expression.BinaryExpression`"
+
+#: kaiwu_community.core._binary_expression.Binary:1 of
+msgid "二进制变量, 只保存变量名，不继承 QuboExpression"
+msgstr "Binary variable, only stores variable name, does not inherit QuboExpression"
+
+#: kaiwu_community.core._binary_expression.BinaryExpression:1 of
+msgid "基类：:py:class:`~kaiwu_community.core._expression.Expression`"
+msgstr "Base class: :py:class:`~kaiwu_community.core._expression.Expression`"
+
+#: kaiwu_community.core._binary_expression.BinaryExpression:1 of
+msgid "QUBO表达式的基础数据结构"
+msgstr "Basic data structure for QUBO expressions"
+
+#: kaiwu_community.core._binary_expression.BinaryExpression.feed:1 of
+msgid "为占位符号赋值, 并返回赋值后的新表达式对象"
+msgstr "Assign values to placeholders and return a new expression object with assigned values"
+
+#: kaiwu_community.core._binary_expression.BinaryExpression.feed:3
+#: kaiwu_community.core._binary_expression.quicksum:3
+#: kaiwu_community.core._binary_model.BinaryModel:3
+#: kaiwu_community.core._binary_model.BinaryModel.add_constraint:3
+#: kaiwu_community.core._binary_model.BinaryModel.get_value:3
+#: kaiwu_community.core._binary_model.BinaryModel.set_constraint_handler:3
+#: kaiwu_community.core._binary_model.BinaryModel.set_objective:3
+#: kaiwu_community.core._binary_model.BinaryModel.verify_constraint:3
+#: kaiwu_community.core._constraint.ConstraintDefinition:3
+#: kaiwu_community.core._constraint.get_min_penalty:3
+#: kaiwu_community.core._constraint.get_min_penalty_from_min_diff:3
+#: kaiwu_community.core._get_val.get_array_val:3
+#: kaiwu_community.core._get_val.get_sol_dict:3
+#: kaiwu_community.core._get_val.get_val:3
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.dot:3
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:3
+#: kaiwu_community.core._matrix.dot:3 kaiwu_community.core._matrix.ndarray:4
+#: kaiwu_community.core._penalty_method_constraint.PenaltyMethodConstraint:3
+#: kaiwu_community.core._penalty_method_constraint.PenaltyMethodConstraint.from_constraint_definition:3
+#: kaiwu_community.core._solver_base.SolverBase:3 of
+msgid "Args:"
+msgstr "Args:"
+
+#: kaiwu_community.core._binary_expression.BinaryExpression.feed:4 of
+msgid "feed_dict(dict): 需要赋值的占位符的值"
+msgstr "feed_dict(dict): Values for placeholders to be assigned"
+
+#: kaiwu_community.core._binary_expression.BinaryExpression.feed:6
+#: kaiwu_community.core._binary_expression.quicksum:9
+#: kaiwu_community.core._constraint.get_min_penalty_from_deltas:16
+#: kaiwu_community.core._get_val.get_array_val:11
+#: kaiwu_community.core._get_val.get_sol_dict:11
+#: kaiwu_community.core._get_val.get_val:11
+#: kaiwu_community.core._matrix.ndarray:16 of
+msgid "Examples:"
+msgstr "Examples:"
+
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray:1 of
+msgid "基类：:py:class:`~numpy.ndarray`"
+msgstr "Base class: :py:class:`~numpy.ndarray`"
+
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray:1
+#: kaiwu_community.core._matrix.ndarray:1 of
+msgid "基于 np.ndarray 的QUBO容器. 该容器支持各种 numpy 原生的向量化运算"
+msgstr "QUBO container based on np.ndarray. This container supports various native numpy vectorized operations"
+
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.dot:1 of
+msgid "使用quicksum的矩阵乘法"
+msgstr "Matrix multiplication using quicksum"
+
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.dot:4 of
+msgid "b (BinaryExpressionNDArray): 另一个矩阵"
+msgstr "b (BinaryExpressionNDArray): Another matrix"
+
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.dot:6
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:8 of
+msgid "out：可选输出数组，用于存储结果。需与预期输出形状一致。"
+msgstr "out: Optional output array to store the result. Must match the expected output shape."
+
+#: kaiwu_community.core._binary_expression.quicksum:6
+#: kaiwu_community.core._binary_model.BinaryModel.get_constraints_expr_list:3
+#: kaiwu_community.core._binary_model.BinaryModel.get_value:6
+#: kaiwu_community.core._binary_model.BinaryModel.verify_constraint:8
+#: kaiwu_community.core._constraint.get_min_penalty:8
+#: kaiwu_community.core._constraint.get_min_penalty_for_equal_constraint:9
+#: kaiwu_community.core._constraint.get_min_penalty_from_min_diff:10
+#: kaiwu_community.core._expression.Expression.get_variables:3
+#: kaiwu_community.core._get_val.get_array_val:8
+#: kaiwu_community.core._get_val.get_sol_dict:8
+#: kaiwu_community.core._get_val.get_val:8
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.dot:7
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:16
+#: kaiwu_community.core._matrix.dot:12 kaiwu_community.core._matrix.ndarray:13
+#: of
+msgid "Returns:"
+msgstr "Returns:"
+
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.dot:8
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:17 of
+msgid "BinaryExpressionNDArray: 乘积"
+msgstr "BinaryExpressionNDArray: Product"
+
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:1 of
+msgid "使用quicksum的求和方法"
+msgstr "Summation method using quicksum"
+
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:4 of
+msgid "axis：指定求和的轴（维度）。默认为 None，表示对所有元素求和；若为整数或元组，则沿指定轴求和。"
+msgstr "axis: Specifies the axis (dimension) for summation. Default is None, meaning sum all elements; if integer or tuple, sum along the specified axis."
+
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:6 of
+msgid "dtype：指定输出数据类型。若未提供，则默认使用输入数组的 dtype，但整数类型可能提升为平台整数精度。暂不支持。"
+msgstr "dtype: Specifies the output data type. If not provided, defaults to the input array's dtype, but integer types may be promoted to platform integer precision. Not supported yet."
+
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:10 of
+msgid "keepdims：布尔值。若为 True，则保留被求和的轴作为长度为1的维度。暂不支持 。"
+msgstr "keepdims: Boolean. If True, retains the summed axis as a dimension of length 1. Not supported yet."
+
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:12 of
+msgid "initial：求和的初始值（标量），默认为0。暂不支持。"
+msgstr "initial: Initial value for summation (scalar), default is 0. Not supported yet."
+
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:14 of
+msgid "where：布尔数组，指定哪些元素参与求和（NumPy 1.20+支持）。暂不支持。"
+msgstr "where: Boolean array specifying which elements to include in the sum (NumPy 1.20+ support). Not supported yet."
+
+#: kaiwu_community.core._binary_model.BinaryModel:1
+#: kaiwu_community.core._constraint.ConstraintDefinition:1
+#: kaiwu_community.core._optimizer_base.OptimizerBase:1
+#: kaiwu_community.core._penalty_method_constraint.PenaltyMethodConstraint:1
+#: kaiwu_community.core._solver_base.SolverBase:1 of
+msgid "基类：:py:class:`object`"
+msgstr "Base class: :py:class:`object`"
+
+#: kaiwu_community.core._binary_model.BinaryModel:1 of
+msgid "二值模型类"
+msgstr "Binary model class"
+
+#: kaiwu_community.core._binary_model.BinaryModel:4 of
+msgid "objective (BinaryExpression, optional): 目标函数. 默认为None"
+msgstr "objective (BinaryExpression, optional): Objective function. Defaults to None"
+
+#: kaiwu_community.core._binary_model.BinaryModel.add_constraint:1 of
+msgid "添加约束项（支持单个或多个约束）"
+msgstr "Add constraint(s) (supports single or multiple constraints)"
+
+#: kaiwu_community.core._binary_model.BinaryModel.add_constraint:4 of
+msgid "constraint_in (ConstraintDefinition or iterable): 约束表达式或其可迭代对象"
+msgstr "constraint_in (ConstraintDefinition or iterable): Constraint expression or iterable of constraint expressions"
+
+#: kaiwu_community.core._binary_model.BinaryModel.add_constraint:6 of
+msgid "name (str or list, optional): 约束名称或名称列表，默认自动命名"
+msgstr "name (str or list, optional): Constraint name or list of names, defaults to auto-naming"
+
+#: kaiwu_community.core._binary_model.BinaryModel.add_constraint:8 of
+msgid "constr_type (str, optional): 约束类型，可以设置为\"soft\"或\"hard\"，默认为\"hard\""
+msgstr "constr_type (str, optional): Constraint type, can be set to \"soft\" or \"hard\", defaults to \"hard\""
+
+#: kaiwu_community.core._binary_model.BinaryModel.add_constraint:10 of
+msgid "penalty (float): 缺省惩罚系数"
+msgstr "penalty (float): Default penalty coefficient"
+
+#: kaiwu_community.core._binary_model.BinaryModel.compile_constraints:1 of
+msgid "按照不同的风格转换约束项为Expression 对于不等式约束，目前支持的是罚函数方式，"
+msgstr "Convert constraints to Expression according to different styles. For inequality constraints, currently only penalty function method is supported,"
+
+#: kaiwu_community.core._binary_model.BinaryModel.get_constraints_expr_list:1
+#: of
+msgid "获取当前所有的constraint。"
+msgstr "Get all current constraints."
+
+#: kaiwu_community.core._binary_model.BinaryModel.get_constraints_expr_list:4
+#: of
+msgid "List of all constraints."
+msgstr "List of all constraints."
+
+#: kaiwu_community.core._binary_model.BinaryModel.get_value:1 of
+msgid "根据结果字典将变量值带入qubo变量."
+msgstr "Substitute variable values into qubo variables based on result dictionary."
+
+#: kaiwu_community.core._binary_model.BinaryModel.get_value:4 of
+msgid "solution_dict (dict): 由get_sol_dict生成的结果字典。"
+msgstr "solution_dict (dict): Result dictionary generated by get_sol_dict."
+
+#: kaiwu_community.core._binary_model.BinaryModel.get_value:7
+#: kaiwu_community.core._get_val.get_val:9 of
+msgid "float: 带入qubo后所得的值"
+msgstr "float: Value obtained after substituting into qubo"
+
+#: kaiwu_community.core._binary_model.BinaryModel.initialize_penalties:1 of
+msgid "自动初始化所有的惩罚系数"
+msgstr "Automatically initialize all penalty coefficients"
+
+#: kaiwu_community.core._binary_model.BinaryModel.set_constraint_handler:1 of
+msgid "设置约束项无约束化方法"
+msgstr "Set constraint unconstraining method"
+
+#: kaiwu_community.core._binary_model.BinaryModel.set_constraint_handler:4 of
+msgid "constraint_handler: 设置约束项无约束化表示方法类"
+msgstr "constraint_handler: Class for setting constraint unconstraining representation method"
+
+#: kaiwu_community.core._binary_model.BinaryModel.set_objective:1 of
+msgid "设置目标函数"
+msgstr "Set objective function"
+
+#: kaiwu_community.core._binary_model.BinaryModel.set_objective:4 of
+msgid "objective (BinaryExpression): 目标函数表达式"
+msgstr "objective (BinaryExpression): Objective function expression"
+
+#: kaiwu_community.core._binary_model.BinaryModel.verify_constraint:1 of
+msgid "确认约束是否满足"
+msgstr "Verify if constraints are satisfied"
+
+#: kaiwu_community.core._binary_model.BinaryModel.verify_constraint:4 of
+msgid "solution_dict (dict): QUBO模型解字典"
+msgstr "solution_dict (dict): QUBO model solution dictionary"
+
+#: kaiwu_community.core._binary_model.BinaryModel.verify_constraint:6 of
+msgid "constr_type(str, optional): 约束类型，可以设置为\"soft\"或\"hard\"，默认为\"hard\""
+msgstr "constr_type(str, optional): Constraint type, can be set to \"soft\" or \"hard\", defaults to \"hard\""
+
+#: kaiwu_community.core._binary_model.BinaryModel.verify_constraint:9 of
+msgid "tuple: 约束满足信息"
+msgstr "tuple: Constraint satisfaction information"
+
+#: kaiwu_community.core._binary_model.BinaryModel.verify_constraint:10 of
+msgid "int: 不满足的约束个数"
+msgstr "int: Number of unsatisfied constraints"
+
+#: kaiwu_community.core._binary_model.BinaryModel.verify_constraint:11 of
+msgid "dict: 包含约束值的字典"
+msgstr "dict: Dictionary containing constraint values"
+
+#: kaiwu_community.core._constraint.ConstraintDefinition:1 of
+msgid "约束定义"
+msgstr "Constraint definition"
+
+#: kaiwu_community.core._constraint.ConstraintDefinition:4 of
+msgid "expr_left (Expression): 约束项左算子"
+msgstr "expr_left (Expression): Left operator of the constraint"
+
+#: kaiwu_community.core._constraint.ConstraintDefinition:6 of
+msgid "relation (string): 关系运算符"
+msgstr "relation (string): Relational operator"
+
+#: kaiwu_community.core._constraint.ConstraintDefinition:8 of
+msgid "expected_value(float): 约束项右算子， 缺省为0"
+msgstr "expected_value(float): Right operator of the constraint, defaults to 0"
+
+#: kaiwu_community.core._constraint.ConstraintDefinition.is_satisfied:1
+#: kaiwu_community.core._penalty_method_constraint.PenaltyMethodConstraint.is_satisfied:1
+#: of
+msgid "验证约束满足情况"
+msgstr "Verify constraint satisfaction"
+
+#: kaiwu_community.core._expression.Expression:1 of
+msgid "基类：:py:class:`dict`"
+msgstr "Base class: :py:class:`dict`"
+
+#: kaiwu_community.core._expression.Expression:1 of
+msgid "QUBO/Ising 通用表达式基类（提供默认二次表达式实现）"
+msgstr "Base class for QUBO/Ising general expressions (provides default quadratic expression implementation)"
+
+#: kaiwu_community.core._expression.Expression.get_average_coefficient:1 of
+msgid "返回coefficient的平均值"
+msgstr "Return the average of coefficients"
+
+#: kaiwu_community.core._expression.Expression.get_max_deltas:1 of
+msgid ""
+"求出每个变量翻转引起目标函数变化的上界 "
+"返回值negative_delta，positive_delta分别为该变量1->0和0->1所引起的最大变化量"
+msgstr ""
+"Calculate the upper bound of objective function change caused by each variable flip "
+"Return values negative_delta and positive_delta are the maximum changes caused by the variable flipping from 1->0 and 0->1 respectively"
+
+#: kaiwu_community.core._expression.Expression.get_variables:1 of
+msgid "获取变量名集合"
+msgstr "Get set of variable names"
+
+#: kaiwu_community.core._expression.Expression.get_variables:4 of
+msgid "variables: (tuple) 返回构成expression的变量集合"
+msgstr "variables: (tuple) Returns the set of variables that constitute the expression"
+
+#: kaiwu_community.core._binary_expression.Integer:1 of
+msgid "整数变量, 只保存变量名和范围，不继承 QuboExpression"
+msgstr "Integer variable, only stores variable name and range, does not inherit QuboExpression"
+
+#: kaiwu_community.core._error.KaiwuError:1 of
+msgid "基类：:py:class:`Exception`"
+msgstr "Base class: :py:class:`Exception`"
+
+#: kaiwu_community.core._error.KaiwuError:1 of
+msgid "Base class for exceptions in this module."
+msgstr "Base class for exceptions in this module."
+
+#: kaiwu_community.core._optimizer_base.OptimizerBase:1 of
+msgid "Ising求解器基类"
+msgstr "Ising solver base class"
+
+#: kaiwu_community.core._optimizer_base.OptimizerBase.on_matrix_change:1 of
+msgid "更新矩阵相关信息, 继承OptimizerBase时可以实现。当处理的ising矩阵发生变化时，这个函数的实现会被调用，从而有机会做相应动作"
+msgstr "Update matrix-related information, can be implemented when inheriting OptimizerBase. When the Ising matrix being processed changes, this function implementation will be called, providing an opportunity to take corresponding actions"
+
+#: kaiwu_community.core._optimizer_base.OptimizerBase.set_matrix:1 of
+msgid "设置矩阵并更新相关内容"
+msgstr "Set matrix and update related content"
+
+#: kaiwu_community.core._optimizer_base.OptimizerBase.solve:1 of
+msgid "求解"
+msgstr "Solve"
+
+#: kaiwu_community.core._penalty_method_constraint.PenaltyMethodConstraint:1 of
+msgid "有约束转无约束的penalty method方法"
+msgstr "Penalty method for converting constrained to unconstrained"
+
+#: kaiwu_community.core._penalty_method_constraint.PenaltyMethodConstraint:4 of
+msgid "expr (Expression): 编译后的约束项表达式"
+msgstr "expr (Expression): Compiled constraint expression"
+
+#: kaiwu_community.core._penalty_method_constraint.PenaltyMethodConstraint:6 of
+msgid "penalty (float): 约束项惩罚系数"
+msgstr "penalty (float): Constraint penalty coefficient"
+
+#: kaiwu_community.core._penalty_method_constraint.PenaltyMethodConstraint.from_constraint_definition:1
+#: of
+msgid ""
+"Prepare QUBO expression for the given constraint, automatically "
+"determining slack variables if needed."
+msgstr ""
+"Prepare QUBO expression for the given constraint, automatically "
+"determining slack variables if needed."
+
+#: kaiwu_community.core._penalty_method_constraint.PenaltyMethodConstraint.from_constraint_definition:4
+#: of
+msgid "name: Name of the constraint."
+msgstr "name: Name of the constraint."
+
+#: kaiwu_community.core._penalty_method_constraint.PenaltyMethodConstraint.from_constraint_definition:6
+#: of
+msgid "constraint: The relation constraint to process."
+msgstr "constraint: The relation constraint to process."
+
+#: kaiwu_community.core._penalty_method_constraint.PenaltyMethodConstraint.from_constraint_definition:8
+#: of
+msgid "parent_model: the model it belongs to."
+msgstr "parent_model: the model it belongs to."
+
+#: kaiwu_community.core._penalty_method_constraint.PenaltyMethodConstraint.penalize_less:1
+#: of
+msgid "降低惩罚系数"
+msgstr "Decrease penalty coefficient"
+
+#: kaiwu_community.core._penalty_method_constraint.PenaltyMethodConstraint.penalize_more:1
+#: of
+msgid "增加惩罚系数"
+msgstr "Increase penalty coefficient"
+
+#: kaiwu_community.core._penalty_method_constraint.PenaltyMethodConstraint.set_penalty:1
+#: of
+msgid "设置惩罚系数"
+msgstr "Set penalty coefficient"
+
+#: kaiwu_community.core._binary_expression.Placeholder:1 of
+msgid "占位符变量, 只保存变量名, 对决策"
+msgstr "Placeholder variable, only stores variable name, for decision making"
+
+#: kaiwu_community.core._binary_expression.Placeholder.get_placeholder_set:1 of
+msgid "获取占位符集合"
+msgstr "Get placeholder set"
+
+#: kaiwu_community.core._solver_base.SolverBase:1 of
+msgid "Solver基类"
+msgstr "Solver base class"
+
+#: kaiwu_community.core._solver_base.SolverBase:4 of
+msgid "optimizer (OptimizerBase): Ising求解器"
+msgstr "optimizer (OptimizerBase): Ising solver"
+
+#: kaiwu_community.core._matrix.dot:1 of
+msgid "矩阵乘法"
+msgstr "Matrix multiplication"
+
+#: kaiwu_community.core._matrix.dot:4 of
+msgid "mat_left (numpy.array): 矩阵1"
+msgstr "mat_left (numpy.array): Matrix 1"
+
+#: kaiwu_community.core._matrix.dot:6 of
+msgid "mat_right (numpy.array): 矩阵2"
+msgstr "mat_right (numpy.array): Matrix 2"
+
+#: kaiwu_community.core._matrix.dot:8 of
+msgid "Raises:"
+msgstr "Raises:"
+
+#: kaiwu_community.core._matrix.dot:9 of
+msgid "ValueError: 两个输入都必须是np.ndarray ValueError: 两个输入的维度必须匹配"
+msgstr "ValueError: Both inputs must be np.ndarray ValueError: Dimensions of the two inputs must match"
+
+#: kaiwu_community.core._matrix.dot:13 of
+msgid "np.ndarray: 乘积矩阵"
+msgstr "np.ndarray: Product matrix"
+
+#: kaiwu_community.core._expression.expr_add:1 of
+msgid "通用二次表达式相加"
+msgstr "General quadratic expression addition"
+
+#: kaiwu_community.core._expression.expr_mul:1 of
+msgid "通用二次表达式相乘"
+msgstr "General quadratic expression multiplication"
+
+#: kaiwu_community.core._expression.expr_neg:1 of
+msgid "通用二次表达式取负"
+msgstr "General quadratic expression negation"
+
+#: kaiwu_community.core._expression.expr_pow:1 of
+msgid "通用二次表达式乘方，要求expr_right只能为1或者2"
+msgstr "General quadratic expression exponentiation, requires expr_right to be only 1 or 2"
+
+#: kaiwu_community.core._get_val.get_array_val:1 of
+msgid "根据结果字典将spin值带入qubo数组变量."
+msgstr "Substitute spin values into qubo array variables based on result dictionary."
+
+#: kaiwu_community.core._get_val.get_array_val:4 of
+msgid "array (QUBOArray): QUBO数组"
+msgstr "array (QUBOArray): QUBO array"
+
+#: kaiwu_community.core._get_val.get_array_val:6
+#: kaiwu_community.core._get_val.get_val:6 of
+msgid "sol_dict (dict): 由get_sol_dict生成的结果字典。"
+msgstr "sol_dict (dict): Result dictionary generated by get_sol_dict."
+
+#: kaiwu_community.core._get_val.get_array_val:9 of
+msgid "np.ndarray: 带入qubo数组后所得的值数组"
+msgstr "np.ndarray: Array of values obtained after substituting into qubo array"
+
+#: kaiwu_community.core._constraint.get_min_penalty:1
+#: kaiwu_community.core._constraint.get_min_penalty_from_deltas:1 of
+msgid "返回约束项cons对应的最小惩罚系数，惩罚项优先满足"
+msgstr "Return the minimum penalty coefficient corresponding to constraint cons, with penalty terms prioritized"
+
+#: kaiwu_community.core._constraint.get_min_penalty:4
+#: kaiwu_community.core._constraint.get_min_penalty_for_equal_constraint:5 of
+msgid "obj: 原目标函数的qubo表达式。"
+msgstr "obj: Original objective function qubo expression."
+
+#: kaiwu_community.core._constraint.get_min_penalty:6
+#: kaiwu_community.core._constraint.get_min_penalty_from_deltas:4 of
+msgid "cons：约束项的qubo表达式"
+msgstr "cons: Qubo expression of the constraint"
+
+#: kaiwu_community.core._constraint.get_min_penalty:9 of
+msgid "float: 返回约束项cons对应的最小惩罚系数."
+msgstr "float: Returns the minimum penalty coefficient corresponding to constraint cons."
+
+#: kaiwu_community.core._constraint.get_min_penalty:11
+#: kaiwu_community.core._constraint.get_min_penalty_for_equal_constraint:12 of
+msgid "Examples："
+msgstr "Examples："
+
+#: kaiwu_community.core._constraint.get_min_penalty_for_equal_constraint:1 of
+msgid ""
+"返回一次等式约束项cons对应的最小惩罚系数：把满足这个约束的解的某一位比特翻转一下的最坏情况。 "
+"这个惩罚系数有效是指能够保证原问题的可行解是目标函数的局部最优（在一位比特翻转的局部意义下）。"
+msgstr ""
+"Return the minimum penalty coefficient corresponding to a linear equality constraint cons: the worst case when flipping a bit of a solution that satisfies this constraint. "
+"This penalty coefficient is effective if it can ensure that feasible solutions to the original problem are locally optimal for the objective function (in the local sense of flipping one bit)."
+
+#: kaiwu_community.core._constraint.get_min_penalty_for_equal_constraint:4
+#: kaiwu_community.core._constraint.get_min_penalty_from_deltas:3 of
+msgid "Args："
+msgstr "Args："
+
+#: kaiwu_community.core._constraint.get_min_penalty_for_equal_constraint:7 of
+msgid "cons：线性的等式约束cons=0中的线性表达式。"
+msgstr "cons: Linear expression in the linear equality constraint cons=0."
+
+#: kaiwu_community.core._constraint.get_min_penalty_for_equal_constraint:10 of
+msgid "float: 一次等式约束项cons对应的最小惩罚系数."
+msgstr "float: Minimum penalty coefficient corresponding to linear equality constraint cons."
+
+#: kaiwu_community.core._constraint.get_min_penalty_from_deltas:6 of
+msgid "neg_delta: 各个变量1变为0时最大变化量的dict"
+msgstr "neg_delta: Dictionary of maximum changes when each variable changes from 1 to 0"
+
+#: kaiwu_community.core._constraint.get_min_penalty_from_deltas:8 of
+msgid "pos_delta: 各个变量0变为1时最大变化量的dict"
+msgstr "pos_delta: Dictionary of maximum changes when each variable changes from 0 to 1"
+
+#: kaiwu_community.core._constraint.get_min_penalty_from_deltas:10 of
+msgid "obj_vars: 第三个元素为变量列表"
+msgstr "obj_vars: Third element is a list of variables"
+
+#: kaiwu_community.core._constraint.get_min_penalty_from_deltas:12 of
+msgid "min_delta_method: 声明在。分别用两种方法寻找最小变化值"
+msgstr "min_delta_method: Declared in. Two methods are used to find the minimum change value"
+
+#: kaiwu_community.core._constraint.get_min_penalty_from_deltas:13 of
+msgid "MIN_DELTA_METHODS = {\"diff\": _get_constraint_min_deltas_diff,"
+msgstr "MIN_DELTA_METHODS = {\"diff\": _get_constraint_min_deltas_diff,"
+
+#: kaiwu_community.core._constraint.get_min_penalty_from_deltas:14 of
+msgid "\"exhaust\": _get_constraint_min_deltas_exhaust}"
+msgstr "\"exhaust\": _get_constraint_min_deltas_exhaust}"
+
+#: kaiwu_community.core._constraint.get_min_penalty_from_min_diff:1 of
+msgid "根据objective的最大值，最小值估算约束项的最小惩罚系数"
+msgstr "Estimate the minimum penalty coefficient for constraints based on the maximum and minimum values of the objective"
+
+#: kaiwu_community.core._constraint.get_min_penalty_from_min_diff:4 of
+msgid "cons:  约束项"
+msgstr "cons:  Constraint"
+
+#: kaiwu_community.core._constraint.get_min_penalty_from_min_diff:6 of
+msgid "negative_delta: objective最小值"
+msgstr "negative_delta: Minimum value of objective"
+
+#: kaiwu_community.core._constraint.get_min_penalty_from_min_diff:8 of
+msgid "positive_delta: objective最大值"
+msgstr "positive_delta: Maximum value of objective"
+
+#: kaiwu_community.core._constraint.get_min_penalty_from_min_diff:11 of
+msgid "找到的最小惩罚系数"
+msgstr "Found minimum penalty coefficient"
+
+#: kaiwu_community.core._get_val.get_sol_dict:1 of
+msgid "根据解向量和变量字典生成结果字典."
+msgstr "Generate result dictionary based on solution vector and variable dictionary."
+
+#: kaiwu_community.core._get_val.get_sol_dict:4 of
+msgid "solution (np.ndarray): 解向量（spin）。"
+msgstr "solution (np.ndarray): Solution vector (spin)."
+
+#: kaiwu_community.core._get_val.get_sol_dict:6 of
+msgid "vars_dict (dict): 变量字典，用cim_ising_model.get_variables()生成。"
+msgstr "vars_dict (dict): Variable dictionary, generated by cim_ising_model.get_variables()."
+
+#: kaiwu_community.core._get_val.get_sol_dict:9 of
+msgid "dict: 结果字典。键为变量名，值为对应的spin值。"
+msgstr "dict: Result dictionary. Keys are variable names, values are corresponding spin values."
+
+#: kaiwu_community.core._get_val.get_val:1 of
+msgid "根据结果字典将spin值带入qubo变量."
+msgstr "Substitute spin values into qubo variables based on result dictionary."
+
+#: kaiwu_community.core._get_val.get_val:4 of
+msgid "qubo (QUBO表达式): QUBO表达式"
+msgstr "qubo (QUBO expression): QUBO expression"
+
+#: kaiwu_community.core._matrix.ndarray:5 of
+msgid "shape (Union[int, Tuple[int, ...]]): 形状"
+msgstr "shape (Union[int, Tuple[int, ...]]): Shape"
+
+#: kaiwu_community.core._matrix.ndarray:7 of
+msgid "name (str): 生成的变量的标识符."
+msgstr "name (str): Identifier for generated variables."
+
+#: kaiwu_community.core._matrix.ndarray:9 of
+msgid "var_func (class for func): 用于生成元素的方法或类. 第一个参数必须是name"
+msgstr "var_func (class for func): Method or class used to generate elements. The first parameter must be name"
+
+#: kaiwu_community.core._matrix.ndarray:11 of
+msgid "var_func_param (tuple): var_func除了name以外的参数"
+msgstr "var_func_param (tuple): Parameters for var_func except name"
+
+#: kaiwu_community.core._matrix.ndarray:14 of
+msgid "np.ndarray: 多维容器."
+msgstr "np.ndarray: Multi-dimensional container."
+
+#: kaiwu_community.core._binary_expression.quicksum:1 of
+msgid "高性能的QUBO求和器."
+msgstr "High-performance QUBO summation."
+
+#: kaiwu_community.core._binary_expression.quicksum:4 of
+msgid "qubo_expr_list (QUBO列表): 用于求和的QUBO表达式的列表."
+msgstr "qubo_expr_list (QUBO list): List of QUBO expressions for summation."
+
+#: kaiwu_community.core._binary_expression.quicksum:7 of
+msgid "BinaryExpression: 约束QUBO."
+msgstr "BinaryExpression: Constrained QUBO."
+
+#: kaiwu_community.core._expression.update_constraint:1 of
+msgid "将qexp的约束以及降阶约束信息更新到q"
+msgstr "Update q with constraint and reduced constraint information from qexp"

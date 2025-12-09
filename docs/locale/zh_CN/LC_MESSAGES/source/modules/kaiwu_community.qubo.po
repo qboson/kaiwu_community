@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022 Beijing QBoson Quantum Technology Co., Ltd
+# This file is distributed under the same license as the Kaiwu Community
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kaiwu Community 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-09 15:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/modules/kaiwu_community.qubo.rst:2
+msgid "kaiwu_community.qubo package"
+msgstr ""
+
+#: ../../source/modules/kaiwu_community.qubo.rst:5
+msgid "Module contents"
+msgstr ""
+
+#: kaiwu_community.qubo:1 of
+msgid "模块: qubo"
+msgstr ""
+
+#: kaiwu_community.qubo:3 of
+msgid "功能: QUBO建模工具"
+msgstr ""
+
+#: kaiwu_community.qubo._error.QuboError:1 of
+msgid "基类：:py:class:`~kaiwu_community.core._error.KaiwuError`"
+msgstr ""
+
+#: kaiwu_community.qubo._error.QuboError:1 of
+msgid "Exceptions in qubo module."
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.QuboModel:1 of
+msgid "基类：:py:class:`~kaiwu_community.core._binary_model.BinaryModel`"
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.QuboModel:1 of
+msgid "支持添加约束的QUBO模型类"
+msgstr ""
+
+#: kaiwu_community.qubo._precision.adjust_qubo_matrix_precision:3
+#: kaiwu_community.qubo._precision.check_qubo_matrix_bit_width:5
+#: kaiwu_community.qubo._qubo_model.QuboModel:3
+#: kaiwu_community.qubo._qubo_model.calculate_qubo_value:3
+#: kaiwu_community.qubo._qubo_model.qubo_matrix_to_qubo_model:3 of
+msgid "Args:"
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.QuboModel:4 of
+msgid "objective (QuboExpression, optional): 目标函数. 默认为None"
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.QuboModel.get_matrix:1 of
+msgid "获取QUBO矩阵"
+msgstr ""
+
+#: kaiwu_community.qubo._precision.adjust_qubo_matrix_precision:8
+#: kaiwu_community.qubo._qubo_model.QuboModel.get_matrix:3
+#: kaiwu_community.qubo._qubo_model.QuboModel.make:3
+#: kaiwu_community.qubo._qubo_model.calculate_qubo_value:10
+#: kaiwu_community.qubo._qubo_model.qubo_matrix_to_qubo_model:6 of
+msgid "Returns:"
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.QuboModel.get_matrix:4 of
+msgid "numpy.ndarray: QUBO矩阵"
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.QuboModel.get_offset:1 of
+msgid "获取qubo模型的offset"
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.QuboModel.get_sol_dict:1 of
+msgid "根据解向量生成结果字典."
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.QuboModel.get_variables:1 of
+msgid "获取qubo模型的variables"
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.QuboModel.invalidate_made_state:1 of
+msgid "Invalidate the made state when the model changes"
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.QuboModel.make:1 of
+msgid "返回合并后的QUBO表达式"
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.QuboModel.make:4 of
+msgid "BinaryExpression: 合并的约束表达式"
+msgstr ""
+
+#: kaiwu_community.qubo._precision.adjust_qubo_matrix_precision:1 of
+msgid "调整矩阵精度, 通过此接口调整后矩阵可能会有较大的精度损失，比如矩阵有一个数远大于其它数时，调整后矩阵精度损失严重无法使用"
+msgstr ""
+
+#: kaiwu_community.qubo._precision.adjust_qubo_matrix_precision:4 of
+msgid "qubo_matrix (np.ndarray): 目标矩阵"
+msgstr ""
+
+#: kaiwu_community.qubo._precision.adjust_qubo_matrix_precision:6 of
+msgid "bit_width (int): 精度范围，目前只支持8位，有一位是符号位"
+msgstr ""
+
+#: kaiwu_community.qubo._precision.adjust_qubo_matrix_precision:9 of
+msgid "np.ndarray: 符合精度要求的QUBO矩阵"
+msgstr ""
+
+#: kaiwu_community.qubo._precision.adjust_qubo_matrix_precision:11
+#: kaiwu_community.qubo._qubo_model.calculate_qubo_value:13
+#: kaiwu_community.qubo._qubo_model.qubo_matrix_to_qubo_model:9 of
+msgid "Examples:"
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.calculate_qubo_value:1 of
+msgid "Q值计算器."
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.calculate_qubo_value:4 of
+msgid "qubo_matrix (np.ndarray): QUBO矩阵."
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.calculate_qubo_value:6 of
+msgid "offset (float): 常数项"
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.calculate_qubo_value:8 of
+msgid "binary_configuration (np.ndarray): 二进制配置"
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.calculate_qubo_value:11 of
+msgid "output (float): Q值."
+msgstr ""
+
+#: kaiwu_community.qubo._precision.check_qubo_matrix_bit_width:1 of
+msgid "校验QUBO矩阵元素位宽"
+msgstr ""
+
+#: kaiwu_community.qubo._precision.check_qubo_matrix_bit_width:3 of
+msgid "将QUBO矩阵转为伊辛矩阵，通过校验伊辛矩阵的元素位宽来实现对QUBO矩阵的校验"
+msgstr ""
+
+#: kaiwu_community.qubo._precision.check_qubo_matrix_bit_width:6 of
+msgid "qubo_matrix (np.ndarray): QUBO矩阵"
+msgstr ""
+
+#: kaiwu_community.qubo._precision.check_qubo_matrix_bit_width:8 of
+msgid "bit_width (int): 位宽"
+msgstr ""
+
+#: kaiwu_community.qubo._precision.check_qubo_matrix_bit_width:10 of
+msgid "Raises:"
+msgstr ""
+
+#: kaiwu_community.qubo._precision.check_qubo_matrix_bit_width:11 of
+msgid "ValueError: 当矩阵元素位宽超过指定位宽时抛出异常"
+msgstr ""
+
+#: kaiwu_community.qubo._precision.check_qubo_matrix_bit_width:13 of
+msgid "Examples1:"
+msgstr ""
+
+#: kaiwu_community.qubo._precision.check_qubo_matrix_bit_width:21 of
+msgid "Examples2（缩放后符合要求）:"
+msgstr ""
+
+#: kaiwu_community.qubo._precision.check_qubo_matrix_bit_width:29 of
+msgid "Examples3(缩放后也不符合要求):"
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.qubo_matrix_to_qubo_model:1 of
+msgid "将qubo矩阵转化为qubo模型"
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.qubo_matrix_to_qubo_model:4 of
+msgid "qubo_mat (np.ndarray): QUBO矩阵"
+msgstr ""
+
+#: kaiwu_community.qubo._qubo_model.qubo_matrix_to_qubo_model:7 of
+msgid "QuboModel: QUBO模型"
+msgstr ""
+
