@@ -28,7 +28,7 @@ Start learning how to use **CIM (Coherent Ising Machine)** with the [SDK Documen
 
 ```bash
 git clone <repository-url>
-cd kaiwu-sdk-community
+cd kaiwu_community
 ```
 
 ### 2. Set Up the Environment
@@ -73,7 +73,7 @@ class NewOptimizer(OptimizerBase):
     ...
 ```
 
-As shown in [BruteForceOptimizer](src/com/qboson/kaiwu/classical/_simulated_annealing.py), you can use it with a solver:
+As shown in [BruteForceOptimizer](src/kaiwu_community/classical/_brute_force.py), you can use it with a solver:
 
 ```python
 solver = kaiwu.solver.SimpleSolver(NewOptimizer())

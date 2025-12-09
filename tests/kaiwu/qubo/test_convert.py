@@ -2,10 +2,11 @@ import os
 import sys
 import numpy as np
 from common.config import BASE_DIR
-sys.path.insert(0, os.path.join(BASE_DIR, 'src/com/qboson'))
-import kaiwu as kw
-from kaiwu.qubo import qubo_matrix_to_qubo_model
-from kaiwu.conversion import qubo_matrix_to_ising_matrix, ising_matrix_to_qubo_matrix
+
+sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
+import kaiwu_community as kw
+from kaiwu_community.qubo import qubo_matrix_to_qubo_model
+from kaiwu_community.conversion import qubo_matrix_to_ising_matrix, ising_matrix_to_qubo_matrix
 
 
 def assert_dict_equality(known_dict, check_dict):

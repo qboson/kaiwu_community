@@ -3,11 +3,11 @@ import sys
 import copy
 from common.config import BASE_DIR
 
-sys.path.insert(0, os.path.join(BASE_DIR, 'src/com/qboson'))
-import kaiwu as kw
+sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
+import kaiwu_community as kw
 import numpy as np
-from kaiwu.core import (Binary, BinaryExpression, get_min_penalty_from_deltas,
-                        get_min_penalty_for_equal_constraint, get_min_penalty)
+from kaiwu_community.core import (Binary, BinaryExpression, get_min_penalty_from_deltas,
+                                  get_min_penalty_for_equal_constraint, get_min_penalty)
 
 
 def find_feasible_solutions(cons: BinaryExpression) -> list:
@@ -64,7 +64,8 @@ def find_min_constraint_solutions(cons: BinaryExpression) -> list:
     return res
 
 
-def is_local_optimal_equal_constraint(obj: BinaryExpression, cons: BinaryExpression, penalty, feasible_sol: dict) -> bool:
+def is_local_optimal_equal_constraint(obj: BinaryExpression, cons: BinaryExpression, penalty,
+                                      feasible_sol: dict) -> bool:
     """
     判断这个可行解在其邻域内（翻转一个比特的邻域）是不是局部最优的
     :param obj: 原目标函数值

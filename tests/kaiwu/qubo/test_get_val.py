@@ -2,11 +2,11 @@ import os
 import sys
 from common.config import BASE_DIR
 
-sys.path.insert(0, os.path.join(BASE_DIR, 'src/com/qboson'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
 import numpy as np
-import kaiwu as kw
-from kaiwu.core import Binary, get_val, get_array_val, get_sol_dict
-from kaiwu.qubo import QuboModel
+import kaiwu_community as kw
+from kaiwu_community.core import Binary, get_val, get_array_val, get_sol_dict
+from kaiwu_community.qubo import QuboModel
 
 
 def test_get_sol_dict():
@@ -35,7 +35,7 @@ def test_get_val():
 
 
 def test_get_array_val():
-    import kaiwu as kw
+    import kaiwu_community as kw
     import numpy as np
     x = kw.core.ndarray((2, 2), "x", Binary)
     y = np.sum(x)
