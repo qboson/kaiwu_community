@@ -11,9 +11,9 @@ from common.config import BASE_DIR
 
 sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
 
-import kaiwu as kw
-from kaiwu.core._matrix import BinaryExpressionNDArray, dot, ndarray
-from kaiwu.core import Binary, Expression
+import kaiwu_community as kw
+from kaiwu_community.core._matrix import BinaryExpressionNDArray, dot, ndarray
+from kaiwu_community.core import Binary, Expression
 
 
 def test_dot_basic():

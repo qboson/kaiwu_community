@@ -1,7 +1,7 @@
 import os
 import sys
 from common.config import BASE_DIR
-from kaiwu.core import Binary, Placeholder
+from kaiwu_community.core import Binary, Placeholder
 
 sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
 

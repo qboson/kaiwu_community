@@ -9,7 +9,7 @@
 import os, sys
 
 sys.path.insert(0, os.path.abspath("../src"))
-from kaiwu import __version__
+from kaiwu_community import __version__
 
 project = 'Kaiwu Core'
 release = __version__

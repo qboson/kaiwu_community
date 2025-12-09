@@ -10,10 +10,10 @@ from common.config import BASE_DIR
 # Set the correct path for Kaiwu imports
 sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
 
-from kaiwu.core._error import KaiwuError
-from kaiwu.core._constraint import ConstraintDefinition
-from kaiwu.core._expression import Expression, is_zero, update_constraint, _check_unit
-from kaiwu.core import Binary
+from kaiwu_community.core._error import KaiwuError
+from kaiwu_community.core._constraint import ConstraintDefinition
+from kaiwu_community.core._expression import Expression, is_zero, update_constraint, _check_unit
+from kaiwu_community.core import Binary
 
 
 @pytest.fixture

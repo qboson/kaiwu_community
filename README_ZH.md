@@ -28,7 +28,7 @@
 
 ```bash
 git clone <repository-url>
-cd kaiwu-sdk-community
+cd kaiwu_community-sdk-community
 ```
 
 ### 2. 配置环境
@@ -73,7 +73,7 @@ class NewOptimizer(OptimizerBase):
     ...
 ```
 
-如 [BruteForceOptimizer](src/kaiwu/classical/_simulated_annealing.py) 所示，可以将其与求解器一起使用：
+如 [BruteForceOptimizer](src/kaiwu_community/classical/_simulated_annealing.py) 所示，可以将其与求解器一起使用：
 
 ```python
 solver = kaiwu.solver.SimpleSolver(NewOptimizer())

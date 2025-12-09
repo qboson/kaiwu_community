@@ -1,11 +1,11 @@
 """
 Solves the Traveling Salesman Problem (TSP) using a QUBO formulation.
 The distance matrix is used to construct a QUBO model with constraints ensuring a valid Hamiltonian cycle.
-The model is solved using a brute-force optimizer from the kaiwu library.
+The model is solved using a brute-force optimizer from the kaiwu_community library.
 """
 
 import numpy as np
-import kaiwu as kw
+import kaiwu_community as kw
 
 
 def is_edge_used(x: np.ndarray, u: int, v: int) :

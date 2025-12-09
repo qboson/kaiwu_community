@@ -2,8 +2,8 @@ import os
 import sys
 from common.config import BASE_DIR
 sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
-import kaiwu as kw
-from kaiwu.core import KaiwuError, Binary, Placeholder
+import kaiwu_community as kw
+from kaiwu_community.core import KaiwuError, Binary, Placeholder
 
 
 class TestQuboExpression:

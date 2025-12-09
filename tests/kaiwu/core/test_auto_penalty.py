@@ -6,8 +6,8 @@ from common.config import BASE_DIR
 
 sys.path.insert(0, os.path.join(BASE_DIR, 'src/'))
 
-from kaiwu.core import Binary, quicksum
-from kaiwu.core import get_min_penalty_for_equal_constraint, get_min_penalty
+from kaiwu_community.core import Binary, quicksum
+from kaiwu_community.core import get_min_penalty_for_equal_constraint, get_min_penalty
 
 
 class TestQuboPenalty(unittest.TestCase):

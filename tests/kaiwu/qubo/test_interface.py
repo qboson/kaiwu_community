@@ -2,9 +2,9 @@ import os
 import sys
 from common.config import BASE_DIR
 sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
-import kaiwu as kw
-from kaiwu.qubo import QuboError, QuboModel
-from kaiwu.core import Binary, quicksum
+import kaiwu_community as kw
+from kaiwu_community.qubo import QuboError, QuboModel
+from kaiwu_community.core import Binary, quicksum
 
 
 def test_details():

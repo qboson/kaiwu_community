@@ -8,8 +8,8 @@ from common.config import BASE_DIR
 
 sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
 import numbers
-import kaiwu.core as kc
-from kaiwu.core import Binary, BinaryExpression
+import kaiwu_community.core as kc
+from kaiwu_community.core import Binary, BinaryExpression
 
 
 def is_zero(qubo_expr):

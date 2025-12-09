@@ -4,10 +4,10 @@ import copy
 from common.config import BASE_DIR
 
 sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
-import kaiwu as kw
+import kaiwu_community as kw
 import numpy as np
-from kaiwu.core import (Binary, BinaryExpression, get_min_penalty_from_deltas,
-                        get_min_penalty_for_equal_constraint, get_min_penalty)
+from kaiwu_community.core import (Binary, BinaryExpression, get_min_penalty_from_deltas,
+                                  get_min_penalty_for_equal_constraint, get_min_penalty)
 
 
 def find_feasible_solutions(cons: BinaryExpression) -> list:
