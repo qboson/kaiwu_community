@@ -7,7 +7,7 @@ build:
 
 python:
   install:
-    - requirements: docs/devel.txt
+    - requirements: devel.txt
     - method: pip
       path: .
 
