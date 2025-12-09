@@ -22,5 +22,5 @@ msgstr ""
 
 #: ../../source/modules/index.rst:3
 msgid "模块手册"
-msgstr ""
+msgstr "Module Manual"
 
