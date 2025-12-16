@@ -1,10 +1,27 @@
-# Kaiwu SDK Community
+# Kaiwu SDK Community Edition
 
 <img src="https://img.shields.io/badge/Python-3.10%2B-blue" alt="Python Version"> <img src="https://img.shields.io/badge/License-Apache%202.0-green" alt="License">
 
 **Language Versions**: [中文](README_ZH.md) | [English](README.md)
 
-The **Kaiwu SDK Community Edition** is an open-source subset of the Kaiwu SDK. It enables users to quickly create **QUBO (Quadratic Unconstrained Binary Optimization) models**, and provides a built-in solver and optimizer for solving QUBO problems.
+## 📖 Project Overview
+
+The **Kaiwu SDK Community Edition** is a Python development toolkit designed specifically for **QUBO (Quadratic Unconstrained Binary Optimization)** problems. It provides underlying data structure implementations and a modeling framework, enabling developers to quickly build custom models and solvers for efficient QUBO problem modeling and solving.
+
+### 🎯 Core Values
+
+- **Rapid Modeling**: Provides a simple and easy-to-use API for quickly building complex QUBO models
+- **Flexible Extension**: Modular design allows developers to easily extend new solvers and optimization algorithms
+- **Built-in Tools**: Includes basic solvers and optimizers for quickly validating model effects
+- **Open Source Freedom**: Based on Apache 2.0 license, fully open source, supporting commercial and non-commercial use
+
+### 📋 Application Scenarios
+
+Kaiwu SDK Community Edition is suitable for the following scenarios:
+- Researchers exploring QUBO problem modeling and solving algorithms
+- Developers building custom QUBO solvers and optimizers
+- Students learning quantum computing and combinatorial optimization problems
+- Enterprises developing QUBO-based solution prototypes
 
 ---
 
@@ -12,7 +29,7 @@ The **Kaiwu SDK Community Edition** is an open-source subset of the Kaiwu SDK. I
 
 Before using the SDK, make sure you have the following installed:
 
-* **Python** ≥ 3.8
+* **Python** ≥ 3.10
 * **Make** (for running build/test commands)
 * **Virtualenv** (optional, for isolated environments: `pip install virtualenv`)
 
@@ -20,9 +37,7 @@ Before using the SDK, make sure you have the following installed:
 
 ## 🛠 Getting Started
 
-Start learning how to use **CIM (Coherent Ising Machine)** with the [SDK Documentation](https://kaiwu-sdk-docs.qboson.com/en/).
-
-> ⚠️ Note: This community edition contains only a subset of the full Kaiwu SDK.
+Please refer to the [SDK Documentation](https://kaiwu-sdk-docs.qboson.com/en/) for detailed usage instructions.
 
 ### 1. Clone the Repository
 
@@ -41,18 +56,30 @@ make all_tests
 
 ---
 
-## 📘 Example Quantum Program
+## 📘 Example Programs
 
-To see how to solve the **Traveling Salesman Problem (TSP)** with Kaiwu SDK, check out:
-[example/tsp\_sdk\_1\_2\_doc\_example.py](example/tsp_sdk_1_2_doc_example.py)
+### Traveling Salesman Problem (TSP) Example
+
+The Traveling Salesman Problem is a classic problem in combinatorial optimization, aiming to find the shortest path that visits all cities and returns to the starting point.
+
+Kaiwu SDK Community Edition provides a complete TSP solving example, demonstrating how to model and solve this problem using a QUBO model:
+
+* **File Path**: [example/tsp\_sdk\_1\_2\_doc\_example.py](example/tsp_sdk_1_2_doc_example.py)
+* **Example Content**:
+  - Building a TSP problem model using a distance matrix
+  - Defining QUBO objective function and constraints
+  - Solving the model using built-in solver
+  - Validating the effectiveness of the solution
+
+This example demonstrates the core functionalities of Kaiwu SDK, including QUBO model construction, constraint addition, model solving, and result validation.
 
 ---
 
 ## 🤝 Support
 
-* Join the [Kaiwu User Community](https://kaiwu.qboson.com/portal.php) to connect with other CIM users
+* Join the [Kaiwu User Community](https://kaiwu.qboson.com/portal.php) to connect with other users
 * Visit the [Kaiwu SDK Help Center](https://kaiwu-sdk-docs.qboson.com/en/) for tutorials & knowledge base
-* Open issues or request features on the **SDK GitHub repo** (📌 link coming soon)
+* Open issues or request features on the **SDK GitHub repo**
 
 ---
 
@@ -62,18 +89,21 @@ We welcome contributions! 🎉
 
 You can extend the SDK by adding:
 
-* New solvers
-* Classical optimizers
-* Implementations that leverage the **CIM machine**
+* New solver implementations
+* Classical optimization algorithms
+* Model conversion tools
+* Example programs and documentation
 
-Example: Creating a custom optimizer by extending `OptimizerBase`:
+### Contribution Example
+
+Creating a custom optimizer by extending `OptimizerBase`:
 
 ```python
 class NewOptimizer(OptimizerBase):
     ...
 ```
 
-As shown in [BruteForceOptimizer](src/kaiwu_community/classical/_brute_force.py), you can use it with a solver:
+Using it with a solver:
 
 ```python
 solver = kaiwu.solver.SimpleSolver(NewOptimizer())
@@ -91,12 +121,13 @@ This project is licensed under the **Apache License 2.0**. See the [LICENSE](LIC
 
 ## 🏗 SDK Architecture
 
-This open-source edition includes code for:
+Kaiwu SDK Community Edition adopts a modular design, including the following core modules:
 
-* **QUBO model**
-* **SimpleSolver**
-* **BruteForceOptimizer**
+* **QUBO Model**: Provides QUBO problem modeling functionality
+* **Solver Framework**: Supports multiple solvers and optimizers
+* **Classical Optimizers**: Includes basic classical solving algorithms
+* **Core Data Structures**: Provides efficient mathematical operation support
 
-Architecture overview（the components in green box are open sourced): 
+Architecture Overview:
 
 ![Kaiwu SDK Architecture](SDD/architecture.png)
