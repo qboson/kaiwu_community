@@ -18,6 +18,11 @@ classifiers = [
 # 依赖写在 requirements.txt 时，这里通过动态方式加载
 dynamic = ["dependencies", "version"]
 
+[project.urls]
+"Homepage" = "https://kaiwu-community.readthedocs.io"
+"Documentation" = "https://kaiwu-community.readthedocs.io"
+"Source" = "https://github.com/qboson/kaiwu_community"
+
 [tool.setuptools]
 package-dir = { "" = "src" }
 
