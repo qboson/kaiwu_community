@@ -10,16 +10,12 @@
 
 ## 安装
 
-从源码安装:
-
 ```bash
-git clone <repository-url>
-cd kaiwu_community
-pip install -e .
+pip install kaiwu_community
 ```
 
 **环境要求:**
-* Python 3.10.x (仅支持 Python 3.10 系列版本，暂不支持 3.11+)
+* Python 3.10.x
 * Make(用于开发构建)
 * Virtualenv(可选,用于环境隔离)
 

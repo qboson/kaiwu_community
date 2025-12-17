@@ -10,16 +10,12 @@
 
 ## Installation
 
-Install from source:
-
 ```bash
-git clone <repository-url>
-cd kaiwu_community
-pip install -e .
+pip install kaiwu_community
 ```
 
 **Requirements:**
-* Python 3.10.x (only Python 3.10 series is supported, 3.11+ not yet supported)
+* Python 3.10.x
 * Make (for development builds)
 * Virtualenv (optional, for environment isolation)
 
