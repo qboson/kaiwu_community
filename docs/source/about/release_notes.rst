@@ -1,12 +1,5 @@
-发行说明
-====================
-
 1.0.0 (2025-12-17)
--------------------
-
-发布日期
-^^^^^^^^
-2023年12月17日
+====================
 
 主要功能
 ^^^^^^^^
@@ -58,25 +51,4 @@ Kaiwu SDK 社区版采用模块化设计，包含以下核心模块：
 安装方式
 ^^^^^^^^
 
-- 从源码安装：
-
-      git clone <repository-url>
-      cd kaiwu_community
-      pip install -e .
-
-- 从PyPI安装：
-
-      pip install kaiwu-community
-
-已知问题
-^^^^^^^^
-
-- 暂无重大已知问题
-- 如有问题，请在GitHub仓库提交Issue
-
-联系方式
-^^^^^^^^
-
-- GitHub仓库：https://github.com/qbosontech/kaiwu_community
-- 社区论坛：https://kaiwu.qboson.com/portal.php
-- 技术支持：通过GitHub Issues提交问题
+  pip install kaiwu-community
