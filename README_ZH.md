@@ -1,4 +1,4 @@
-# Kaiwu SDK 社区版
+# Kaiwu Community
 
 <img src="https://img.shields.io/badge/Python-3.10%2B-blue" alt="Python Version"> <img src="https://img.shields.io/badge/License-Apache%202.0-green" alt="License">
 
@@ -6,7 +6,7 @@
 
 ---
 
-[Kaiwu SDK 社区版](https://kaiwu.qboson.com) 是一款专为 QUBO(二次无约束二进制优化)问题设计的 Python 开发工具包,提供快速建模、灵活扩展和高效求解能力。
+Kaiwu Community 是一款专为 QUBO(二次无约束二进制优化)问题设计的 Python 开发工具包,提供快速建模、灵活扩展和高效求解能力。
 
 ## 安装
 
@@ -72,15 +72,28 @@ Kaiwu SDK 适用于:
 通过继承基类快速扩展功能:
 
 ```python
-from kaiwu.optimizer import OptimizerBase
+from kaiwu_community.core import OptimizerBase, SolverBase
+import kaiwu_community
 
-class NewOptimizer(OptimizerBase):
-    def optimize(self, model):
-        # 自定义优化逻辑
+# 自定义优化器
+class CustomOptimizer(OptimizerBase):
+    def solve(self, ising_matrix=None):
+        # 实现自定义优化逻辑
         pass
 
-# 使用自定义优化器
-solver = kaiwu.solver.SimpleSolver(NewOptimizer())
+# 自定义求解器
+class CustomSolver(SolverBase):
+    def solve_qubo(self, model):
+        # 实现自定义求解逻辑
+        self._optimizer.solve()
+        pass
+
+# 建模
+qubo_model = kaiwu_community.qubo.QuboModel()
+# 调用自定义组件
+optimizer = CustomOptimizer()
+solver = CustomSolver(optimizer)
+result = solver.solve_qubo(qubo_model)
 ```
 
 ➡️ 详细贡献指南请参考 [Contributing Guide](https://github.com/qboson/kaiwu_community/blob/main/CONTRIBUTING.md)。
