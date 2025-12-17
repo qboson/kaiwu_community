@@ -17,11 +17,38 @@ The **Kaiwu SDK Community Edition** is a Python development toolkit designed spe
 
 ### 📋 Application Scenarios
 
-Kaiwu SDK Community Edition is suitable for the following scenarios:
-- Researchers exploring QUBO problem modeling and solving algorithms
-- Developers building custom QUBO solvers and optimizers
-- Students learning quantum computing and combinatorial optimization problems
-- Enterprises developing QUBO-based solution prototypes
+Kaiwu SDK Community Edition is suitable for the following specific scenarios:
+
+1. **Combinatorial Optimization Problem Solving**
+   - Traveling Salesman Problem (TSP): Optimize logistics routes, reduce transportation costs
+   - Knapsack Problem: Maximize resource utilization, optimize item combinations
+   - Maximum Cut Problem: Network community discovery, social network analysis
+   - Graph Coloring Problem: Resource allocation optimization, frequency assignment
+
+2. **Machine Learning and Data Mining**
+   - Feature Selection: Reduce model complexity, improve training efficiency
+   - Clustering Analysis: Discover hidden patterns and structures in data
+   - Model Compression: Reduce model size, accelerate inference process
+
+3. **Network and Resource Optimization**
+   - Routing Optimization: Optimize network traffic, reduce latency
+   - Resource Allocation: Allocate computing resources reasonably, improve utilization
+   - Load Balancing: Balance system load, avoid single points of failure
+
+4. **Scheduling and Planning**
+   - Job Scheduling: Optimize production processes, improve productivity
+   - Task Assignment: Allocate tasks reasonably, improve team efficiency
+   - Shift Optimization: Optimize staff scheduling, reduce labor costs
+
+5. **Finance and Risk Management**
+   - Portfolio Optimization: Maximize returns, minimize risks
+   - Risk Management: Identify and evaluate potential risks
+   - Option Pricing: Accurately calculate prices of financial derivatives
+
+6. **Quantum Computing Research and Development**
+   - QUBO Model Research: Explore new modeling methods and techniques
+   - Solver Development: Build custom solvers and optimization algorithms
+   - Quantum Algorithm Validation: Verify the effectiveness and performance of quantum algorithms
 
 ---
 
@@ -29,7 +56,7 @@ Kaiwu SDK Community Edition is suitable for the following scenarios:
 
 Before using the SDK, make sure you have the following installed:
 
-* **Python** ≥ 3.10
+* **Python** 3.10+ (only supports all minor versions of Python 3.10, does not support Python 3.11 and above)
 * **Make** (for running build/test commands)
 * **Virtualenv** (optional, for isolated environments: `pip install virtualenv`)
 

@@ -30,7 +30,7 @@ gettext_compact = False
 extensions = [
     'sphinx.ext.autodoc',
     "sphinxcontrib.jquery",
-    'sphinx.ext.imgmath',
+    'sphinx.ext.mathjax',
     'myst_parser'
 ]
 
@@ -42,3 +42,31 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
+
+# Theme options
+html_theme_options = {
+    # 顶部导航栏配置
+    'navbar_start': ['navbar-logo'],
+    'navbar_center': ['navbar-nav'],
+    'navbar_end': ['theme-switcher', 'navbar-icon-links'],  # 删除搜索框
+    # 始终显示所有顶部导航项
+    'navbar_align': 'left',
+    # 确保面包屑导航正常显示
+    'show_prev_next': False,
+    # 确保所有toctree项都显示
+    'collapse_navigation': False,
+    # 显示章节导航，不显示目录
+    'show_nav_level': 2,
+}
+
+# 只显示章节导航，不显示目录
+html_sidebars = {
+    '**': [
+        'sidebar-nav-bs',  # 只显示整个文档的结构，即章节导航
+    ],
+}
+
+# 隐藏当前页面的目录
+html_show_copyright = False
+html_show_sphinx = False
+html_show_sourcelink = False

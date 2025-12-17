@@ -5,5 +5,4 @@
 .. toctree::
    :maxdepth: 2
 
-   license
    release_notes

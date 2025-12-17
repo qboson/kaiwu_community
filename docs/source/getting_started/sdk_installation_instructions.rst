@@ -9,7 +9,6 @@ Kaiwu SDK 社区版提供多种安装方式，您可以根据自己的需求选�
    安装Python 3.10（不区分小版本），暂不支持Python其它版本。
 
    - 检查Python版本：
-     .. code:: bash
 
          python --version
          # 或
@@ -20,45 +19,38 @@ Kaiwu SDK 社区版提供多种安装方式，您可以根据自己的需求选�
 2. 安装方式
 -----------
 
-   以下是三种常用的安装方式：
+以下是三种常用的安装方式：
 
-   2.1 从源码安装（推荐用于开发）
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2.1 从源码安装（推荐用于开发）
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   - 克隆仓库：
-     .. code:: bash
+- 克隆仓库：
 
-         git clone <repository-url>
-         cd kaiwu_community
+      git clone <repository-url>
+      cd kaiwu_community
 
-   - 安装开发依赖：
-     .. code:: bash
+- 安装开发依赖：
 
-         pip install -r requirements.txt
+      pip install -r requirements.txt
 
-   - 以可编辑模式安装SDK：
-     .. code:: bash
+- 以可编辑模式安装SDK：
 
-         pip install -e .
+      pip install -e .
 
-   2.2 从PyPI安装（推荐用于使用）
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2.2 从PyPI安装（推荐用于使用）
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   .. note::
-      该方式将在项目正式发布后可用。
+.. note::
+   该方式将在项目正式发布后可用。
 
-   .. code:: bash
+    pip install kaiwu-community
 
-       pip install kaiwu-community
+2.3 直接使用源码
+~~~~~~~~~~~~~~~~~
 
-   2.3 直接使用源码
-   ^^^^^^^^^^^^^^^^
+如果您不想安装SDK，也可以直接将源码目录添加到Python路径中使用：
 
-   如果您不想安装SDK，也可以直接将源码目录添加到Python路径中使用：
-
-   .. code:: bash
-
-       export PYTHONPATH=$PYTHONPATH:/path/to/kaiwu_community/src
+    export PYTHONPATH=$PYTHONPATH:/path/to/kaiwu_community/src
 
 3. 验证安装
 -----------
@@ -75,8 +67,6 @@ Kaiwu SDK 社区版提供多种安装方式，您可以根据自己的需求选�
 
    如果您计划参与SDK的开发，可以使用以下命令运行所有测试和代码检查：
 
-   .. code:: bash
-
        make all_tests
 
    这将运行：
@@ -89,13 +79,9 @@ Kaiwu SDK 社区版提供多种安装方式，您可以根据自己的需求选�
 
    如果您需要卸载SDK，可以使用以下命令：
 
-   .. code:: bash
-
        pip uninstall kaiwu-community
 
    或者如果是从源码安装：
-
-   .. code:: bash
 
        pip uninstall kaiwu-community
 

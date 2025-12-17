@@ -25,4 +25,9 @@
 .. toctree::
    :maxdepth: 2
 
+   source/faq/index
+
+.. toctree::
+   :maxdepth: 2
+
    source/about/index
