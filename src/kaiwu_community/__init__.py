@@ -8,7 +8,7 @@
 import logging
 from kaiwu_community import qubo, core, ising, conversion, classical, solver
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 logging.getLogger(__name__).addHandler(logging.NullHandler())
 __all__ = ["qubo", "core","ising","conversion","classical","solver"]
