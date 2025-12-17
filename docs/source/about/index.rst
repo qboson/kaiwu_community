@@ -1,9 +1,8 @@
 ==================
-关于
+发行说明
 ==================
 
 .. toctree::
    :maxdepth: 2
 
-   license
    release_notes

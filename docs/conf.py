@@ -42,3 +42,33 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
+html_logo = "_static/sdk-logo.png"
+html_favicon = "_static/sdk-logo.png"
+
+html_theme_options = {
+    "show_nav_level": 1,
+    "logo": {
+        "text": project,
+        "image_dark": "",
+        "image_light": ""
+    },
+    # 导航栏配置
+    # "navbar_start": ["navbar-logo", ],    # 左侧元素
+    "navbar_center": ["navbar-nav"],    # 中间导航链接
+    # "navbar_end": ["theme-switcher", "navbar-icon-links"],  # 右侧元素
+    "navbar_persistent": ["search-button"],  # 常驻元素（如搜索按钮）
+    # "navbar_align": "left",
+    # 页脚配置
+    "footer_start": ["copyright"],      # 页脚开头
+    "footer_end": ["theme-version"],     # 页脚结尾
+    "show_toc_level": 2,               # 侧边栏目录显示层级
+}
+
+html_show_sourcelink = False
+html_css_files = ['custom.css']
+
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.txt': 'markdown',
+    '.md': 'markdown',
+}

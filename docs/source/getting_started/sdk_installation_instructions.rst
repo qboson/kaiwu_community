@@ -1,28 +1,88 @@
 安装说明
 ========
 
-1. 安装Python3.10（不区分小版本），暂不支持Python其它版本，Python安装请自行搜索相关教程。
+Kaiwu SDK 社区版提供多种安装方式，您可以根据自己的需求选择合适的安装方法。
 
-2. 创建虚拟环境，激活虚拟环境在命令行输入: python --version, 检查python版本是否为3.10。
+1. 环境准备
+-----------
 
-   `python 3.10 下载 <https://www.python.org/downloads/release/python-31011/>`_。
+   安装Python 3.10（不区分小版本），暂不支持Python其它版本。
 
-3. 登录网站 (https://platform.qboson.com/) 获取用户ID和SDK授权码。
+   - 检查Python版本：
 
-4. 根据个人电脑操作系统在官网下载对应的SDK，文件命名如：kaiwu-sdk.linux.1.2.0.zip(mac有intel和m两个版本，
-   使用过程中如提醒架构有问题，请尝试不同的版本，如果两个版本都不行请联系相关人员)。
+         python --version
+         # 或
+         python3 --version
 
-5. 解压下载的SDK安装包，解压后会有一个whl文件。
+   - 如果需要安装Python 3.10，请访问 `Python 3.10 下载页面 <https://www.python.org/downloads/release/python-31011/>`_。
 
-6. 安装SDK，使用pip安装时注意whl文件路径和系统版本。
+2. 安装方式
+-----------
 
-    .. code:: python
+以下是三种常用的安装方式：
 
-        pip3 install kaiwu-1.2.0-cp310-none-win_amd64.whl -i https://pypi.tuna.tsinghua.edu.cn/simple
+2.1 从源码安装（推荐用于开发）
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-7. 建模代码开头增加授权初始化代码，如果初始化错误请校验用户ID和SDK授权码或清除kaiwu/license.lic文件，然后重新初始化。
+- 克隆仓库：
 
-    .. code:: python
+      git clone <repository-url>
+      cd kaiwu_community
 
-       import kaiwu as kw
-       kw.license.init(user_id="123456", sdk_code="AjUvlTvWrWeidADu5Vbf6pceVmuX")
+- 安装开发依赖：
+
+      pip install -r requirements.txt
+
+- 以可编辑模式安装SDK：
+
+      pip install -e .
+
+2.2 从PyPI安装（推荐用于使用）
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+   该方式将在项目正式发布后可用。
+
+    pip install kaiwu-community
+
+2.3 直接使用源码
+~~~~~~~~~~~~~~~~~
+
+如果您不想安装SDK，也可以直接将源码目录添加到Python路径中使用：
+
+    export PYTHONPATH=$PYTHONPATH:/path/to/kaiwu_community/src
+
+3. 验证安装
+-----------
+
+   安装完成后，您可以通过以下方式验证SDK是否安装成功：
+
+   .. code:: python
+
+       import kaiwu_community as kw
+       print("Kaiwu SDK Community Edition installed successfully!")
+
+4. 开发环境设置
+---------------
+
+   如果您计划参与SDK的开发，可以使用以下命令运行所有测试和代码检查：
+
+       make all_tests
+
+   这将运行：
+   - 代码风格检查（pylint）
+   - 单元测试（pytest）
+   - 文档测试（doctest）
+
+5. 卸载SDK
+-----------
+
+   如果您需要卸载SDK，可以使用以下命令：
+
+       pip uninstall kaiwu-community
+
+   或者如果是从源码安装：
+
+       pip uninstall kaiwu-community
+
+   然后删除克隆的仓库目录。

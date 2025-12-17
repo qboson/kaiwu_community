@@ -1,30 +1,93 @@
 概述
 ====
 
-Kaiwu SDK
----------
+1. 产品定位
+-----------
 
-Kaiwu SDK是一套软件开发套件，专为基于相干光量子计算机的QUBO问题求解而设计。该套件致力于为开发者提供一个便捷的Python环境，以构建适用于相干光量子计算机的软件算法，并直接通过物理接口（目前支持Ising矩阵）调用量子计算机真机进行计算。
+**Kaiwu SDK 社区版** 是一套开源的软件开发套件，专为 **QUBO（二次无约束二进制优化）问题求解** 而设计。它提供了便捷的Python环境，帮助开发者快速构建QUBO模型并高效求解，加速QUBO相关应用的开发和研究。
 
-Kaiwu SDK目前包含以下核心模块：qubo、cim、ising、preprocess、classical、sampler、solver和utils。在典型应用场景中，用户首先利用qubo模块进行问题建模，随后借助solver模块对构建的QUBO模型进行高效求解。solver模块不仅负责管理QUBO模型的系数，还支持调用用户指定的optimizer对最终的Ising模型矩阵进行深度求解。
+核心价值
+^^^^^^^^
+- **快速建模**：简洁易用的接口，支持快速构建复杂的QUBO模型
+- **灵活扩展**：模块化设计，允许开发者轻松扩展新的求解器和优化算法
+- **内置工具**：包含基础求解器和优化器，支持快速验证模型效果
+- **开源自由**：基于Apache 2.0许可证，完全开源，支持商业和非商业使用
 
-我们特别将Ising模型矩阵的求解功能定义为optimizer。其中，基于经典计算实现的optimizer，如SA、tabu等经典模拟求解器，均集成在classical模块中；而直接对接真机的optimizer则位于cim模块。此外，其他辅助模块提供了日志记录、降阶处理和降精度处理等实用功能，为用户提供全方位的支持。
+2. 应用场景
+-----------
 
-典型的使用方式
-------------------
+Kaiwu SDK 社区版适用于多种场景，帮助不同用户解决实际问题：
+
+.. list-table:: 
+   :widths: 20 50 30
+   :header-rows: 1
+
+   * - 用户类型
+     - 实际问题
+     - SDK价值
+   * - 研究人员
+     - 探索QUBO问题建模方法，验证新优化算法性能，开展量子计算相关研究
+     - 提供快速建模和求解能力，加速研究进程
+   * - 开发者
+     - 构建自定义QUBO求解器，开发基于QUBO的应用，集成求解功能到现有系统
+     - 模块化设计，支持灵活扩展和快速开发
+   * - 企业用户
+     - 开发QUBO解决方案原型，优化业务流程和资源配置，探索量子计算应用
+     - 降低开发成本，加速解决方案落地
+   * - 学生和教育工作者
+     - 学习QUBO模型和求解方法，开展量子计算实验和项目
+     - 提供直观易用的工具，辅助教学和学习
+
+
+3. 核心模块
+-----------
+
+Kaiwu SDK 社区版采用模块化设计，包含以下核心模块：
+
+.. list-table:: 
+   :widths: 20 40 40
+   :header-rows: 1
+
+   * - 模块名称
+     - 主要功能
+     - 用户价值
+   * - **qubo**
+     - 提供QUBO模型的构建和管理功能
+     - 帮助用户快速构建QUBO模型
+   * - **ising**
+     - 支持Ising模型的表示和转换
+     - 方便用户在QUBO和Ising模型之间转换
+   * - **classical**
+     - 包含经典优化算法，如BruteForceOptimizer
+     - 提供基础求解能力，支持快速验证模型
+   * - **solver**
+     - 提供求解器框架，支持调用不同的优化器
+     - 简化求解器调用流程，支持灵活扩展
+   * - **core**
+     - 提供核心数据结构和数学运算支持
+     - 提供高效的底层计算能力
+   * - **common**
+     - 提供通用工具和配置管理
+     - 简化开发流程，提高开发效率
+
+4. 典型使用流程
+---------------
+
+使用Kaiwu SDK 社区版解决QUBO问题的典型流程如下：
 
 .. image:: images/Sequence_Diagram.png
 
-预备知识
-----------
+1. **问题建模**：使用qubo模块将实际问题转化为QUBO模型
+2. **模型配置**：设置模型参数和求解选项
+3. **求解器选择**：选择合适的求解器或优化器
+4. **模型求解**：调用solver模块对QUBO模型进行求解
+5. **结果分析**：分析求解结果，验证解决方案的有效性
 
-CIM
-^^^^^^
-
-相干伊辛机(Coherent Ising Machine，简称CIM)，是目前玻色量子重点研发的一项量子计算机技术。CIM是一种基于简并光学参量振荡器(DOPO)的光量子计算机。在数学实践中，我们可以将其抽象为优化Ising模型的专用计算机。
+5. 预备知识
+-----------
 
 Ising模型
-^^^^^^^^^^^^
+^^^^^^^^^^
 
 伊辛模型(Ising Model)，是一类描述物质相变的随机过程模型。抽象为数学形式为：
 
@@ -32,8 +95,8 @@ Ising模型
 
 其中\ :math:`\sigma`\ 为待求自旋变量，取值为\ :math:`\{-1,1\}`\ ， \ :math:`H`\ 为哈密顿量， \ :math:`J`\为二次项系数，\ :math:`\mu`\和\ :math:`h`\ 为线性项系数，是已知量。
 
-QUBO
-^^^^^^
+QUBO模型
+^^^^^^^^^^
 
 二次无约束二值优化问题(Quadratic unconstrained binary optimization，简称QUBO)，其数学形式如下：
 
@@ -48,34 +111,27 @@ QUBO
 
 .. math:: \pmb x^*=\mathop{\arg\min}\limits_{\pmb x}f_Q(\pmb x)
 
-在Kaiwu SDK中，通过kw.qubo.details查看QUBO模型细节会显示offset和coefficients信息。其中offset表示QUBO模型中的常数项，与变量无关。coefficients表示QUBO模型中每个二值变量的系数取值，以及它们的交互项的系数取值。
-
-CIM求解模型
+6. 引用方式
 -----------
 
-CIM求解QUBO或优化Ising模型的过程就是，将QUBO中的\ :math:`q_{ij}`\ 或Ising模型中的\ :math:`J_{ij}`\ 输入CIM，CIM返回\ :math:`\pmb x`\ 或\ :math:`\sigma`\ 的过程。
-
-Citing Kaiwu SDK
----------------------------
-
-如果Kaiwu SDK对您的学术研究有帮助，玻色量子感谢您做如下引用。
+如果Kaiwu SDK 社区版对您的学术研究有帮助，欢迎引用：
 
 .. code:: python
 
-    @software{KaiwuSDK,
-    title = {Kaiwu SDK for development and research on coherent ising machine},
+    @software{KaiwuSDKCommunity,
+    title = {Kaiwu SDK Community Edition for QUBO problem solving},
     author = {{QBoson Inc.}},
-    year = {2022},
-    url = {https://www.qboson.com/}
+    year = {2023},
+    url = {https://github.com/qbosontech/kaiwu_community}
     }
 
 或者
 
 .. code:: python
 
-    @misc{KaiwuSDK,
-    title = {Kaiwu SDK for development and research on coherent ising machine},
+    @misc{KaiwuSDKCommunity,
+    title = {Kaiwu SDK Community Edition for QUBO problem solving},
     author = {{QBoson Inc.}},
-    year = {2022},
-    url = {https://www.qboson.com/}
+    year = {2023},
+    url = {https://github.com/qbosontech/kaiwu_community}
     }
