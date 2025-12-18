@@ -26,11 +26,11 @@ msgstr "Installation Instructions"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:4
 msgid "Kaiwu SDK 社区版提供多种安装方式，您可以根据自己的需求选择合适的安装方法。"
-msgstr ""
+msgstr "Kaiwu SDK Community Edition provides multiple installation methods. You can choose the appropriate installation method according to your needs."
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:7
 msgid "1. 环境准备"
-msgstr ""
+msgstr "1. Environment Preparation"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:9
 #, fuzzy
@@ -42,11 +42,11 @@ msgstr ""
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:11
 msgid "检查Python版本："
-msgstr ""
+msgstr "Check Python version:"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:13
 msgid "python --version # 或 python3 --version"
-msgstr ""
+msgstr "python --version # or python3 --version"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:17
 #, fuzzy
@@ -59,108 +59,108 @@ msgstr ""
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:20
 msgid "2. 安装方式"
-msgstr ""
+msgstr "2. Installation Methods"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:22
 msgid "以下是三种常用的安装方式："
-msgstr ""
+msgstr "The following are three common installation methods:"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:25
 msgid "2.1 从源码安装（推荐用于开发）"
-msgstr ""
+msgstr "2.1 Install from Source (Recommended for Development)"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:27
 msgid "克隆仓库："
-msgstr ""
+msgstr "Clone the repository:"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:29
 msgid "git clone <repository-url> cd kaiwu_community"
-msgstr ""
+msgstr "git clone <repository-url> cd kaiwu_community"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:32
 msgid "安装开发依赖："
-msgstr ""
+msgstr "Install development dependencies:"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:34
 msgid "pip install -r requirements.txt"
-msgstr ""
+msgstr "pip install -r requirements.txt"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:36
 msgid "以可编辑模式安装SDK："
-msgstr ""
+msgstr "Install SDK in editable mode:"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:38
 msgid "pip install -e ."
-msgstr ""
+msgstr "pip install -e ."
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:41
 msgid "2.2 从PyPI安装（推荐用于使用）"
-msgstr ""
+msgstr "2.2 Install from PyPI (Recommended for Usage)"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:44
 msgid "该方式将在项目正式发布后可用。"
-msgstr ""
+msgstr "This method will be available after the official release of the project."
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:46
 msgid "pip install kaiwu-community"
-msgstr ""
+msgstr "pip install kaiwu-community"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:49
 msgid "2.3 直接使用源码"
-msgstr ""
+msgstr "2.3 Use Source Code Directly"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:51
 msgid "如果您不想安装SDK，也可以直接将源码目录添加到Python路径中使用："
-msgstr ""
+msgstr "If you do not want to install the SDK, you can directly add the source code directory to the Python path:"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:53
 msgid "export PYTHONPATH=$PYTHONPATH:/path/to/kaiwu_community/src"
-msgstr ""
+msgstr "export PYTHONPATH=$PYTHONPATH:/path/to/kaiwu_community/src"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:56
 msgid "3. 验证安装"
-msgstr ""
+msgstr "3. Verify Installation"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:58
 msgid "安装完成后，您可以通过以下方式验证SDK是否安装成功："
-msgstr ""
+msgstr "After installation, you can verify whether the SDK is installed successfully by the following method:"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:66
 msgid "4. 开发环境设置"
-msgstr ""
+msgstr "4. Development Environment Setup"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:68
 msgid "如果您计划参与SDK的开发，可以使用以下命令运行所有测试和代码检查："
-msgstr ""
+msgstr "If you plan to participate in SDK development, you can use the following command to run all tests and code checks:"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:70
 msgid "make all_tests"
-msgstr ""
+msgstr "make all_tests"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:72
 msgid "这将运行： - 代码风格检查（pylint） - 单元测试（pytest） - 文档测试（doctest）"
-msgstr ""
+msgstr "This will run: - Code style check (pylint) - Unit tests (pytest) - Documentation tests (doctest)"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:78
 msgid "5. 卸载SDK"
-msgstr ""
+msgstr "5. Uninstall SDK"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:80
 msgid "如果您需要卸载SDK，可以使用以下命令："
-msgstr ""
+msgstr "If you need to uninstall the SDK, you can use the following command:"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:82
 #: ../../source/getting_started/sdk_installation_instructions.rst:86
 msgid "pip uninstall kaiwu-community"
-msgstr ""
+msgstr "pip uninstall kaiwu-community"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:84
 msgid "或者如果是从源码安装："
-msgstr ""
+msgstr "Or if installed from source:"
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:88
 msgid "然后删除克隆的仓库目录。"
-msgstr ""
+msgstr "Then delete the cloned repository directory."
 
 #~ msgid "创建虚拟环境，激活虚拟环境在命令行输入: python --version, 检查python版本是否为3.10。"
 #~ msgstr ""

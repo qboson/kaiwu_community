@@ -22,15 +22,15 @@ msgstr ""
 
 #: ../../source/modules/kaiwu_community.classical.rst:2
 msgid "kaiwu_community.classical package"
-msgstr ""
+msgstr "kaiwu_community.classical package"
 
 #: ../../source/modules/kaiwu_community.classical.rst:5
 msgid "Module contents"
-msgstr ""
+msgstr "Module contents"
 
 #: kaiwu_community.classical:1 of
 msgid "模块: classical"
-msgstr ""
+msgstr "Module: classical"
 
 #: kaiwu_community.classical:3 of
 msgid "功能: 提供一系列经典求解器"
@@ -51,7 +51,7 @@ msgstr "Solve the Ising matrix using the solve interface"
 
 #: kaiwu_community.classical._brute_force.BruteForceOptimizer.solve:3 of
 msgid "Args:"
-msgstr ""
+msgstr "Args:"
 
 #: kaiwu_community.classical._brute_force.BruteForceOptimizer.solve:4 of
 msgid "ising_matrix (np.ndarray, optional): Ising矩阵. Defaults to None."
@@ -59,7 +59,7 @@ msgstr "ising_matrix (np.ndarray, optional): Ising Matrix. Defaults to None."
 
 #: kaiwu_community.classical._brute_force.BruteForceOptimizer.solve:6 of
 msgid "Returns:"
-msgstr ""
+msgstr "Returns:"
 
 #: kaiwu_community.classical._brute_force.BruteForceOptimizer.solve:7 of
 msgid "np.ndarray: 1个或者多个能量最低的解向量."
@@ -67,5 +67,5 @@ msgstr "np.ndarray: One or more vectors representing the lowest energy solutions
 
 #: kaiwu_community.classical._brute_force.BruteForceOptimizer.solve:9 of
 msgid "Examples:"
-msgstr ""
+msgstr "Examples:"
 

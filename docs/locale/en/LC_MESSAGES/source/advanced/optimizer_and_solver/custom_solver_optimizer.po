@@ -22,185 +22,201 @@ msgstr ""
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:2
 msgid "自定义求解器与优化器"
-msgstr ""
+msgstr "Custom Solver and Optimizer"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:4
 msgid "本章节将介绍如何在Kaiwu SDK社区版中创建自定义的求解器（solver）和优化器（optimizer），帮助您扩展SDK的求解能力。"
-msgstr ""
+msgstr "This chapter will introduce how to create custom solvers and optimizers in Kaiwu SDK Community Edition, helping you extend the SDK's solving capabilities."
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:7
 msgid "概述"
-msgstr ""
+msgstr "Overview"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:9
 msgid ""
 "在Kaiwu "
 "SDK中，求解器（solver）负责管理QUBO模型并调用优化器（optimizer）进行求解。优化器（optimizer）是实际执行优化算法的组件，负责寻找QUBO模型的最优解。"
 msgstr ""
+"In Kaiwu SDK, the solver is responsible for managing the QUBO model and "
+"calling the optimizer to solve it. The optimizer is the component that "
+"actually executes the optimization algorithm, responsible for finding the "
+"optimal solution to the QUBO model."
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:11
 msgid ""
 "Kaiwu "
 "SDK采用模块化设计，允许您轻松扩展新的求解器和优化器。要创建自定义优化器，您需要继承`OptimizerBase`类；而求解器则可以直接使用现有的框架或创建自定义实现。"
 msgstr ""
+"Kaiwu SDK adopts a modular design, allowing you to easily extend new solvers "
+"and optimizers. To create a custom optimizer, you need to inherit from the "
+"`OptimizerBase` class; for solvers, you can either use the existing "
+"framework directly or create a custom implementation."
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:14
 msgid "自定义优化器"
-msgstr ""
+msgstr "Custom Optimizer"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:17
 msgid "优化器基类"
-msgstr ""
+msgstr "Optimizer Base Class"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:19
 msgid "优化器需要继承`kaiwu_community.core.OptimizerBase`类，并实现以下方法："
-msgstr ""
+msgstr "The optimizer needs to inherit from the `kaiwu_community.core.OptimizerBase` class and implement the following methods:"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:21
 msgid "`__init__`：初始化优化器，设置参数"
-msgstr ""
+msgstr "`__init__`: Initialize the optimizer and set parameters"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:22
 msgid "`optimize`：执行优化算法，返回最优解"
-msgstr ""
+msgstr "`optimize`: Execute the optimization algorithm and return the optimal solution"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:25
 msgid "自定义优化器示例"
-msgstr ""
+msgstr "Custom Optimizer Example"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:27
 msgid "以下是一个简单的随机搜索优化器示例："
-msgstr ""
+msgstr "Here is a simple random search optimizer example:"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:79
 msgid "使用自定义优化器"
-msgstr ""
+msgstr "Using Custom Optimizer"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:81
 msgid "创建自定义优化器后，您可以将其与现有求解器一起使用："
-msgstr ""
+msgstr "After creating a custom optimizer, you can use it with existing solvers:"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:107
 msgid "自定义求解器"
-msgstr ""
+msgstr "Custom Solver"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:110
 msgid "求解器基类"
-msgstr ""
+msgstr "Solver Base Class"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:112
 msgid "求解器通常使用现有的框架，如`SimpleSolver`，但您也可以创建自定义求解器。求解器需要实现以下功能："
-msgstr ""
+msgstr "Solvers typically use existing frameworks, such as `SimpleSolver`, but you can also create custom solvers. A solver needs to implement the following functionalities:"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:114
 msgid "接收QUBO/Ising模型"
-msgstr ""
+msgstr "Receive QUBO/Ising models"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:115
 msgid "调用优化器进行求解"
-msgstr ""
+msgstr "Call the optimizer to solve"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:116
 msgid "返回求解结果"
-msgstr ""
+msgstr "Return the solving result"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:119
 msgid "自定义求解器示例"
-msgstr ""
+msgstr "Custom Solver Example"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:121
 msgid "以下是一个简单的自定义求解器示例："
-msgstr ""
+msgstr "Here is a simple custom solver example:"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:161
 msgid "使用自定义求解器"
-msgstr ""
+msgstr "Using Custom Solver"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:163
 msgid "创建自定义求解器后，您可以直接使用它来求解模型："
-msgstr ""
+msgstr "After creating a custom solver, you can use it directly to solve models:"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:187
 msgid "完整示例"
-msgstr ""
+msgstr "Complete Example"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:189
 msgid "以下是一个完整的示例，展示如何创建和使用自定义优化器和求解器："
-msgstr ""
+msgstr "Here is a complete example showing how to create and use custom optimizers and solvers:"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:313
 msgid "测试与验证"
-msgstr ""
+msgstr "Testing and Validation"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:315
 msgid "创建自定义求解器和优化器后，您应该对其进行测试和验证，确保它们能够正确工作："
-msgstr ""
+msgstr "After creating custom solvers and optimizers, you should test and validate them to ensure they work correctly:"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:317
 msgid "**单元测试**：为自定义优化器和求解器编写单元测试"
-msgstr ""
+msgstr "**Unit Testing**: Write unit tests for custom optimizers and solvers"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:318
 msgid "**集成测试**：测试它们与现有SDK组件的兼容性"
-msgstr ""
+msgstr "**Integration Testing**: Test their compatibility with existing SDK components"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:319
 msgid "**性能测试**：评估它们在不同规模问题上的性能"
-msgstr ""
+msgstr "**Performance Testing**: Evaluate their performance on problems of different scales"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:320
 msgid "**正确性验证**：使用已知最优解的问题验证求解结果"
-msgstr ""
+msgstr "**Correctness Validation**: Validate solving results using problems with known optimal solutions"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:323
 msgid "最佳实践"
-msgstr ""
+msgstr "Best Practices"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:325
 msgid "**继承基类**：始终继承SDK提供的基类（如`OptimizerBase`和`SolverBase`），确保兼容性"
-msgstr ""
+msgstr "**Inherit Base Classes**: Always inherit from the base classes provided by the SDK (such as `OptimizerBase` and `SolverBase`) to ensure compatibility"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:326
 msgid "**清晰的文档**：为自定义组件编写详细的文档字符串"
-msgstr ""
+msgstr "**Clear Documentation**: Write detailed docstrings for custom components"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:327
 msgid "**参数化设计**：允许通过参数配置优化器的行为"
-msgstr ""
+msgstr "**Parameterized Design**: Allow configuring optimizer behavior through parameters"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:328
 msgid "**错误处理**：添加适当的错误处理和日志记录"
-msgstr ""
+msgstr "**Error Handling**: Add appropriate error handling and logging"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:329
 msgid "**模块化设计**：将复杂功能拆分为多个小模块"
-msgstr ""
+msgstr "**Modular Design**: Split complex functionality into multiple smaller modules"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:330
 msgid "**遵循命名规范**：使用清晰、一致的命名规范"
-msgstr ""
+msgstr "**Follow Naming Conventions**: Use clear and consistent naming conventions"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:331
 msgid "**测试覆盖**：编写全面的测试用例"
-msgstr ""
+msgstr "**Test Coverage**: Write comprehensive test cases"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:332
 msgid "**性能优化**：针对大规模问题优化算法性能"
-msgstr ""
+msgstr "**Performance Optimization**: Optimize algorithm performance for large-scale problems"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:335
 msgid "总结"
-msgstr ""
+msgstr "Summary"
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:337
 msgid ""
 "本章节介绍了如何在Kaiwu "
 "SDK社区版中创建自定义的求解器和优化器。通过继承基类并实现必要的方法，您可以轻松扩展SDK的求解能力，适应不同的问题需求。"
 msgstr ""
+"This chapter introduced how to create custom solvers and optimizers in "
+"Kaiwu SDK Community Edition. By inheriting from base classes and "
+"implementing the necessary methods, you can easily extend the SDK's "
+"solving capabilities to adapt to different problem requirements."
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:339
 msgid ""
 "创建自定义求解器和优化器是扩展Kaiwu SDK功能的重要方式，希望本教程能够帮助您快速上手。如果您有任何问题或建议，欢迎通过GitHub "
 "Issues提交。"
 msgstr ""
+"Creating custom solvers and optimizers is an important way to extend "
+"Kaiwu SDK functionality. We hope this tutorial helps you get started "
+"quickly. If you have any questions or suggestions, please feel free to "
+"submit them via GitHub Issues."
 

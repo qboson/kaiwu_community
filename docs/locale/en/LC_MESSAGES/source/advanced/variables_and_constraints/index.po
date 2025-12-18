@@ -22,5 +22,5 @@ msgstr ""
 
 #: ../../source/advanced/variables_and_constraints/index.rst:3
 msgid "变量和约束"
-msgstr ""
+msgstr "Variables and Constraints"
 

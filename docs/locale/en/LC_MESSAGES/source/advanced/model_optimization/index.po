@@ -22,5 +22,5 @@ msgstr ""
 
 #: ../../source/advanced/model_optimization/index.rst:3
 msgid "模型优化"
-msgstr ""
+msgstr "Model Optimization"
 

@@ -22,37 +22,53 @@ msgstr ""
 
 #: ../../source/advanced/model_optimization/auto_penalty.rst:3
 msgid "自动确定惩罚系数"
-msgstr ""
+msgstr "Automatic Penalty Coefficient Determination"
 
 #: ../../source/advanced/model_optimization/auto_penalty.rst:6
 msgid "1. 惩罚系数"
-msgstr ""
+msgstr "1. Penalty Coefficient"
 
 #: ../../source/advanced/model_optimization/auto_penalty.rst:8
 msgid ""
 "在通过QUBO对实际问题建模的过程中，约束条件的一种常见处理方式是将其转化为惩罚项，添加到目标函数中。 "
 "确定约束条件的合适的惩罚系数有时是一个花费时间的事情。"
 msgstr ""
+"In the process of modeling practical problems via QUBO, a common approach "
+"to handle constraints is to convert them into penalty terms and add them to "
+"the objective function. Determining appropriate penalty coefficients for "
+"constraints can sometimes be a time-consuming task."
 
 #: ../../source/advanced/model_optimization/auto_penalty.rst:11
 msgid ""
 "对于传统方法，过大的惩罚系数会导致算法忽略了目标函数，导致求到的可行解没有一个较好的目标函数。 对于真机，过大的惩罚系数也可能导致精度方面的问题。"
 " 与此相反，过小的惩罚系数可能会导致约束没有被优先满足。 因此，估计出合适的惩罚系数是有意义的。"
 msgstr ""
+"For traditional methods, an excessively large penalty coefficient will cause "
+"the algorithm to ignore the objective function, resulting in feasible "
+"solutions with suboptimal objective function values. For physical quantum "
+"machines, an overly large penalty coefficient may also lead to precision "
+"issues. Conversely, an excessively small penalty coefficient may result in "
+"constraints not being prioritized. Therefore, it is meaningful to estimate "
+"appropriate penalty coefficients."
 
 #: ../../source/advanced/model_optimization/auto_penalty.rst:17
 msgid "2. 估计方法"
-msgstr ""
+msgstr "2. Estimation Method"
 
 #: ../../source/advanced/model_optimization/auto_penalty.rst:19
 msgid ""
 "当某个离散变量的值变化时，如果在目标函数引起的变化量恒小于在惩罚项引起的变化量，则惩罚项能够被优先满足。 "
 "所以只要估计出每个变量引起的变化量的比例，就能得到惩罚系数。"
 msgstr ""
+"When the value of a discrete variable changes, if the resulting change in "
+"the objective function is consistently smaller than that in the penalty "
+"term, the penalty term will be prioritized. Therefore, the penalty "
+"coefficient can be derived by estimating the ratio of the changes caused by "
+"each variable."
 
 #: ../../source/advanced/model_optimization/auto_penalty.rst:22
 msgid "目标函数的最大变化量可以通过上界来估计"
-msgstr ""
+msgstr "The maximum variation of the objective function can be estimated using an upper bound"
 
 #: ../../source/advanced/model_optimization/auto_penalty.rst:25
 #, python-brace-format
@@ -61,36 +77,43 @@ msgid ""
 "x_k x_j\n"
 "\n"
 msgstr ""
+"x^\\top Q x = f(x_i) = \\sum_j q_{ij}x_i x_j + \\sum_{k\\neq i,j} q_{kj} "
+"x_k x_j\n"
+"\n"
 
 #: ../../source/advanced/model_optimization/auto_penalty.rst:28
 msgid "QUBO表达式中，与 :math:`x_i` 相关的项可以分离出来。"
-msgstr ""
+msgstr "In the QUBO expression, the terms related to :math:`x_i` can be separated."
 
 #: ../../source/advanced/model_optimization/auto_penalty.rst:30
 msgid "当x_i从0变化为1时"
-msgstr ""
+msgstr "When :math:`x_i` changes from 0 to 1"
 
 #: ../../source/advanced/model_optimization/auto_penalty.rst:32
 msgid ""
 "\\Delta f(x_i) = \\sum_j q_{ij} x_j < \\sum_{q_{ij}>0} q_ij\n"
 "\n"
 msgstr ""
+"\\Delta f(x_i) = \\sum_j q_{ij} x_j < \\sum_{q_{ij}>0} q_ij\n"
+"\n"
 
 #: ../../source/advanced/model_optimization/auto_penalty.rst:35
 msgid "当x_i从1变化为0时"
-msgstr ""
+msgstr "When :math:`x_i` changes from 1 to 0"
 
 #: ../../source/advanced/model_optimization/auto_penalty.rst:37
 msgid ""
 "\\Delta f(x_i) = -\\sum_j q_{ij} x_j < \\sum_{q_{ij}<0} q_ij\n"
 "\n"
 msgstr ""
+"\\Delta f(x_i) = -\\sum_j q_{ij} x_j < \\sum_{q_{ij}<0} q_ij\n"
+"\n"
 
 #: ../../source/advanced/model_optimization/auto_penalty.rst:40
 msgid "估计惩罚项的最小非零变化量，二者比值可以作为惩罚系数"
-msgstr ""
+msgstr "Estimate the minimum non-zero variation of the penalty term, and the ratio between the two can be used as the penalty coefficient"
 
 #: ../../source/advanced/model_optimization/auto_penalty.rst:44
 msgid "3. 例子"
-msgstr ""
+msgstr "3. Example"
 

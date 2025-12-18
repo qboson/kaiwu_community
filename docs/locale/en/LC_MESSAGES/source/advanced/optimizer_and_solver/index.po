@@ -22,5 +22,5 @@ msgstr ""
 
 #: ../../source/advanced/optimizer_and_solver/index.rst:3
 msgid "自定义Optimizer和Solver"
-msgstr ""
+msgstr "Custom Optimizer and Solver"
 

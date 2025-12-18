@@ -53,7 +53,7 @@ msgstr ""
 #: kaiwu_community.core._binary_expression.Binary.clear:1
 #: kaiwu_community.core._expression.Expression.clear:1 of
 msgid "初始化所有属性"
-msgstr ""
+msgstr "Initialize all attributes"
 
 #: kaiwu_community.core._binary_expression.BinaryExpression:1 of
 msgid "基类：:py:class:`~kaiwu_community.core._expression.Expression`"
@@ -479,7 +479,7 @@ msgstr "optimizer (OptimizerBase): Ising solver"
 
 #: kaiwu_community.core._solver_base.SolverBase.solve_qubo:1 of
 msgid "求解QUBO"
-msgstr ""
+msgstr "Solve QUBO"
 
 #: kaiwu_community.core._solver_base.SolverBase.solve_qubo:4 of
 #, fuzzy
@@ -488,7 +488,7 @@ msgstr "qubo (QUBO expression): QUBO expression"
 
 #: kaiwu_community.core._solver_base.SolverBase.solve_qubo:7 of
 msgid "tuple: 元组，包含求解结果信息"
-msgstr ""
+msgstr "tuple: Tuple containing solution result information"
 
 #: kaiwu_community.core._solver_base.SolverBase.solve_qubo:8 of
 #, fuzzy

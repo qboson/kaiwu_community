@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../source/about/index.rst:3
 msgid "发行说明"
-msgstr ""
+msgstr "Release Notes"
 
 #~ msgid "关于"
 #~ msgstr "About"

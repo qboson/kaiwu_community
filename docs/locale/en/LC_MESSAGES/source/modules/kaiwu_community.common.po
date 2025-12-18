@@ -50,7 +50,7 @@ msgstr "ising_matrix (np.ndarray): CIM Ising matrix."
 
 #: kaiwu_community.common._util.check_symmetric:6 of
 msgid "tolerance (float): 误差."
-msgstr ""
+msgstr "tolerance (float): Tolerance."
 
 #: kaiwu_community.common._util.check_symmetric:8
 #: kaiwu_community.common._util.hamiltonian:8 of
@@ -59,7 +59,7 @@ msgstr "Returns:"
 
 #: kaiwu_community.common._util.check_symmetric:9 of
 msgid "bool: 是否为对称矩阵."
-msgstr ""
+msgstr "bool: Whether the matrix is symmetric."
 
 #: kaiwu_community.common._logger.set_log_level:8
 #: kaiwu_community.common._logger.set_log_path:6
