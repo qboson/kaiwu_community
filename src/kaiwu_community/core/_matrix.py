@@ -85,26 +85,21 @@ class BinaryExpressionNDArray(np.ndarray):
     """基于 np.ndarray 的QUBO容器.
     该容器支持各种 numpy 原生的向量化运算
     """
-    is_array_less = np.vectorize(_is_less)
-    is_array_less_equal = np.vectorize(_is_less_equal)
-    is_array_greater = np.vectorize(_is_greater)
-    is_array_greater_equal = np.vectorize(_is_greater_equal)
-    is_array_equal = np.vectorize(_is_equal)
 
     def __lt__(self, other):
-        return BinaryExpressionNDArray.is_array_less(self, other)
+        return np.vectorize(_is_less)(self, other)
 
     def __le__(self, other):
-        return BinaryExpressionNDArray.is_array_less_equal(self, other)
+        return np.vectorize(_is_less_equal)(self, other)
 
     def __gt__(self, other):
-        return BinaryExpressionNDArray.is_array_greater(self, other)
+        return np.vectorize(_is_greater)(self, other)
 
     def __ge__(self, other):
-        return BinaryExpressionNDArray.is_array_greater_equal(self, other)
+        return np.vectorize(_is_greater_equal)(self, other)
 
     def __eq__(self, other):
-        return BinaryExpressionNDArray.is_array_equal(self, other)
+        return np.vectorize(_is_equal)(self, other)
 
     def __matmul__(self, other):
         return self.dot(other)
@@ -115,7 +110,8 @@ class BinaryExpressionNDArray(np.ndarray):
         Args:
             b (BinaryExpressionNDArray): 另一个矩阵
 
-            out：可选输出数组，用于存储结果。需与预期输出形状一致。
+            out: 可选输出数组，用于存储结果。需与预期输出形状一致。
+
         Returns:
             BinaryExpressionNDArray: 乘积
         """
@@ -130,17 +126,17 @@ class BinaryExpressionNDArray(np.ndarray):
         """使用quicksum的求和方法
 
         Args:
-            axis：指定求和的轴（维度）。默认为 None，表示对所有元素求和；若为整数或元组，则沿指定轴求和。
+            axis: 指定求和的轴（维度）。默认为 None，表示对所有元素求和；若为整数或元组，则沿指定轴求和。
 
-            dtype：指定输出数据类型。若未提供，则默认使用输入数组的 dtype，但整数类型可能提升为平台整数精度。暂不支持。
+            dtype: 指定输出数据类型。若未提供，则默认使用输入数组的 dtype，但整数类型可能提升为平台整数精度。暂不支持。
 
-            out：可选输出数组，用于存储结果。需与预期输出形状一致。
+            out: 可选输出数组，用于存储结果。需与预期输出形状一致。
 
-            keepdims：布尔值。若为 True，则保留被求和的轴作为长度为1的维度。暂不支持 。
+            keepdims: 布尔值。若为 True，则保留被求和的轴作为长度为1的维度。暂不支持 。
 
-            initial：求和的初始值（标量），默认为0。暂不支持。
+            initial: 求和的初始值（标量），默认为0。暂不支持。
 
-            where：布尔数组，指定哪些元素参与求和（NumPy 1.20+支持）。暂不支持。
+            where: 布尔数组，指定哪些元素参与求和（NumPy 1.20+支持）。暂不支持。
 
         Returns:
             BinaryExpressionNDArray: 乘积

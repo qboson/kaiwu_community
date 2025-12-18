@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kaiwu Community 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-09 15:08+0800\n"
+"POT-Creation-Date: 2025-12-18 17:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -25,38 +25,162 @@ msgid "安装说明"
 msgstr ""
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:4
-msgid "安装Python3.10（不区分小版本），暂不支持Python其它版本，Python安装请自行搜索相关教程。"
+msgid "Kaiwu SDK 社区版提供多种安装方式，您可以根据自己的需求选择合适的安装方法。"
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:6
-msgid "创建虚拟环境，激活虚拟环境在命令行输入: python --version, 检查python版本是否为3.10。"
+#: ../../source/getting_started/sdk_installation_instructions.rst:7
+msgid "1. 环境准备"
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:8
-msgid ""
-"`python 3.10 下载 "
-"<https://www.python.org/downloads/release/python-31011/>`_。"
+#: ../../source/getting_started/sdk_installation_instructions.rst:9
+msgid "安装Python 3.10（不区分小版本），暂不支持Python其它版本。"
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:10
-msgid "登录网站 (https://platform.qboson.com/) 获取用户ID和SDK授权码。"
+#: ../../source/getting_started/sdk_installation_instructions.rst:11
+msgid "检查Python版本："
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:12
-msgid ""
-"根据个人电脑操作系统在官网下载对应的SDK，文件命名如：kaiwu-sdk.linux.1.2.0.zip(mac有intel和m两个版本， "
-"使用过程中如提醒架构有问题，请尝试不同的版本，如果两个版本都不行请联系相关人员)。"
-msgstr ""
-
-#: ../../source/getting_started/sdk_installation_instructions.rst:15
-msgid "解压下载的SDK安装包，解压后会有一个whl文件。"
+#: ../../source/getting_started/sdk_installation_instructions.rst:13
+msgid "python --version # 或 python3 --version"
 msgstr ""
 
 #: ../../source/getting_started/sdk_installation_instructions.rst:17
-msgid "安装SDK，使用pip安装时注意whl文件路径和系统版本。"
+msgid ""
+"如果需要安装Python 3.10，请访问 `Python 3.10 下载页面 "
+"<https://www.python.org/downloads/release/python-31011/>`_。"
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:23
-msgid "建模代码开头增加授权初始化代码，如果初始化错误请校验用户ID和SDK授权码或清除kaiwu/license.lic文件，然后重新初始化。"
+#: ../../source/getting_started/sdk_installation_instructions.rst:20
+msgid "2. 安装方式"
 msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:22
+msgid "以下是三种常用的安装方式："
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:25
+msgid "2.1 从源码安装（推荐用于开发）"
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:27
+msgid "克隆仓库："
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:29
+msgid "git clone <repository-url> cd kaiwu_community"
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:32
+msgid "安装开发依赖："
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:34
+msgid "pip install -r requirements.txt"
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:36
+msgid "以可编辑模式安装SDK："
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:38
+msgid "pip install -e ."
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:41
+msgid "2.2 从PyPI安装（推荐用于使用）"
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:44
+msgid "该方式将在项目正式发布后可用。"
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:46
+msgid "pip install kaiwu-community"
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:49
+msgid "2.3 直接使用源码"
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:51
+msgid "如果您不想安装SDK，也可以直接将源码目录添加到Python路径中使用："
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:53
+msgid "export PYTHONPATH=$PYTHONPATH:/path/to/kaiwu_community/src"
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:56
+msgid "3. 验证安装"
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:58
+msgid "安装完成后，您可以通过以下方式验证SDK是否安装成功："
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:66
+msgid "4. 开发环境设置"
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:68
+msgid "如果您计划参与SDK的开发，可以使用以下命令运行所有测试和代码检查："
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:70
+msgid "make all_tests"
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:72
+msgid "这将运行： - 代码风格检查（pylint） - 单元测试（pytest） - 文档测试（doctest）"
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:78
+msgid "5. 卸载SDK"
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:80
+msgid "如果您需要卸载SDK，可以使用以下命令："
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:82
+#: ../../source/getting_started/sdk_installation_instructions.rst:86
+msgid "pip uninstall kaiwu-community"
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:84
+msgid "或者如果是从源码安装："
+msgstr ""
+
+#: ../../source/getting_started/sdk_installation_instructions.rst:88
+msgid "然后删除克隆的仓库目录。"
+msgstr ""
+
+#~ msgid "安装Python3.10（不区分小版本），暂不支持Python其它版本，Python安装请自行搜索相关教程。"
+#~ msgstr ""
+
+#~ msgid "创建虚拟环境，激活虚拟环境在命令行输入: python --version, 检查python版本是否为3.10。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`python 3.10 下载 "
+#~ "<https://www.python.org/downloads/release/python-31011/>`_。"
+#~ msgstr ""
+
+#~ msgid "登录网站 (https://platform.qboson.com/) 获取用户ID和SDK授权码。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "根据个人电脑操作系统在官网下载对应的SDK，文件命名如：kaiwu-"
+#~ "sdk.linux.1.2.0.zip(mac有intel和m两个版本， "
+#~ "使用过程中如提醒架构有问题，请尝试不同的版本，如果两个版本都不行请联系相关人员)。"
+#~ msgstr ""
+
+#~ msgid "解压下载的SDK安装包，解压后会有一个whl文件。"
+#~ msgstr ""
+
+#~ msgid "安装SDK，使用pip安装时注意whl文件路径和系统版本。"
+#~ msgstr ""
+
+#~ msgid "建模代码开头增加授权初始化代码，如果初始化错误请校验用户ID和SDK授权码或清除kaiwu/license.lic文件，然后重新初始化。"
+#~ msgstr ""
 

@@ -2,26 +2,9 @@
 进阶知识
 ==================
 
-模型优化
---------
-
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
-   auto_penalty
-
-变量与约束
-----------
-
-.. toctree::
-   :maxdepth: 2
-
-   spin_var
-
-自定义求解器与优化器
----------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   custom_solver_optimizer
+   model_optimization/index
+   variables_and_constraints/index
+   optimizer_and_solver/index

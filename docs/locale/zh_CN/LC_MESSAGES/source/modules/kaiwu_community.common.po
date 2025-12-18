@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kaiwu Community 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-09 15:11+0800\n"
+"POT-Creation-Date: 2025-12-18 17:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -36,14 +36,39 @@ msgstr ""
 msgid "检查矩阵是否为对称矩阵，允许一定误差"
 msgstr ""
 
-#: kaiwu_community.common._util.hamiltonian:1 of
-msgid "计算哈密顿量."
-msgstr ""
-
 #: kaiwu_community.common._logger.set_log_level:5
 #: kaiwu_community.common._logger.set_log_path:3
+#: kaiwu_community.common._util.check_symmetric:3
 #: kaiwu_community.common._util.hamiltonian:3 of
 msgid "Args:"
+msgstr ""
+
+#: kaiwu_community.common._util.check_symmetric:4 of
+msgid "mat (np.ndarray): 矩阵."
+msgstr ""
+
+#: kaiwu_community.common._util.check_symmetric:6 of
+msgid "tolerance (float): 误差."
+msgstr ""
+
+#: kaiwu_community.common._util.check_symmetric:8
+#: kaiwu_community.common._util.hamiltonian:8 of
+msgid "Returns:"
+msgstr ""
+
+#: kaiwu_community.common._util.check_symmetric:9 of
+msgid "bool: 是否为对称矩阵."
+msgstr ""
+
+#: kaiwu_community.common._logger.set_log_level:8
+#: kaiwu_community.common._logger.set_log_path:6
+#: kaiwu_community.common._util.check_symmetric:11
+#: kaiwu_community.common._util.hamiltonian:11 of
+msgid "Examples:"
+msgstr ""
+
+#: kaiwu_community.common._util.hamiltonian:1 of
+msgid "计算哈密顿量."
 msgstr ""
 
 #: kaiwu_community.common._util.hamiltonian:4 of
@@ -54,18 +79,8 @@ msgstr ""
 msgid "c_list (np.ndarray): 要计算哈密顿量的变量组合集合."
 msgstr ""
 
-#: kaiwu_community.common._util.hamiltonian:8 of
-msgid "Returns:"
-msgstr ""
-
 #: kaiwu_community.common._util.hamiltonian:9 of
 msgid "np.ndarray: 哈密顿量集合."
-msgstr ""
-
-#: kaiwu_community.common._logger.set_log_level:8
-#: kaiwu_community.common._logger.set_log_path:6
-#: kaiwu_community.common._util.hamiltonian:11 of
-msgid "Examples:"
 msgstr ""
 
 #: kaiwu_community.common._logger.set_log_level:1 of

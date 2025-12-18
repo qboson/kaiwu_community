@@ -6,7 +6,27 @@ import numpy as np
 
 
 def check_symmetric(mat, tolerance=1e-8):
-    """检查矩阵是否为对称矩阵，允许一定误差"""
+    """检查矩阵是否为对称矩阵，允许一定误差
+
+    Args:
+        mat (np.ndarray): 矩阵.
+
+        tolerance (float): 误差.
+
+    Returns:
+        bool: 是否为对称矩阵.
+
+    Examples:
+        >>> import numpy as np
+        >>> import kaiwu_community as kw
+        >>> ising_matrix = -np.array([[ 0. ,  1. ,  0. ,  1. ,  1. ],
+        ...                           [ 1. ,  0. ,  0. ,  1.,   1. ],
+        ...                           [ 0. ,  0. ,  0. ,  1.,   1. ],
+        ...                           [ 1. ,  1.,   1. ,  0. ,  1. ],
+        ...                           [ 1. ,  1.,   1. ,  1. ,  0. ]])
+        >>> print(kw.common.check_symmetric(ising_matrix))
+        True
+    """
     result = np.all(np.abs(mat - mat.T) < tolerance)
     return result
 

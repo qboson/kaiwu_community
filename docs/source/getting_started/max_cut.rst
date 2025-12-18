@@ -1,5 +1,5 @@
 新手教程-Ising建模-Maxcut
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 问题描述
 ==========
@@ -57,10 +57,7 @@
 .. code:: python
 
    import numpy as np
-   import kaiwu as kw
-
-   # Import the plotting library
-   import matplotlib.pyplot as plt
+   import kaiwu_community as kw
 
    # invert input graph matrix
    matrix = -np.array([
@@ -81,11 +78,7 @@
 
 .. code:: python
 
-    worker = kw.classical.SimulatedAnnealingOptimizer(initial_temperature=100,
-                                                      alpha=0.99,
-                                                      cutoff_temperature=0.001,
-                                                      iterations_per_t=10,
-                                                      size_limit=100)
+    worker = kw.classical.BruteForceOptimizer()
     output = worker.solve(matrix)
 
 输出结果
@@ -95,7 +88,6 @@
 
 .. code:: python
 
-   opt = kw.sampler.optimal_sampler(matrix, output, 0)
-   best = opt[0][0]
+   best = output[0]
    max_cut = (np.sum(-matrix)-np.dot(-matrix,best).dot(best))/4
    print("The obtained max cut is " + str(max_cut) + ".")

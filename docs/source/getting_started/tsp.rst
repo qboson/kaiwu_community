@@ -1,5 +1,5 @@
 新手教程-QUBO建模-旅行商问题
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 什么是旅行商问题
 ----------------
@@ -114,6 +114,7 @@
 | 优化目标是求H的最小值
 
 4. 实现用Solver直接对QuboModel进行求解
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 注：Solver求解器是针对QUBOModel的求解工具，它用QUBO Model生成Ising矩阵，使用提供的Optimizer来求解。
 本例子使用一个具有基本功能的Solver来求解。
@@ -128,7 +129,7 @@
     # Import numpy and kaiwu
     import numpy as np
     import pandas as pd
-    import kaiwu as kw
+    import kaiwu_community as kw
 
 加载图数据， 并做预处理。 下面的代码中定义了x变量就是模型中的决策变量\ :math:`x_{u,j}=1`\。
 
@@ -145,7 +146,7 @@
     n = w.shape[0]
 
     # Create qubo variable matrix
-    x = kw.qubo.ndarray((n, n), "x", kw.qubo.Binary)
+    x = kw.core.ndarray((n, n), "x", kw.core.Binary)
 
     # Get sets of edge and non-edge pairs
     edges = [(u, v) for u in range(n) for v in range(n) if w[u, v] != 0]
@@ -157,20 +158,20 @@
 .. code:: python
 
     def is_edge_used(x, u, v):
-        return kw.qubo.quicksum([x[u, j] * x[v, j + 1] for j in range(-1, n - 1)])
+        return kw.core.quicksum([x[u, j] * x[v, j + 1] for j in range(-1, n - 1)])
 
     qubo_model = kw.qubo.QuboModel()
     # TSP path cost
-    qubo_model.set_objective(kw.qubo.quicksum([w[u, v] * is_edge_used(x, u, v) for u, v in edges]))
+    qubo_model.set_objective(kw.core.quicksum([w[u, v] * is_edge_used(x, u, v) for u, v in edges]))
 
     # Node constraint: Each node must belong to exactly one position
-    qubo_model.add_constraint(x.sum(axis=0) == 1, "sequence_cons", penalty=6.0)
+    qubo_model.add_constraint((x.sum(axis=0) - 1) ** 2 == 0, "sequence_cons", penalty=6.0)
 
     # Position constraint: Each position can have only one node
-    qubo_model.add_constraint(x.sum(axis=1) == 1, "node_cons", penalty=6.0)
+    qubo_model.add_constraint((x.sum(axis=1) - 1) ** 2 == 0, "node_cons", penalty=6.0)
 
     # Edge constraint: Pairs without edges cannot appear in the path
-    qubo_model.add_constraint(kw.qubo.quicksum([is_edge_used(x, u, v) for u, v in no_edges]),
+    qubo_model.add_constraint(kw.core.quicksum([is_edge_used(x, u, v) for u, v in no_edges]) == 0,
         "connect_cons", penalty=6.0)
 
 
@@ -182,11 +183,7 @@
 .. code:: python
 
     # Perform calculation using SA optimizer
-    solver = kw.solver.SimpleSolver(kw.classical.SimulatedAnnealingOptimizer(initial_temperature=100,
-                                                                             alpha=0.99,
-                                                                             cutoff_temperature=0.001,
-                                                                             iterations_per_t=100,
-                                                                             size_limit=100))
+    solver = kw.solver.SimpleSolver(kw.classical.BruteForceOptimizer())
 
     sol_dict, qubo_val = solver.solve_qubo(qubo_model)
 
@@ -238,19 +235,3 @@
     [3 1 2 4 0]
 
 这表示路径上1号位置选择0号节点，2号位置选择1号节点，3号位置选择2号节点等等。
-
-7. 使用光量子计算机进行计算
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-使用真机计算的话，需要使用如下代码生成csv文件上传给云平台
-
-.. code:: python
-
-    qubo_mat = qubo_model.get_matrix()
-    pd.DataFrame(qubo_mat).to_csv("tsp.csv", index=False, header=False)
-
-使用玻色量子云平台来调用相干伊辛机来求解TSP问题，得到的结果如下图所示。该结果的最短路径值经过验证与上述方法相同，耗时约为1.66ms。
-
-.. image:: images/TSP_cloundplatform_cim_result.png
-
-结果1是最优解，按照前面变量定义，每5个一组代表图上一个节点，每组5个变量表示5个位置，值为1表示第一个节点在路径的对应位置通过。

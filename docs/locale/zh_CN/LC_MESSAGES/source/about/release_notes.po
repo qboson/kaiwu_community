@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kaiwu Community 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-09 15:08+0800\n"
+"POT-Creation-Date: 2025-12-18 17:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,10 +21,146 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../source/about/release_notes.rst:2
-msgid "发行说明"
+msgid "1.0.0 (2025-12-17)"
 msgstr ""
 
-#: ../../source/about/release_notes.rst:4
-msgid "建设中."
+#: ../../source/about/release_notes.rst:5
+#: ../../source/about/release_notes.rst:24
+msgid "主要功能"
 msgstr ""
+
+#: ../../source/about/release_notes.rst:7
+msgid "提供完整的QUBO模型构建和管理功能"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:8
+#: ../../source/about/release_notes.rst:30
+msgid "支持Ising模型的表示和转换"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:9
+msgid "内置经典优化算法，如BruteForceOptimizer"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:10
+msgid "提供灵活的求解器框架，支持调用不同的优化器"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:11
+msgid "包含高效的核心数据结构和数学运算支持"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:12
+msgid "提供通用工具和配置管理功能"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:15
+msgid "核心模块"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:17
+msgid "Kaiwu SDK 社区版采用模块化设计，包含以下核心模块："
+msgstr ""
+
+#: ../../source/about/release_notes.rst:23
+msgid "模块名称"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:25
+msgid "价值"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:26
+msgid "**qubo**"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:27
+msgid "提供QUBO模型的构建和管理功能"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:28
+msgid "帮助用户快速构建QUBO模型"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:29
+msgid "**ising**"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:31
+msgid "方便用户在QUBO和Ising模型之间转换"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:32
+msgid "**classical**"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:33
+msgid "包含经典优化算法，如BruteForceOptimizer"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:34
+msgid "提供基础求解能力，支持快速验证模型"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:35
+msgid "**solver**"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:36
+msgid "提供求解器框架，支持调用不同的优化器"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:37
+msgid "简化求解器调用流程，支持灵活扩展"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:38
+msgid "**core**"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:39
+msgid "提供核心数据结构和数学运算支持"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:40
+msgid "提供高效的底层计算能力"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:41
+msgid "**common**"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:42
+msgid "提供通用工具和配置管理"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:43
+msgid "简化开发流程，提高开发效率"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:46
+msgid "版本兼容性"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:48
+msgid "**Python版本**：仅支持Python 3.10的所有小版本，不支持Python 3.11及以上版本"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:49
+msgid "**操作系统**：支持Windows、Linux和macOS"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:52
+msgid "安装方式"
+msgstr ""
+
+#: ../../source/about/release_notes.rst:54
+msgid "pip install kaiwu-community"
+msgstr ""
+
+#~ msgid "发行说明"
+#~ msgstr ""
+
+#~ msgid "建设中."
+#~ msgstr ""
 

@@ -75,22 +75,22 @@ Quickly extend functionality by inheriting base classes:
 from kaiwu_community.core import OptimizerBase, SolverBase
 import kaiwu_community
 
-# 自定义优化器
+# Custom optimizer
 class CustomOptimizer(OptimizerBase):
     def solve(self, ising_matrix=None):
-        # 实现自定义优化逻辑
+        # Implement custom optimization logic
         pass
 
-# 自定义求解器
+# Custom solver
 class CustomSolver(SolverBase):
     def solve_qubo(self, model):
-        # 实现自定义求解逻辑
+        # Implement custom solver logic
         self._optimizer.solve()
         pass
 
-# 建模
+# Modeling
 qubo_model = kaiwu_community.qubo.QuboModel()
-# 调用自定义组件
+# Calling the custom component
 optimizer = CustomOptimizer()
 solver = CustomSolver(optimizer)
 result = solver.solve_qubo(qubo_model)

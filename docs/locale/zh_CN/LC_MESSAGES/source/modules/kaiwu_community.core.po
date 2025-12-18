@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kaiwu Community 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-09 15:11+0800\n"
+"POT-Creation-Date: 2025-12-18 17:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -46,6 +46,11 @@ msgstr ""
 msgid "二进制变量, 只保存变量名，不继承 QuboExpression"
 msgstr ""
 
+#: kaiwu_community.core._binary_expression.Binary.clear:1
+#: kaiwu_community.core._expression.Expression.clear:1 of
+msgid "初始化所有属性"
+msgstr ""
+
 #: kaiwu_community.core._binary_expression.BinaryExpression:1 of
 msgid "基类：:py:class:`~kaiwu_community.core._expression.Expression`"
 msgstr ""
@@ -77,7 +82,8 @@ msgstr ""
 #: kaiwu_community.core._matrix.dot:3 kaiwu_community.core._matrix.ndarray:4
 #: kaiwu_community.core._penalty_method_constraint.PenaltyMethodConstraint:3
 #: kaiwu_community.core._penalty_method_constraint.PenaltyMethodConstraint.from_constraint_definition:3
-#: kaiwu_community.core._solver_base.SolverBase:3 of
+#: kaiwu_community.core._solver_base.SolverBase:3
+#: kaiwu_community.core._solver_base.SolverBase.solve_qubo:3 of
 msgid "Args:"
 msgstr ""
 
@@ -114,7 +120,7 @@ msgstr ""
 
 #: kaiwu_community.core._matrix.BinaryExpressionNDArray.dot:6
 #: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:8 of
-msgid "out：可选输出数组，用于存储结果。需与预期输出形状一致。"
+msgid "out: 可选输出数组，用于存储结果。需与预期输出形状一致。"
 msgstr ""
 
 #: kaiwu_community.core._binary_expression.quicksum:6
@@ -128,14 +134,14 @@ msgstr ""
 #: kaiwu_community.core._get_val.get_array_val:8
 #: kaiwu_community.core._get_val.get_sol_dict:8
 #: kaiwu_community.core._get_val.get_val:8
-#: kaiwu_community.core._matrix.BinaryExpressionNDArray.dot:7
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.dot:8
 #: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:16
 #: kaiwu_community.core._matrix.dot:12 kaiwu_community.core._matrix.ndarray:13
-#: of
+#: kaiwu_community.core._solver_base.SolverBase.solve_qubo:6 of
 msgid "Returns:"
 msgstr ""
 
-#: kaiwu_community.core._matrix.BinaryExpressionNDArray.dot:8
+#: kaiwu_community.core._matrix.BinaryExpressionNDArray.dot:9
 #: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:17 of
 msgid "BinaryExpressionNDArray: 乘积"
 msgstr ""
@@ -145,23 +151,23 @@ msgid "使用quicksum的求和方法"
 msgstr ""
 
 #: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:4 of
-msgid "axis：指定求和的轴（维度）。默认为 None，表示对所有元素求和；若为整数或元组，则沿指定轴求和。"
+msgid "axis: 指定求和的轴（维度）。默认为 None，表示对所有元素求和；若为整数或元组，则沿指定轴求和。"
 msgstr ""
 
 #: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:6 of
-msgid "dtype：指定输出数据类型。若未提供，则默认使用输入数组的 dtype，但整数类型可能提升为平台整数精度。暂不支持。"
+msgid "dtype: 指定输出数据类型。若未提供，则默认使用输入数组的 dtype，但整数类型可能提升为平台整数精度。暂不支持。"
 msgstr ""
 
 #: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:10 of
-msgid "keepdims：布尔值。若为 True，则保留被求和的轴作为长度为1的维度。暂不支持 。"
+msgid "keepdims: 布尔值。若为 True，则保留被求和的轴作为长度为1的维度。暂不支持 。"
 msgstr ""
 
 #: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:12 of
-msgid "initial：求和的初始值（标量），默认为0。暂不支持。"
+msgid "initial: 求和的初始值（标量），默认为0。暂不支持。"
 msgstr ""
 
 #: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:14 of
-msgid "where：布尔数组，指定哪些元素参与求和（NumPy 1.20+支持）。暂不支持。"
+msgid "where: 布尔数组，指定哪些元素参与求和（NumPy 1.20+支持）。暂不支持。"
 msgstr ""
 
 #: kaiwu_community.core._binary_model.BinaryModel:1
@@ -412,6 +418,26 @@ msgstr ""
 msgid "optimizer (OptimizerBase): Ising求解器"
 msgstr ""
 
+#: kaiwu_community.core._solver_base.SolverBase.solve_qubo:1 of
+msgid "求解QUBO"
+msgstr ""
+
+#: kaiwu_community.core._solver_base.SolverBase.solve_qubo:4 of
+msgid "qubo_model (QuboModel): QUBO模型"
+msgstr ""
+
+#: kaiwu_community.core._solver_base.SolverBase.solve_qubo:7 of
+msgid "tuple: 元组，包含求解结果信息"
+msgstr ""
+
+#: kaiwu_community.core._solver_base.SolverBase.solve_qubo:8 of
+msgid "dict: 解字典"
+msgstr ""
+
+#: kaiwu_community.core._solver_base.SolverBase.solve_qubo:9 of
+msgid "float: QUBO值"
+msgstr ""
+
 #: kaiwu_community.core._matrix.dot:1 of
 msgid "矩阵乘法"
 msgstr ""
@@ -615,4 +641,22 @@ msgstr ""
 #: kaiwu_community.core._expression.update_constraint:1 of
 msgid "将qexp的约束以及降阶约束信息更新到q"
 msgstr ""
+
+#~ msgid "out：可选输出数组，用于存储结果。需与预期输出形状一致。"
+#~ msgstr ""
+
+#~ msgid "axis：指定求和的轴（维度）。默认为 None，表示对所有元素求和；若为整数或元组，则沿指定轴求和。"
+#~ msgstr ""
+
+#~ msgid "dtype：指定输出数据类型。若未提供，则默认使用输入数组的 dtype，但整数类型可能提升为平台整数精度。暂不支持。"
+#~ msgstr ""
+
+#~ msgid "keepdims：布尔值。若为 True，则保留被求和的轴作为长度为1的维度。暂不支持 。"
+#~ msgstr ""
+
+#~ msgid "initial：求和的初始值（标量），默认为0。暂不支持。"
+#~ msgstr ""
+
+#~ msgid "where：布尔数组，指定哪些元素参与求和（NumPy 1.20+支持）。暂不支持。"
+#~ msgstr ""
 

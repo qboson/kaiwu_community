@@ -1,4 +1,4 @@
-CHECK_DIRS=src/kaiwu
+CHECK_DIRS=src/kaiwu_community
 VENV_PATH = ./.venv
 export PATH := $(VENV_PATH)/Scripts/:$(PATH)
 

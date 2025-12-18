@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kaiwu Community 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-09 15:11+0800\n"
+"POT-Creation-Date: 2025-12-18 17:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -36,15 +36,41 @@ msgstr "Common utility collection"
 msgid "检查矩阵是否为对称矩阵，允许一定误差"
 msgstr "Check if a matrix is symmetric with a certain tolerance"
 
-#: kaiwu_community.common._util.hamiltonian:1 of
-msgid "计算哈密顿量."
-msgstr "Calculate Hamiltonian."
-
 #: kaiwu_community.common._logger.set_log_level:5
 #: kaiwu_community.common._logger.set_log_path:3
+#: kaiwu_community.common._util.check_symmetric:3
 #: kaiwu_community.common._util.hamiltonian:3 of
 msgid "Args:"
 msgstr "Args:"
+
+#: kaiwu_community.common._util.check_symmetric:4 of
+#, fuzzy
+msgid "mat (np.ndarray): 矩阵."
+msgstr "ising_matrix (np.ndarray): CIM Ising matrix."
+
+#: kaiwu_community.common._util.check_symmetric:6 of
+msgid "tolerance (float): 误差."
+msgstr ""
+
+#: kaiwu_community.common._util.check_symmetric:8
+#: kaiwu_community.common._util.hamiltonian:8 of
+msgid "Returns:"
+msgstr "Returns:"
+
+#: kaiwu_community.common._util.check_symmetric:9 of
+msgid "bool: 是否为对称矩阵."
+msgstr ""
+
+#: kaiwu_community.common._logger.set_log_level:8
+#: kaiwu_community.common._logger.set_log_path:6
+#: kaiwu_community.common._util.check_symmetric:11
+#: kaiwu_community.common._util.hamiltonian:11 of
+msgid "Examples:"
+msgstr "Examples:"
+
+#: kaiwu_community.common._util.hamiltonian:1 of
+msgid "计算哈密顿量."
+msgstr "Calculate Hamiltonian."
 
 #: kaiwu_community.common._util.hamiltonian:4 of
 msgid "ising_matrix (np.ndarray): CIM Ising 矩阵."
@@ -52,21 +78,13 @@ msgstr "ising_matrix (np.ndarray): CIM Ising matrix."
 
 #: kaiwu_community.common._util.hamiltonian:6 of
 msgid "c_list (np.ndarray): 要计算哈密顿量的变量组合集合."
-msgstr "c_list (np.ndarray): Set of variable combinations for which to calculate the Hamiltonian."
-
-#: kaiwu_community.common._util.hamiltonian:8 of
-msgid "Returns:"
-msgstr "Returns:"
+msgstr ""
+"c_list (np.ndarray): Set of variable combinations for which to calculate "
+"the Hamiltonian."
 
 #: kaiwu_community.common._util.hamiltonian:9 of
 msgid "np.ndarray: 哈密顿量集合."
 msgstr "np.ndarray: Set of Hamiltonian values."
-
-#: kaiwu_community.common._logger.set_log_level:8
-#: kaiwu_community.common._logger.set_log_path:6
-#: kaiwu_community.common._util.hamiltonian:11 of
-msgid "Examples:"
-msgstr "Examples:"
 
 #: kaiwu_community.common._logger.set_log_level:1 of
 msgid "设置SDK日志输出级别"
@@ -74,14 +92,17 @@ msgstr "Set SDK log output level"
 
 #: kaiwu_community.common._logger.set_log_level:3 of
 msgid "SDK默认输出INFO级别以上的日志，可通过此函数修改输出级别"
-msgstr "The SDK outputs logs of INFO level and above by default. You can modify the output level through this function"
+msgstr ""
+"The SDK outputs logs of INFO level and above by default. You can modify "
+"the output level through this function"
 
 #: kaiwu_community.common._logger.set_log_level:6 of
 msgid ""
 "level (str or int): 支持传入 logging.ERROR， logging.INFO、... "
 "、logging.ERROR或字符串ERROR、INFO、... 、ERROR"
 msgstr ""
-"level (str or int): Supports passing logging.ERROR, logging.INFO, ..., logging.ERROR or strings ERROR, INFO, ..., ERROR"
+"level (str or int): Supports passing logging.ERROR, logging.INFO, ..., "
+"logging.ERROR or strings ERROR, INFO, ..., ERROR"
 
 #: kaiwu_community.common._logger.set_log_path:1 of
 msgid "设置SDK日志输出文件路径, 需要绝对路径."
@@ -90,3 +111,4 @@ msgstr "Set SDK log output file path, absolute path is required."
 #: kaiwu_community.common._logger.set_log_path:4 of
 msgid "path (str): 自定义日志文件输出路径"
 msgstr "path (str): Custom log file output path"
+

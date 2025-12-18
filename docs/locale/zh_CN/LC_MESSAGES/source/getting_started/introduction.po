@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kaiwu Community 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-09 15:08+0800\n"
+"POT-Creation-Date: 2025-12-18 17:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -25,59 +25,243 @@ msgid "概述"
 msgstr ""
 
 #: ../../source/getting_started/introduction.rst:5
-msgid "Kaiwu SDK"
+msgid "1. 产品定位"
 msgstr ""
 
 #: ../../source/getting_started/introduction.rst:7
 msgid ""
-"Kaiwu "
-"SDK是一套软件开发套件，专为基于相干光量子计算机的QUBO问题求解而设计。该套件致力于为开发者提供一个便捷的Python环境，以构建适用于相干光量子计算机的软件算法，并直接通过物理接口（目前支持Ising矩阵）调用量子计算机真机进行计算。"
+"**Kaiwu SDK 社区版** 是一套开源的软件开发套件，专为 **QUBO（二次无约束二进制优化）问题求解** "
+"而设计。它提供了便捷的Python环境，帮助开发者快速构建QUBO模型并高效求解，加速QUBO相关应用的开发和研究。"
 msgstr ""
 
-#: ../../source/getting_started/introduction.rst:9
-msgid ""
-"Kaiwu "
-"SDK目前包含以下核心模块：qubo、cim、ising、preprocess、classical、sampler、solver和utils。在典型应用场景中，用户首先利用qubo模块进行问题建模，随后借助solver模块对构建的QUBO模型进行高效求解。solver模块不仅负责管理QUBO模型的系数，还支持调用用户指定的optimizer对最终的Ising模型矩阵进行深度求解。"
+#: ../../source/getting_started/introduction.rst:10
+msgid "核心价值"
 msgstr ""
 
 #: ../../source/getting_started/introduction.rst:11
-msgid "我们特别将Ising模型矩阵的求解功能定义为optimizer。其中，基于经典计算实现的optimizer，如SA、tabu等经典模拟求解器，均集成在classical模块中；而直接对接真机的optimizer则位于cim模块。此外，其他辅助模块提供了日志记录、降阶处理和降精度处理等实用功能，为用户提供全方位的支持。"
+msgid "**快速建模**：简洁易用的接口，支持快速构建复杂的QUBO模型"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:12
+msgid "**灵活扩展**：模块化设计，允许开发者轻松扩展新的求解器和优化算法"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:13
+msgid "**内置工具**：包含基础求解器和优化器，支持快速验证模型效果"
 msgstr ""
 
 #: ../../source/getting_started/introduction.rst:14
-msgid "典型的使用方式"
+msgid "**开源自由**：基于Apache 2.0许可证，完全开源，支持商业和非商业使用"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:17
+msgid "2. 应用场景"
 msgstr ""
 
 #: ../../source/getting_started/introduction.rst:19
-msgid "预备知识"
+msgid "Kaiwu SDK 社区版适用于多种场景，帮助不同用户解决实际问题："
 msgstr ""
 
-#: ../../source/getting_started/introduction.rst:22
-msgid "CIM"
+#: ../../source/getting_started/introduction.rst:25
+msgid "用户类型"
 msgstr ""
 
-#: ../../source/getting_started/introduction.rst:24
-msgid ""
-"相干伊辛机(Coherent Ising "
-"Machine，简称CIM)，是目前玻色量子重点研发的一项量子计算机技术。CIM是一种基于简并光学参量振荡器(DOPO)的光量子计算机。在数学实践中，我们可以将其抽象为优化Ising模型的专用计算机。"
+#: ../../source/getting_started/introduction.rst:26
+msgid "实际问题"
 msgstr ""
 
 #: ../../source/getting_started/introduction.rst:27
-msgid "Ising模型"
+msgid "SDK价值"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:28
+msgid "研究人员"
 msgstr ""
 
 #: ../../source/getting_started/introduction.rst:29
-msgid "伊辛模型(Ising Model)，是一类描述物质相变的随机过程模型。抽象为数学形式为："
+msgid "探索QUBO问题建模方法，验证新优化算法性能，开展量子计算相关研究"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:30
+msgid "提供快速建模和求解能力，加速研究进程"
 msgstr ""
 
 #: ../../source/getting_started/introduction.rst:31
+msgid "开发者"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:32
+msgid "构建自定义QUBO求解器，开发基于QUBO的应用，集成求解功能到现有系统"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:33
+msgid "模块化设计，支持灵活扩展和快速开发"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:34
+msgid "企业用户"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:35
+msgid "开发QUBO解决方案原型，优化业务流程和资源配置，探索量子计算应用"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:36
+msgid "降低开发成本，加速解决方案落地"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:37
+msgid "学生和教育工作者"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:38
+msgid "学习QUBO模型和求解方法，开展量子计算实验和项目"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:39
+msgid "提供直观易用的工具，辅助教学和学习"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:43
+msgid "3. 核心模块"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:45
+msgid "Kaiwu SDK 社区版采用模块化设计，包含以下核心模块："
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:51
+msgid "模块名称"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:52
+msgid "主要功能"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:53
+msgid "用户价值"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:54
+msgid "**qubo**"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:55
+msgid "提供QUBO模型的构建和管理功能"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:56
+msgid "帮助用户快速构建QUBO模型"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:57
+msgid "**ising**"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:58
+msgid "支持Ising模型的表示和转换"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:59
+msgid "方便用户在QUBO和Ising模型之间转换"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:60
+msgid "**classical**"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:61
+msgid "包含经典优化算法，如BruteForceOptimizer"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:62
+msgid "提供基础求解能力，支持快速验证模型"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:63
+msgid "**solver**"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:64
+msgid "提供求解器框架，支持调用不同的优化器"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:65
+msgid "简化求解器调用流程，支持灵活扩展"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:66
+msgid "**core**"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:67
+msgid "提供核心数据结构和数学运算支持"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:68
+msgid "提供高效的底层计算能力"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:69
+msgid "**common**"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:70
+msgid "提供通用工具和配置管理"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:71
+msgid "简化开发流程，提高开发效率"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:74
+msgid "4. 典型使用流程"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:76
+msgid "使用Kaiwu SDK 社区版解决QUBO问题的典型流程如下："
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:80
+msgid "**问题建模**：使用qubo模块将实际问题转化为QUBO模型"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:81
+msgid "**模型配置**：设置模型参数和求解选项"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:82
+msgid "**求解器选择**：选择合适的求解器或优化器"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:83
+msgid "**模型求解**：调用solver模块对QUBO模型进行求解"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:84
+msgid "**结果分析**：分析求解结果，验证解决方案的有效性"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:87
+msgid "5. 预备知识"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:90
+msgid "Ising模型"
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:92
+msgid "伊辛模型(Ising Model)，是一类描述物质相变的随机过程模型。抽象为数学形式为："
+msgstr ""
+
+#: ../../source/getting_started/introduction.rst:94
 #, python-brace-format
 msgid ""
 "H(\\sigma)=-\\sum_{i,j}J_{ij}\\sigma_i\\sigma_j-\\mu\\sum_ih_i\\sigma_i\n"
 "\n"
 msgstr ""
 
-#: ../../source/getting_started/introduction.rst:33
+#: ../../source/getting_started/introduction.rst:96
 #, python-brace-format
 msgid ""
 "其中\\ :math:`\\sigma`\\ 为待求自旋变量，取值为\\ :math:`\\{-1,1\\}`\\ ， \\ "
@@ -85,74 +269,109 @@ msgid ""
 "为线性项系数，是已知量。"
 msgstr ""
 
-#: ../../source/getting_started/introduction.rst:36
-msgid "QUBO"
+#: ../../source/getting_started/introduction.rst:99
+msgid "QUBO模型"
 msgstr ""
 
-#: ../../source/getting_started/introduction.rst:38
+#: ../../source/getting_started/introduction.rst:101
 msgid "二次无约束二值优化问题(Quadratic unconstrained binary optimization，简称QUBO)，其数学形式如下："
 msgstr ""
 
-#: ../../source/getting_started/introduction.rst:40
+#: ../../source/getting_started/introduction.rst:103
 #, python-brace-format
 msgid ""
 "f_Q(x)=\\sum_{i\\leqslant j}q_{ij}x_ix_j\n"
 "\n"
 msgstr ""
 
-#: ../../source/getting_started/introduction.rst:42
+#: ../../source/getting_started/introduction.rst:105
 #, python-brace-format
 msgid ""
 "其中\\ :math:`x`\\ 为待求二进制变量, 取值为\\ :math:`\\{0,1\\}`\\ , \\ :math:`f`\\ "
 "为目标函数, \\ :math:`q`\\ 为二次项系数, 是已知量. 写成线性代数的形式:"
 msgstr ""
 
-#: ../../source/getting_started/introduction.rst:45
+#: ../../source/getting_started/introduction.rst:108
 msgid ""
 "f_Q(\\pmb x)=\\pmb x^T\\pmb Q\\pmb x\n"
 "\n"
 msgstr ""
 
-#: ../../source/getting_started/introduction.rst:47
+#: ../../source/getting_started/introduction.rst:110
 msgid ""
 "其中, \\ :math:`\\pmb x`\\ 为二进制向量, \\ :math:`\\pmb Q`\\ 为QUBO矩阵, "
 "QUBO目标是找到使得\\ :math:`f`\\ 最小或最大的\\ :math:`\\pmb x`\\ , 即:"
 msgstr ""
 
-#: ../../source/getting_started/introduction.rst:49
+#: ../../source/getting_started/introduction.rst:112
 #, python-brace-format
 msgid ""
 "\\pmb x^*=\\mathop{\\arg\\min}\\limits_{\\pmb x}f_Q(\\pmb x)\n"
 "\n"
 msgstr ""
 
-#: ../../source/getting_started/introduction.rst:51
-msgid ""
-"在Kaiwu "
-"SDK中，通过kw.qubo.details查看QUBO模型细节会显示offset和coefficients信息。其中offset表示QUBO模型中的常数项，与变量无关。coefficients表示QUBO模型中每个二值变量的系数取值，以及它们的交互项的系数取值。"
+#: ../../source/getting_started/introduction.rst:115
+msgid "6. 引用方式"
 msgstr ""
 
-#: ../../source/getting_started/introduction.rst:54
-msgid "CIM求解模型"
+#: ../../source/getting_started/introduction.rst:117
+msgid "如果Kaiwu SDK 社区版对您的学术研究有帮助，欢迎引用："
 msgstr ""
 
-#: ../../source/getting_started/introduction.rst:56
-#, python-brace-format
-msgid ""
-"CIM求解QUBO或优化Ising模型的过程就是，将QUBO中的\\ :math:`q_{ij}`\\ 或Ising模型中的\\ "
-":math:`J_{ij}`\\ 输入CIM，CIM返回\\ :math:`\\pmb x`\\ 或\\ :math:`\\sigma`\\ "
-"的过程。"
-msgstr ""
-
-#: ../../source/getting_started/introduction.rst:59
-msgid "Citing Kaiwu SDK"
-msgstr ""
-
-#: ../../source/getting_started/introduction.rst:61
-msgid "如果Kaiwu SDK对您的学术研究有帮助，玻色量子感谢您做如下引用。"
-msgstr ""
-
-#: ../../source/getting_started/introduction.rst:72
+#: ../../source/getting_started/introduction.rst:128
 msgid "或者"
 msgstr ""
+
+#~ msgid "Kaiwu SDK"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Kaiwu "
+#~ "SDK是一套软件开发套件，专为基于相干光量子计算机的QUBO问题求解而设计。该套件致力于为开发者提供一个便捷的Python环境，以构建适用于相干光量子计算机的软件算法，并直接通过物理接口（目前支持Ising矩阵）调用量子计算机真机进行计算。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Kaiwu "
+#~ "SDK目前包含以下核心模块：qubo、cim、ising、preprocess、classical、sampler、solver和utils。在典型应用场景中，用户首先利用qubo模块进行问题建模，随后借助solver模块对构建的QUBO模型进行高效求解。solver模块不仅负责管理QUBO模型的系数，还支持调用用户指定的optimizer对最终的Ising模型矩阵进行深度求解。"
+#~ msgstr ""
+
+#~ msgid "我们特别将Ising模型矩阵的求解功能定义为optimizer。其中，基于经典计算实现的optimizer，如SA、tabu等经典模拟求解器，均集成在classical模块中；而直接对接真机的optimizer则位于cim模块。此外，其他辅助模块提供了日志记录、降阶处理和降精度处理等实用功能，为用户提供全方位的支持。"
+#~ msgstr ""
+
+#~ msgid "典型的使用方式"
+#~ msgstr ""
+
+#~ msgid "预备知识"
+#~ msgstr ""
+
+#~ msgid "CIM"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "相干伊辛机(Coherent Ising "
+#~ "Machine，简称CIM)，是目前玻色量子重点研发的一项量子计算机技术。CIM是一种基于简并光学参量振荡器(DOPO)的光量子计算机。在数学实践中，我们可以将其抽象为优化Ising模型的专用计算机。"
+#~ msgstr ""
+
+#~ msgid "QUBO"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "在Kaiwu "
+#~ "SDK中，通过kw.qubo.details查看QUBO模型细节会显示offset和coefficients信息。其中offset表示QUBO模型中的常数项，与变量无关。coefficients表示QUBO模型中每个二值变量的系数取值，以及它们的交互项的系数取值。"
+#~ msgstr ""
+
+#~ msgid "CIM求解模型"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "CIM求解QUBO或优化Ising模型的过程就是，将QUBO中的\\ :math:`q_{ij}`\\ "
+#~ "或Ising模型中的\\ :math:`J_{ij}`\\ 输入CIM，CIM返回\\ "
+#~ ":math:`\\pmb x`\\ 或\\ :math:`\\sigma`\\ 的过程。"
+#~ msgstr ""
+
+#~ msgid "Citing Kaiwu SDK"
+#~ msgstr ""
+
+#~ msgid "如果Kaiwu SDK对您的学术研究有帮助，玻色量子感谢您做如下引用。"
+#~ msgstr ""
 

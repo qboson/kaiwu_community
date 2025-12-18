@@ -96,6 +96,7 @@ class Binary(BinaryExpression):
         super().__init__({("b" + name,): 1}, 0, name="b" + name)
 
     def clear(self):
+        """初始化所有属性"""
         self.name = ""
         self.coefficient = {}
         self.offset = 0

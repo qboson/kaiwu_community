@@ -4,12 +4,11 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Kaiwu Community 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-09 15:08+0800\n"
+"POT-Creation-Date: 2025-12-18 17:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -23,4 +22,8 @@ msgstr ""
 #: ../../source/getting_started/index.rst:3
 msgid "入门指南"
 msgstr "Getting Started Guide"
+
+#: ../../source/getting_started/index.rst:12
+msgid "新手教程"
+msgstr "Beginner's Tutorial"
 

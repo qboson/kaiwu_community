@@ -46,7 +46,7 @@ html_logo = "_static/sdk-logo.png"
 html_favicon = "_static/sdk-logo.png"
 
 html_theme_options = {
-    "show_nav_level": 1,
+    "show_nav_level": 2,
     "logo": {
         "text": project,
         "image_dark": "",

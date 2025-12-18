@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kaiwu Community 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-09 15:11+0800\n"
+"POT-Creation-Date: 2025-12-18 17:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -48,7 +48,8 @@ msgstr "Implement direct solving of QuboModel using Optimizer"
 msgid "Examples:"
 msgstr "Examples:"
 
-#: kaiwu_community.solver._simple_solver.SimpleSolver:19 of
+#: kaiwu_community.solver._simple_solver.SimpleSolver:19
+#: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:6 of
 msgid "Returns:"
 msgstr "Returns:"
 
@@ -67,3 +68,29 @@ msgstr ""
 #: kaiwu_community.solver._simple_solver.SimpleSolver:24 of
 msgid "float: qubo value."
 msgstr "float: qubo value."
+
+#: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:1 of
+msgid "求解QUBO"
+msgstr ""
+
+#: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:3 of
+msgid "Args:"
+msgstr ""
+
+#: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:4 of
+msgid "qubo_model (QuboModel): QUBO模型"
+msgstr ""
+
+#: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:7 of
+msgid "tuple: 元组，包含求解结果信息"
+msgstr ""
+
+#: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:8 of
+msgid "dict: 解字典"
+msgstr ""
+
+#: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:9 of
+#, fuzzy
+msgid "float: QUBO值"
+msgstr "float: qubo value."
+

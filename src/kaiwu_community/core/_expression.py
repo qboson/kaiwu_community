@@ -144,6 +144,7 @@ class Expression(dict):
         self.offset = offset
 
     def clear(self) -> None:
+        """初始化所有属性"""
         self.coefficient = {}
         self.offset = 0
 
@@ -278,9 +279,7 @@ class Expression(dict):
         return negative_delta, positive_delta
 
     def get_average_coefficient(self):
-        """ 返回coefficient的平均值
-
-        """
+        """ 返回coefficient的平均值"""
         coe_sum = 0
         num_item = 0
         for _, coe in self.coefficient.items():

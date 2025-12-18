@@ -5,6 +5,7 @@ Provide some basic implementation of solver and its interface
 """
 import logging
 import abc
+from functools import wraps
 
 logger = logging.getLogger(__name__)
 
@@ -16,6 +17,7 @@ class SolverBaseMeta(abc.ABCMeta):
         if name != 'Base' and 'solve_qubo' in namespace:
             original_execute = namespace['solve_qubo']
 
+            @wraps(original_execute)
             def wrapped_execute(self, *args, **kwargs):
                 result = original_execute(self, *args, **kwargs)
                 if result[0] is None:
