@@ -4,7 +4,7 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: Kaiwu Community 1.0.0\n"
@@ -33,7 +33,7 @@ msgid ""
 "**Kaiwu SDK 社区版** 是一套开源的软件开发套件，专为 **QUBO（二次无约束二进制优化）问题求解** "
 "而设计。它提供了便捷的Python环境，帮助开发者快速构建QUBO模型并高效求解，加速QUBO相关应用的开发和研究。"
 msgstr ""
-"**Kaiwu SDK Community Edition** is an open-source software development kit "
+"**Kaiwu SDK Community** is an open-source software development kit "
 "designed specifically for **QUBO (Quadratic Unconstrained Binary Optimization) "
 "problem solving**. It provides a convenient Python environment to help developers "
 "quickly build QUBO models and solve them efficiently, accelerating the development "
@@ -65,13 +65,13 @@ msgstr "2. Application Scenarios"
 
 #: ../../source/getting_started/introduction.rst:19
 msgid "Kaiwu SDK 社区版适用于多种场景，帮助不同用户解决实际问题："
-msgstr "Kaiwu SDK Community Edition is suitable for various scenarios, helping different users solve practical problems:"
+msgstr "Kaiwu SDK Community is suitable for various scenarios, helping different users solve practical problems:"
 
 #: ../../source/getting_started/introduction.rst:25
 msgid "用户类型"
 msgstr "User Type"
 
-#: ../../source/getting_started/introduction.rst:26
+#: ../../source/getting_started/introduction.rst:262
 msgid "实际问题"
 msgstr "Practical Problems"
 
@@ -133,7 +133,7 @@ msgstr "3. Core Modules"
 
 #: ../../source/getting_started/introduction.rst:45
 msgid "Kaiwu SDK 社区版采用模块化设计，包含以下核心模块："
-msgstr "Kaiwu SDK Community Edition adopts a modular design, including the following core modules:"
+msgstr "Kaiwu SDK Community adopts a modular design, including the following core modules:"
 
 #: ../../source/getting_started/introduction.rst:51
 msgid "模块名称"
@@ -225,7 +225,7 @@ msgstr "4. Typical Usage Workflow"
 
 #: ../../source/getting_started/introduction.rst:76
 msgid "使用Kaiwu SDK 社区版解决QUBO问题的典型流程如下："
-msgstr "The typical workflow for solving QUBO problems using Kaiwu SDK Community Edition is as follows:"
+msgstr "The typical workflow for solving QUBO problems using Kaiwu SDK Community is as follows:"
 
 #: ../../source/getting_started/introduction.rst:80
 msgid "**问题建模**：使用qubo模块将实际问题转化为QUBO模型"
@@ -248,9 +248,8 @@ msgid "**结果分析**：分析求解结果，验证解决方案的有效性"
 msgstr "**Result Analysis**: Analyze solving results, validate solution effectiveness"
 
 #: ../../source/getting_started/introduction.rst:87
-#, fuzzy
 msgid "5. 预备知识"
-msgstr "Prerequisite Knowledge"
+msgstr "5. Prerequisite Knowledge"
 
 #: ../../source/getting_started/introduction.rst:90
 msgid "Ising模型"
@@ -285,7 +284,6 @@ msgstr ""
 ":math:`h`\\ are the linear coefficients, which are known quantities."
 
 #: ../../source/getting_started/introduction.rst:99
-#, fuzzy
 msgid "QUBO模型"
 msgstr "QUBO"
 
@@ -346,7 +344,7 @@ msgid "6. 引用方式"
 msgstr "6. Citation"
 
 #: ../../source/getting_started/introduction.rst:117
-#, fuzzy
+
 msgid "如果Kaiwu SDK 社区版对您的学术研究有帮助，欢迎引用："
 msgstr ""
 "If Kaiwu SDK is helpful for your academic research, QBoson Quantum "

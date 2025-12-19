@@ -4,7 +4,7 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: Kaiwu Community 1.0.0\n"
@@ -128,7 +128,7 @@ msgstr "b (BinaryExpressionNDArray): Another matrix"
 
 #: kaiwu_community.core._matrix.BinaryExpressionNDArray.dot:6
 #: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:8 of
-#, fuzzy
+
 msgid "out: 可选输出数组，用于存储结果。需与预期输出形状一致。"
 msgstr ""
 "out: Optional output array to store the result. Must match the expected "
@@ -162,15 +162,13 @@ msgid "使用quicksum的求和方法"
 msgstr "Summation method using quicksum"
 
 #: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:4 of
-#, fuzzy
 msgid "axis: 指定求和的轴（维度）。默认为 None，表示对所有元素求和；若为整数或元组，则沿指定轴求和。"
-msgstr ""
-"axis: Specifies the axis (dimension) for summation. Default is None, "
+msgstr "axis: Specifies the axis (dimension) for summation. Default is None, "
 "meaning sum all elements; if integer or tuple, sum along the specified "
 "axis."
 
 #: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:6 of
-#, fuzzy
+
 msgid "dtype: 指定输出数据类型。若未提供，则默认使用输入数组的 dtype，但整数类型可能提升为平台整数精度。暂不支持。"
 msgstr ""
 "dtype: Specifies the output data type. If not provided, defaults to the "
@@ -178,21 +176,20 @@ msgstr ""
 "integer precision. Not supported yet."
 
 #: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:10 of
-#, fuzzy
+
 msgid "keepdims: 布尔值。若为 True，则保留被求和的轴作为长度为1的维度。暂不支持 。"
 msgstr ""
 "keepdims: Boolean. If True, retains the summed axis as a dimension of "
 "length 1. Not supported yet."
 
 #: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:12 of
-#, fuzzy
 msgid "initial: 求和的初始值（标量），默认为0。暂不支持。"
 msgstr ""
 "initial: Initial value for summation (scalar), default is 0. Not "
 "supported yet."
 
 #: kaiwu_community.core._matrix.BinaryExpressionNDArray.sum:14 of
-#, fuzzy
+
 msgid "where: 布尔数组，指定哪些元素参与求和（NumPy 1.20+支持）。暂不支持。"
 msgstr ""
 "where: Boolean array specifying which elements to include in the sum "
@@ -482,7 +479,7 @@ msgid "求解QUBO"
 msgstr "Solve QUBO"
 
 #: kaiwu_community.core._solver_base.SolverBase.solve_qubo:4 of
-#, fuzzy
+
 msgid "qubo_model (QuboModel): QUBO模型"
 msgstr "qubo (QUBO expression): QUBO expression"
 
@@ -491,12 +488,12 @@ msgid "tuple: 元组，包含求解结果信息"
 msgstr "tuple: Tuple containing solution result information"
 
 #: kaiwu_community.core._solver_base.SolverBase.solve_qubo:8 of
-#, fuzzy
+
 msgid "dict: 解字典"
 msgstr "dict: Dictionary containing constraint values"
 
 #: kaiwu_community.core._solver_base.SolverBase.solve_qubo:9 of
-#, fuzzy
+
 msgid "float: QUBO值"
 msgstr "float: Value obtained after substituting into qubo"
 
