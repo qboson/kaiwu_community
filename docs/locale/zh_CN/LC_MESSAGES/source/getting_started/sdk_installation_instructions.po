@@ -4,12 +4,11 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: Kaiwu Community 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-18 17:13+0800\n"
+"POT-Creation-Date: 2025-12-19 15:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -90,68 +89,64 @@ msgstr ""
 msgid "2.2 从PyPI安装（推荐用于使用）"
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:44
-msgid "该方式将在项目正式发布后可用。"
-msgstr ""
-
-#: ../../source/getting_started/sdk_installation_instructions.rst:46
+#: ../../source/getting_started/sdk_installation_instructions.rst:43
 msgid "pip install kaiwu-community"
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:49
+#: ../../source/getting_started/sdk_installation_instructions.rst:46
 msgid "2.3 直接使用源码"
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:51
+#: ../../source/getting_started/sdk_installation_instructions.rst:48
 msgid "如果您不想安装SDK，也可以直接将源码目录添加到Python路径中使用："
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:53
+#: ../../source/getting_started/sdk_installation_instructions.rst:50
 msgid "export PYTHONPATH=$PYTHONPATH:/path/to/kaiwu_community/src"
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:56
+#: ../../source/getting_started/sdk_installation_instructions.rst:53
 msgid "3. 验证安装"
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:58
+#: ../../source/getting_started/sdk_installation_instructions.rst:55
 msgid "安装完成后，您可以通过以下方式验证SDK是否安装成功："
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:66
+#: ../../source/getting_started/sdk_installation_instructions.rst:63
 msgid "4. 开发环境设置"
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:68
+#: ../../source/getting_started/sdk_installation_instructions.rst:65
 msgid "如果您计划参与SDK的开发，可以使用以下命令运行所有测试和代码检查："
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:70
+#: ../../source/getting_started/sdk_installation_instructions.rst:67
 msgid "make all_tests"
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:72
+#: ../../source/getting_started/sdk_installation_instructions.rst:69
 msgid "这将运行： - 代码风格检查（pylint） - 单元测试（pytest） - 文档测试（doctest）"
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:78
+#: ../../source/getting_started/sdk_installation_instructions.rst:75
 msgid "5. 卸载SDK"
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:80
+#: ../../source/getting_started/sdk_installation_instructions.rst:77
 msgid "如果您需要卸载SDK，可以使用以下命令："
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:82
-#: ../../source/getting_started/sdk_installation_instructions.rst:86
+#: ../../source/getting_started/sdk_installation_instructions.rst:79
+#: ../../source/getting_started/sdk_installation_instructions.rst:83
 msgid "pip uninstall kaiwu-community"
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:84
+#: ../../source/getting_started/sdk_installation_instructions.rst:81
 msgid "或者如果是从源码安装："
 msgstr ""
 
-#: ../../source/getting_started/sdk_installation_instructions.rst:88
+#: ../../source/getting_started/sdk_installation_instructions.rst:85
 msgid "然后删除克隆的仓库目录。"
 msgstr ""
 
@@ -182,5 +177,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "建模代码开头增加授权初始化代码，如果初始化错误请校验用户ID和SDK授权码或清除kaiwu/license.lic文件，然后重新初始化。"
+#~ msgstr ""
+
+#~ msgid "该方式将在项目正式发布后可用。"
 #~ msgstr ""
 
