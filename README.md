@@ -38,7 +38,7 @@ For more installation information, please refer to the [Installation Documentati
 
 ### Example: Traveling Salesman Problem (TSP)
 
-This example demonstrates how to solve the Traveling Salesman Problem using Kaiwu SDK Community Edition, including the following steps:
+This example demonstrates how to solve the Traveling Salesman Problem using Kaiwu SDK Community, including the following steps:
 
 * Build a TSP problem model using a distance matrix
 * Define QUBO objective function and constraints

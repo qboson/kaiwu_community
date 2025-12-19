@@ -4,7 +4,7 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: Kaiwu Community 1.0.2\n"
@@ -22,95 +22,101 @@ msgstr ""
 
 #: ../../source/faq/faq.rst:2
 msgid "常见问题"
-msgstr ""
+msgstr "FAQ"
 
 #: ../../source/faq/faq.rst:4
 msgid "本章节整理了使用Kaiwu SDK社区版过程中常见的问题和解决方案。"
-msgstr ""
+msgstr "This section collects common questions and solutions encountered when using Kaiwu SDK Community."
 
 #: ../../source/faq/faq.rst:7
 msgid "Q1: Kaiwu SDK社区版支持哪些Python版本？"
-msgstr ""
+msgstr "Q1: Which Python versions are supported by Kaiwu SDK Community?"
 
 #: ../../source/faq/faq.rst:8
 msgid "A1: Kaiwu SDK社区版仅支持Python 3.10的所有小版本，不支持Python 3.11及以上版本。"
-msgstr ""
+msgstr "A1: Kaiwu SDK Community only supports all minor versions of Python 3.10, and does not support Python 3.11 or above."
 
 #: ../../source/faq/faq.rst:11
 msgid "Q2: 如何安装Kaiwu SDK社区版？"
-msgstr ""
+msgstr "Q2: How to install Kaiwu SDK Community?"
 
 #: ../../source/faq/faq.rst:12
 msgid "A2: 您可以通过以下两种方式安装Kaiwu SDK社区版："
-msgstr ""
+msgstr "A2: You can install Kaiwu SDK Community in the following two ways:"
 
 #: ../../source/faq/faq.rst:14
 msgid "从源码安装："
-msgstr ""
+msgstr "Install from source:"
 
 #: ../../source/faq/faq.rst:22
 msgid "从PyPI安装："
-msgstr ""
+msgstr "Install from PyPI:"
 
 #: ../../source/faq/faq.rst:29
 msgid "Q3: Kaiwu SDK社区版包含哪些核心模块？"
-msgstr ""
+msgstr "Q3: What core modules are included in Kaiwu SDK Community?"
 
 #: ../../source/faq/faq.rst:30
 msgid "A3: Kaiwu SDK社区版包含以下核心模块："
-msgstr ""
+msgstr "A3: Kaiwu SDK Community includes the following core modules:"
 
 #: ../../source/faq/faq.rst:32
 msgid "qubo: 提供QUBO模型的构建和管理功能"
-msgstr ""
+msgstr "qubo: Provides QUBO model construction and management functionality"
 
 #: ../../source/faq/faq.rst:33
 msgid "ising: 支持Ising模型的表示和转换"
-msgstr ""
+msgstr "ising: Supports Ising model representation and conversion"
 
 #: ../../source/faq/faq.rst:34
 msgid "classical: 包含经典优化算法，如BruteForceOptimizer"
-msgstr ""
+msgstr "classical: Contains classical optimization algorithms, such as BruteForceOptimizer"
 
 #: ../../source/faq/faq.rst:35
 msgid "solver: 提供求解器框架，支持调用不同的优化器"
-msgstr ""
+msgstr "solver: Provides solver framework, supports calling different optimizers"
 
 #: ../../source/faq/faq.rst:36
 msgid "core: 提供核心数据结构和数学运算支持"
-msgstr ""
+msgstr "core: Provides core data structures and mathematical operation support"
 
 #: ../../source/faq/faq.rst:37
 msgid "common: 提供通用工具和配置管理"
-msgstr ""
+msgstr "common: Provides common utilities and configuration management"
 
 #: ../../source/faq/faq.rst:40
 msgid "Q4: 如何构建QUBO模型？"
-msgstr ""
+msgstr "Q4: How to build a QUBO model?"
 
 #: ../../source/faq/faq.rst:41
 msgid ""
 "A4: 您可以使用qubo模块构建QUBO模型，具体步骤请参考： - `TSP示例 <../getting_started/tsp.html>`_"
 " - `MaxCut示例 <../getting_started/max_cut.html>`_"
 msgstr ""
+"A4: You can use the qubo module to build QUBO models. For specific steps, "
+"please refer to: - `TSP Example <../getting_started/tsp.html>`_ - `MaxCut "
+"Example <../getting_started/max_cut.html>`_"
 
 #: ../../source/faq/faq.rst:46
 msgid "Q5: 如何创建自定义求解器和优化器？"
-msgstr ""
+msgstr "Q5: How to create custom solvers and optimizers?"
 
 #: ../../source/faq/faq.rst:47
 msgid ""
 "A5: 您可以通过继承OptimizerBase类创建自定义优化器，然后将其与求解器一起使用。具体请参考： - `如何制作求解器和优化器 "
 "<../advanced/custom_solver_optimizer.html>`_"
 msgstr ""
+"A5: You can create custom optimizers by inheriting from the OptimizerBase "
+"class, and then use them with solvers. For details, please refer to: - `How "
+"to Create Solvers and Optimizers <../advanced/custom_solver_optimizer.html>`_"
 
 #: ../../source/faq/faq.rst:51
 msgid "Q6: 遇到问题如何获取帮助？"
-msgstr ""
+msgstr "Q6: How to get help when encountering problems?"
 
 #: ../../source/faq/faq.rst:52
 msgid "A6: 您可以通过以下方式获取帮助："
-msgstr ""
+msgstr "A6: You can get help through the following ways:"
 
 #: ../../source/faq/faq.rst:54
 msgid ""
@@ -118,12 +124,15 @@ msgid ""
 "<../getting_started/sdk_installation_instructions.html>`_ - `API文档 "
 "<../modules/index.html>`_"
 msgstr ""
+"Check documentation: - `Quick Start <../getting_started/index.html>`_ - "
+"`Installation Instructions <../getting_started/sdk_installation_instructions.html>`_ "
+"- `API Documentation <../modules/index.html>`_"
 
 #: ../../source/faq/faq.rst:59
 msgid "提交Issue： - GitHub仓库：https://github.com/qbosontech/kaiwu_community"
-msgstr ""
+msgstr "Submit an Issue: - GitHub repository: https://github.com/qbosontech/kaiwu_community"
 
 #: ../../source/faq/faq.rst:62
 msgid "加入社区： - 社区论坛：https://kaiwu.qboson.com/portal.php"
-msgstr ""
+msgstr "Join the community: - Community forum: https://kaiwu.qboson.com/portal.php"
 

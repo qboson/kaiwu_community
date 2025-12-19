@@ -4,7 +4,7 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: Kaiwu Community 1.0.0\n"
@@ -26,137 +26,142 @@ msgstr "Overview"
 
 #: ../../source/getting_started/introduction.rst:5
 msgid "1. 产品定位"
-msgstr ""
+msgstr "1. Product Positioning"
 
 #: ../../source/getting_started/introduction.rst:7
 msgid ""
 "**Kaiwu SDK 社区版** 是一套开源的软件开发套件，专为 **QUBO（二次无约束二进制优化）问题求解** "
 "而设计。它提供了便捷的Python环境，帮助开发者快速构建QUBO模型并高效求解，加速QUBO相关应用的开发和研究。"
 msgstr ""
+"**Kaiwu SDK Community** is an open-source software development kit "
+"designed specifically for **QUBO (Quadratic Unconstrained Binary Optimization) "
+"problem solving**. It provides a convenient Python environment to help developers "
+"quickly build QUBO models and solve them efficiently, accelerating the development "
+"and research of QUBO-related applications."
 
 #: ../../source/getting_started/introduction.rst:10
 msgid "核心价值"
-msgstr ""
+msgstr "Core Values"
 
 #: ../../source/getting_started/introduction.rst:11
 msgid "**快速建模**：简洁易用的接口，支持快速构建复杂的QUBO模型"
-msgstr ""
+msgstr "**Rapid Modeling**: Simple and easy-to-use interfaces, supporting fast construction of complex QUBO models"
 
 #: ../../source/getting_started/introduction.rst:12
 msgid "**灵活扩展**：模块化设计，允许开发者轻松扩展新的求解器和优化算法"
-msgstr ""
+msgstr "**Flexible Extension**: Modular design, allowing developers to easily extend new solvers and optimization algorithms"
 
 #: ../../source/getting_started/introduction.rst:13
 msgid "**内置工具**：包含基础求解器和优化器，支持快速验证模型效果"
-msgstr ""
+msgstr "**Built-in Tools**: Includes basic solvers and optimizers, supporting quick validation of model performance"
 
 #: ../../source/getting_started/introduction.rst:14
 msgid "**开源自由**：基于Apache 2.0许可证，完全开源，支持商业和非商业使用"
-msgstr ""
+msgstr "**Open Source Freedom**: Based on the Apache 2.0 license, fully open source, supporting both commercial and non-commercial use"
 
 #: ../../source/getting_started/introduction.rst:17
 msgid "2. 应用场景"
-msgstr ""
+msgstr "2. Application Scenarios"
 
 #: ../../source/getting_started/introduction.rst:19
 msgid "Kaiwu SDK 社区版适用于多种场景，帮助不同用户解决实际问题："
-msgstr ""
+msgstr "Kaiwu SDK Community is suitable for various scenarios, helping different users solve practical problems:"
 
 #: ../../source/getting_started/introduction.rst:25
 msgid "用户类型"
-msgstr ""
+msgstr "User Type"
 
-#: ../../source/getting_started/introduction.rst:26
+#: ../../source/getting_started/introduction.rst:262
 msgid "实际问题"
-msgstr ""
+msgstr "Practical Problems"
 
 #: ../../source/getting_started/introduction.rst:27
 msgid "SDK价值"
-msgstr ""
+msgstr "SDK Value"
 
 #: ../../source/getting_started/introduction.rst:28
 msgid "研究人员"
-msgstr ""
+msgstr "Researchers"
 
 #: ../../source/getting_started/introduction.rst:29
 msgid "探索QUBO问题建模方法，验证新优化算法性能，开展量子计算相关研究"
-msgstr ""
+msgstr "Explore QUBO problem modeling methods, validate new optimization algorithm performance, conduct quantum computing related research"
 
 #: ../../source/getting_started/introduction.rst:30
 msgid "提供快速建模和求解能力，加速研究进程"
-msgstr ""
+msgstr "Provide rapid modeling and solving capabilities, accelerate research progress"
 
 #: ../../source/getting_started/introduction.rst:31
 msgid "开发者"
-msgstr ""
+msgstr "Developers"
 
 #: ../../source/getting_started/introduction.rst:32
 msgid "构建自定义QUBO求解器，开发基于QUBO的应用，集成求解功能到现有系统"
-msgstr ""
+msgstr "Build custom QUBO solvers, develop QUBO-based applications, integrate solving capabilities into existing systems"
 
 #: ../../source/getting_started/introduction.rst:33
 msgid "模块化设计，支持灵活扩展和快速开发"
-msgstr ""
+msgstr "Modular design, supporting flexible extension and rapid development"
 
 #: ../../source/getting_started/introduction.rst:34
 msgid "企业用户"
-msgstr ""
+msgstr "Enterprise Users"
 
 #: ../../source/getting_started/introduction.rst:35
 msgid "开发QUBO解决方案原型，优化业务流程和资源配置，探索量子计算应用"
-msgstr ""
+msgstr "Develop QUBO solution prototypes, optimize business processes and resource allocation, explore quantum computing applications"
 
 #: ../../source/getting_started/introduction.rst:36
 msgid "降低开发成本，加速解决方案落地"
-msgstr ""
+msgstr "Reduce development costs, accelerate solution implementation"
 
 #: ../../source/getting_started/introduction.rst:37
 msgid "学生和教育工作者"
-msgstr ""
+msgstr "Students and Educators"
 
 #: ../../source/getting_started/introduction.rst:38
 msgid "学习QUBO模型和求解方法，开展量子计算实验和项目"
-msgstr ""
+msgstr "Learn QUBO models and solving methods, conduct quantum computing experiments and projects"
 
 #: ../../source/getting_started/introduction.rst:39
 msgid "提供直观易用的工具，辅助教学和学习"
-msgstr ""
+msgstr "Provide intuitive and easy-to-use tools, assist teaching and learning"
 
 #: ../../source/getting_started/introduction.rst:43
 msgid "3. 核心模块"
-msgstr ""
+msgstr "3. Core Modules"
 
 #: ../../source/getting_started/introduction.rst:45
 msgid "Kaiwu SDK 社区版采用模块化设计，包含以下核心模块："
-msgstr ""
+msgstr "Kaiwu SDK Community adopts a modular design, including the following core modules:"
 
 #: ../../source/getting_started/introduction.rst:51
 msgid "模块名称"
-msgstr ""
+msgstr "Module Name"
 
 #: ../../source/getting_started/introduction.rst:52
 msgid "主要功能"
-msgstr ""
+msgstr "Main Functions"
 
 #: ../../source/getting_started/introduction.rst:53
 msgid "用户价值"
-msgstr ""
+msgstr "User Value"
 
 #: ../../source/getting_started/introduction.rst:54
 msgid "**qubo**"
-msgstr ""
+msgstr "**qubo**"
 
 #: ../../source/getting_started/introduction.rst:55
 msgid "提供QUBO模型的构建和管理功能"
-msgstr ""
+msgstr "Provides QUBO model construction and management functions"
 
 #: ../../source/getting_started/introduction.rst:56
 msgid "帮助用户快速构建QUBO模型"
-msgstr ""
+msgstr "Helps users quickly build QUBO models"
 
 #: ../../source/getting_started/introduction.rst:57
 msgid "**ising**"
-msgstr ""
+msgstr "**ising**"
 
 #: ../../source/getting_started/introduction.rst:58
 msgid "支持Ising模型的表示和转换"
@@ -164,88 +169,87 @@ msgstr "Support the representation and transformation of Ising model"
 
 #: ../../source/getting_started/introduction.rst:59
 msgid "方便用户在QUBO和Ising模型之间转换"
-msgstr ""
+msgstr "Facilitates conversion between QUBO and Ising models for users"
 
 #: ../../source/getting_started/introduction.rst:60
 msgid "**classical**"
-msgstr ""
+msgstr "**classical**"
 
 #: ../../source/getting_started/introduction.rst:61
 msgid "包含经典优化算法，如BruteForceOptimizer"
-msgstr ""
+msgstr "Contains classical optimization algorithms, such as BruteForceOptimizer"
 
 #: ../../source/getting_started/introduction.rst:62
 msgid "提供基础求解能力，支持快速验证模型"
-msgstr ""
+msgstr "Provides basic solving capabilities, supporting quick model validation"
 
 #: ../../source/getting_started/introduction.rst:63
 msgid "**solver**"
-msgstr ""
+msgstr "**solver**"
 
 #: ../../source/getting_started/introduction.rst:64
 msgid "提供求解器框架，支持调用不同的优化器"
-msgstr ""
+msgstr "Provides solver framework, supporting calls to different optimizers"
 
 #: ../../source/getting_started/introduction.rst:65
 msgid "简化求解器调用流程，支持灵活扩展"
-msgstr ""
+msgstr "Simplifies solver invocation process, supporting flexible extension"
 
 #: ../../source/getting_started/introduction.rst:66
 msgid "**core**"
-msgstr ""
+msgstr "**core**"
 
 #: ../../source/getting_started/introduction.rst:67
 msgid "提供核心数据结构和数学运算支持"
-msgstr ""
+msgstr "Provides core data structures and mathematical operation support"
 
 #: ../../source/getting_started/introduction.rst:68
 msgid "提供高效的底层计算能力"
-msgstr ""
+msgstr "Provides efficient low-level computing capabilities"
 
 #: ../../source/getting_started/introduction.rst:69
 msgid "**common**"
-msgstr ""
+msgstr "**common**"
 
 #: ../../source/getting_started/introduction.rst:70
 msgid "提供通用工具和配置管理"
-msgstr ""
+msgstr "Provides common utilities and configuration management"
 
 #: ../../source/getting_started/introduction.rst:71
 msgid "简化开发流程，提高开发效率"
-msgstr ""
+msgstr "Simplifies development process, improves development efficiency"
 
 #: ../../source/getting_started/introduction.rst:74
 msgid "4. 典型使用流程"
-msgstr ""
+msgstr "4. Typical Usage Workflow"
 
 #: ../../source/getting_started/introduction.rst:76
 msgid "使用Kaiwu SDK 社区版解决QUBO问题的典型流程如下："
-msgstr ""
+msgstr "The typical workflow for solving QUBO problems using Kaiwu SDK Community is as follows:"
 
 #: ../../source/getting_started/introduction.rst:80
 msgid "**问题建模**：使用qubo模块将实际问题转化为QUBO模型"
-msgstr ""
+msgstr "**Problem Modeling**: Use the qubo module to convert practical problems into QUBO models"
 
 #: ../../source/getting_started/introduction.rst:81
 msgid "**模型配置**：设置模型参数和求解选项"
-msgstr ""
+msgstr "**Model Configuration**: Set model parameters and solving options"
 
 #: ../../source/getting_started/introduction.rst:82
 msgid "**求解器选择**：选择合适的求解器或优化器"
-msgstr ""
+msgstr "**Solver Selection**: Choose an appropriate solver or optimizer"
 
 #: ../../source/getting_started/introduction.rst:83
 msgid "**模型求解**：调用solver模块对QUBO模型进行求解"
-msgstr ""
+msgstr "**Model Solving**: Call the solver module to solve the QUBO model"
 
 #: ../../source/getting_started/introduction.rst:84
 msgid "**结果分析**：分析求解结果，验证解决方案的有效性"
-msgstr ""
+msgstr "**Result Analysis**: Analyze solving results, validate solution effectiveness"
 
 #: ../../source/getting_started/introduction.rst:87
-#, fuzzy
 msgid "5. 预备知识"
-msgstr "Prerequisite Knowledge"
+msgstr "5. Prerequisite Knowledge"
 
 #: ../../source/getting_started/introduction.rst:90
 msgid "Ising模型"
@@ -280,7 +284,6 @@ msgstr ""
 ":math:`h`\\ are the linear coefficients, which are known quantities."
 
 #: ../../source/getting_started/introduction.rst:99
-#, fuzzy
 msgid "QUBO模型"
 msgstr "QUBO"
 
@@ -338,10 +341,10 @@ msgstr ""
 
 #: ../../source/getting_started/introduction.rst:115
 msgid "6. 引用方式"
-msgstr ""
+msgstr "6. Citation"
 
 #: ../../source/getting_started/introduction.rst:117
-#, fuzzy
+
 msgid "如果Kaiwu SDK 社区版对您的学术研究有帮助，欢迎引用："
 msgstr ""
 "If Kaiwu SDK is helpful for your academic research, QBoson Quantum "

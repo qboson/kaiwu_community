@@ -4,7 +4,7 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: Kaiwu Community 1.0.0\n"
@@ -71,26 +71,26 @@ msgstr "float: qubo value."
 
 #: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:1 of
 msgid "求解QUBO"
-msgstr ""
+msgstr "Solve QUBO"
 
 #: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:3 of
 msgid "Args:"
-msgstr ""
+msgstr "Args:"
 
 #: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:4 of
 msgid "qubo_model (QuboModel): QUBO模型"
-msgstr ""
+msgstr "qubo_model (QuboModel): QUBO model"
 
 #: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:7 of
 msgid "tuple: 元组，包含求解结果信息"
-msgstr ""
+msgstr "tuple: Tuple containing solution result information"
 
 #: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:8 of
 msgid "dict: 解字典"
-msgstr ""
+msgstr "dict: Solution dictionary"
 
 #: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:9 of
-#, fuzzy
+
 msgid "float: QUBO值"
 msgstr "float: qubo value."
 

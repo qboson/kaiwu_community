@@ -119,7 +119,7 @@ QUBO模型
 .. code:: python
 
     @software{KaiwuSDKCommunity,
-    title = {Kaiwu SDK Community Edition for QUBO problem solving},
+    title = {Kaiwu SDK Community for QUBO problem solving},
     author = {{QBoson Inc.}},
     year = {2023},
     url = {https://github.com/qbosontech/kaiwu_community}
@@ -130,7 +130,7 @@ QUBO模型
 .. code:: python
 
     @misc{KaiwuSDKCommunity,
-    title = {Kaiwu SDK Community Edition for QUBO problem solving},
+    title = {Kaiwu SDK Community for QUBO problem solving},
     author = {{QBoson Inc.}},
     year = {2023},
     url = {https://github.com/qbosontech/kaiwu_community}

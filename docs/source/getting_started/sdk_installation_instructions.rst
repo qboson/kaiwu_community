@@ -40,9 +40,6 @@ Kaiwu SDK 社区版提供多种安装方式，您可以根据自己的需求选�
 2.2 从PyPI安装（推荐用于使用）
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
-   该方式将在项目正式发布后可用。
-
     pip install kaiwu-community
 
 2.3 直接使用源码
@@ -60,7 +57,7 @@ Kaiwu SDK 社区版提供多种安装方式，您可以根据自己的需求选�
    .. code:: python
 
        import kaiwu_community as kw
-       print("Kaiwu SDK Community Edition installed successfully!")
+       print("Kaiwu SDK Community installed successfully!")
 
 4. 开发环境设置
 ---------------
