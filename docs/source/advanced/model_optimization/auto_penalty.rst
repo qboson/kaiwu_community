@@ -45,7 +45,7 @@ QUBO表达式中，与 :math:`x_i` 相关的项可以分离出来。
 
 .. code:: python
 
-    import kaiwu as kw
+    import kaiwu_community as kw
     x = kw.qubo.ndarray(4, 'x', kw.qubo.Binary)
     cons = (x[0] + x[1] + 2*x[3] - 2)**2 + 2 * x[2]
     obj = 3*(x[0] - x[1])**2 - 2 * x[2]
