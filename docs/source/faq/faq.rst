@@ -15,7 +15,7 @@ A2: 您可以通过以下两种方式安装Kaiwu SDK社区版：
 
 .. code:: python
 
-       git clone https://github.com/qboson/kaiwu_community.git
+       git clone https://github.com/qboson/kaiwu.git
        cd kaiwu_community
        pip install -e .
 

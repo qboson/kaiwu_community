@@ -1,10 +1,10 @@
-kaiwu_community.common package
+kaiwu.common package
 ==================================
 
 Module contents
 ---------------
 
-.. automodule:: kaiwu_community.common
+.. automodule:: kaiwu.common
    :members:
    :undoc-members:
    :show-inheritance:

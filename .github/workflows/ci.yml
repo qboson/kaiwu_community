@@ -24,13 +24,13 @@ jobs:
 
       - name: Pylint
         run: |
-          pylint src/kaiwu_community
+          pylint src/kaiwu
 
       - name: Doctest (docs-test)
         run: |
-          pytest --doctest-modules -o doctest_optionflags=NORMALIZE_WHITESPACE src/kaiwu_community
+          pytest --doctest-modules -o doctest_optionflags=NORMALIZE_WHITESPACE src/kaiwu
 
       - name: Pytest + Coverage
         run: |
-          coverage run --source=src/kaiwu_community -m pytest tests
+          coverage run --source=src/kaiwu -m pytest tests
           coverage report

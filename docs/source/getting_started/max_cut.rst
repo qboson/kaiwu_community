@@ -57,7 +57,7 @@
 .. code:: python
 
    import numpy as np
-   import kaiwu_community as kw
+   import kaiwu as kw
 
    # invert input graph matrix
    matrix = -np.array([

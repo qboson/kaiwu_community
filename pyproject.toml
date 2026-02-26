@@ -31,4 +31,4 @@ where = ["src"]
 
 [tool.setuptools.dynamic]
 dependencies = { file = ["requirements.txt"] }
-version = { attr = "kaiwu_community.__version__" }
+version = { attr = "kaiwu.__version__" }

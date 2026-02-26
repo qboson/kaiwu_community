@@ -1,10 +1,10 @@
-kaiwu_community.ising package
+kaiwu.ising package
 =================================
 
 Module contents
 ---------------
 
-.. automodule:: kaiwu_community.ising
+.. automodule:: kaiwu.ising
    :members:
    :undoc-members:
    :show-inheritance:

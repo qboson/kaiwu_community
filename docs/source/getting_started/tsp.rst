@@ -129,7 +129,7 @@
     # Import numpy and kaiwu
     import numpy as np
     import pandas as pd
-    import kaiwu_community as kw
+    import kaiwu as kw
 
 加载图数据， 并做预处理。 下面的代码中定义了x变量就是模型中的决策变量\ :math:`x_{u,j}=1`\。
 

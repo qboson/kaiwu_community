@@ -60,7 +60,7 @@ msgid "OptimizerBase 简介"
 msgstr ""
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:24
-msgid "优化器需要继承`kaiwu_community.core.OptimizerBase`类，并实现以下方法："
+msgid "优化器需要继承`kaiwu.core.OptimizerBase`类，并实现以下方法："
 msgstr ""
 
 #: ../../source/advanced/optimizer_and_solver/custom_solver_optimizer.rst:26

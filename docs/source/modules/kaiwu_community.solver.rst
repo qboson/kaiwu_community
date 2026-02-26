@@ -1,10 +1,10 @@
-kaiwu_community.solver package
+kaiwu.solver package
 ====================================
 
 Module contents
 ---------------
 
-.. automodule:: kaiwu_community.solver
+.. automodule:: kaiwu.solver
    :members:
    :undoc-members:
    :show-inheritance:

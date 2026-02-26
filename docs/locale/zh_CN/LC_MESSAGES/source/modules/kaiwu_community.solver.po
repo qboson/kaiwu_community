@@ -20,74 +20,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: ../../source/modules/kaiwu_community.solver.rst:2
-msgid "kaiwu_community.solver package"
+#: ../../source/modules/kaiwu.solver.rst:2
+msgid "kaiwu.solver package"
 msgstr ""
 
-#: ../../source/modules/kaiwu_community.solver.rst:5
+#: ../../source/modules/kaiwu.solver.rst:5
 msgid "Module contents"
 msgstr ""
 
-#: kaiwu_community.solver:1 of
+#: kaiwu.solver:1 of
 msgid "模块: solver"
 msgstr ""
 
-#: kaiwu_community.solver:3 of
+#: kaiwu.solver:3 of
 msgid "功能: 提供一系列基于cim/classical中的opitimizer进行求解的solver"
 msgstr ""
 
-#: kaiwu_community.solver._simple_solver.SimpleSolver:1 of
-msgid "基类：:py:class:`~kaiwu_community.core._solver_base.SolverBase`"
+#: kaiwu.solver._simple_solver.SimpleSolver:1 of
+msgid "基类：:py:class:`~kaiwu.core._solver_base.SolverBase`"
 msgstr ""
 
-#: kaiwu_community.solver._simple_solver.SimpleSolver:1 of
+#: kaiwu.solver._simple_solver.SimpleSolver:1 of
 msgid "实现用Optimizer直接对QuboModel进行求解"
 msgstr ""
 
-#: kaiwu_community.solver._simple_solver.SimpleSolver:3 of
+#: kaiwu.solver._simple_solver.SimpleSolver:3 of
 msgid "Examples:"
 msgstr ""
 
-#: kaiwu_community.solver._simple_solver.SimpleSolver:19
-#: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:6 of
+#: kaiwu.solver._simple_solver.SimpleSolver:19
+#: kaiwu.solver._simple_solver.SimpleSolver.solve_qubo:6 of
 msgid "Returns:"
 msgstr ""
 
-#: kaiwu_community.solver._simple_solver.SimpleSolver:20 of
+#: kaiwu.solver._simple_solver.SimpleSolver:20 of
 msgid "tuple: Result dictionary and Result dictionary."
 msgstr ""
 
-#: kaiwu_community.solver._simple_solver.SimpleSolver:22 of
+#: kaiwu.solver._simple_solver.SimpleSolver:22 of
 msgid ""
 "dict: Result dictionary. The key is the variable name, and the value is "
 "the corresponding spin value."
 msgstr ""
 
-#: kaiwu_community.solver._simple_solver.SimpleSolver:24 of
+#: kaiwu.solver._simple_solver.SimpleSolver:24 of
 msgid "float: qubo value."
 msgstr ""
 
-#: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:1 of
+#: kaiwu.solver._simple_solver.SimpleSolver.solve_qubo:1 of
 msgid "求解QUBO"
 msgstr ""
 
-#: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:3 of
+#: kaiwu.solver._simple_solver.SimpleSolver.solve_qubo:3 of
 msgid "Args:"
 msgstr ""
 
-#: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:4 of
+#: kaiwu.solver._simple_solver.SimpleSolver.solve_qubo:4 of
 msgid "qubo_model (QuboModel): QUBO模型"
 msgstr ""
 
-#: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:7 of
+#: kaiwu.solver._simple_solver.SimpleSolver.solve_qubo:7 of
 msgid "tuple: 元组，包含求解结果信息"
 msgstr ""
 
-#: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:8 of
+#: kaiwu.solver._simple_solver.SimpleSolver.solve_qubo:8 of
 msgid "dict: 解字典"
 msgstr ""
 
-#: kaiwu_community.solver._simple_solver.SimpleSolver.solve_qubo:9 of
+#: kaiwu.solver._simple_solver.SimpleSolver.solve_qubo:9 of
 msgid "float: QUBO值"
 msgstr ""
 

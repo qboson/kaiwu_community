@@ -1,10 +1,10 @@
-kaiwu_community.qubo package
+kaiwu.qubo package
 ===============================
 
 Module contents
 ---------------
 
-.. automodule:: kaiwu_community.qubo
+.. automodule:: kaiwu.qubo
    :members:
    :undoc-members:
    :show-inheritance:

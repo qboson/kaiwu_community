@@ -3,11 +3,16 @@ import sys
 import copy
 from common.config import BASE_DIR
 
-sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
-import kaiwu_community as kw
+sys.path.insert(0, os.path.join(BASE_DIR, "src"))
+import kaiwu as kw
 import numpy as np
-from kaiwu_community.core import (Binary, BinaryExpression, get_min_penalty_from_deltas,
-                                  get_min_penalty_for_equal_constraint, get_min_penalty)
+from kaiwu.core import (
+    Binary,
+    BinaryExpression,
+    get_min_penalty_from_deltas,
+    get_min_penalty_for_equal_constraint,
+    get_min_penalty,
+)
 
 
 def find_feasible_solutions(cons: BinaryExpression) -> list:
@@ -64,8 +69,9 @@ def find_min_constraint_solutions(cons: BinaryExpression) -> list:
     return res
 
 
-def is_local_optimal_equal_constraint(obj: BinaryExpression, cons: BinaryExpression, penalty,
-                                      feasible_sol: dict) -> bool:
+def is_local_optimal_equal_constraint(
+    obj: BinaryExpression, cons: BinaryExpression, penalty, feasible_sol: dict
+) -> bool:
     """
     判断这个可行解在其邻域内（翻转一个比特的邻域）是不是局部最优的
     :param obj: 原目标函数值
@@ -73,7 +79,9 @@ def is_local_optimal_equal_constraint(obj: BinaryExpression, cons: BinaryExpress
     :param feasible_sol: 一个满足cons约束的解（只包含cons中含有的变量）key是二值变量，value是0或1
     :return: True表示可行解是局部最优的
     """
-    cons_variables = [key[0] for key in cons.coefficient]  # 放约束项cons所包含的所有变量
+    cons_variables = [
+        key[0] for key in cons.coefficient
+    ]  # 放约束项cons所包含的所有变量
     obj_variables = set()  # 放目标函数obj所包含的所有变量
     for key in obj.coefficient:
         obj_variables.add(key[0])
@@ -116,8 +124,13 @@ def test_get_min_penalty_for_equal_constraint():
     penalty = get_min_penalty_for_equal_constraint(obj, cons)
     res = find_feasible_solutions(cons)
     for feasible_sol in res:
-        assert is_local_optimal_equal_constraint(obj, cons, penalty, feasible_sol) is True
-        assert is_local_optimal_equal_constraint(obj, cons, penalty / 10, feasible_sol) is False
+        assert (
+            is_local_optimal_equal_constraint(obj, cons, penalty, feasible_sol) is True
+        )
+        assert (
+            is_local_optimal_equal_constraint(obj, cons, penalty / 10, feasible_sol)
+            is False
+        )
 
 
 def test_get_min_penalty():
@@ -141,7 +154,9 @@ def test_get_min_penalty_exhaustive():
 
     obj_vars = obj.get_variables()
     neg_delta, pos_delta = obj.get_max_deltas()
-    penalty = get_min_penalty_from_deltas(cons, neg_delta, pos_delta, obj_vars, min_delta_method='exhaust')
+    penalty = get_min_penalty_from_deltas(
+        cons, neg_delta, pos_delta, obj_vars, min_delta_method="exhaust"
+    )
     res = find_min_constraint_solutions(cons)
     for feasible_sol in res:
         assert is_local_optimal(obj + penalty * cons, feasible_sol, v) is True

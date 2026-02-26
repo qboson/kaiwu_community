@@ -1,6 +1,7 @@
 """
 Tests for core._matrix module
 """
+
 import os
 import sys
 import numpy as np
@@ -9,11 +10,11 @@ from numpy.testing import assert_array_equal, assert_array_almost_equal
 
 from common.config import BASE_DIR
 
-sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
+sys.path.insert(0, os.path.join(BASE_DIR, "src"))
 
-import kaiwu_community as kw
-from kaiwu_community.core._matrix import BinaryExpressionNDArray, dot, ndarray
-from kaiwu_community.core import Binary, Expression
+import kaiwu as kw
+from kaiwu.core._matrix import BinaryExpressionNDArray, dot, ndarray
+from kaiwu.core import Binary, Expression
 
 
 def test_dot_basic():
@@ -64,25 +65,25 @@ def test_binary_expression_array_creation():
 
 def test_binary_expression_array_comparison():
     """Test BinaryExpressionArray comparison operations"""
-    x = kw.core.Binary('x')
-    y = kw.core.Binary('y')
+    x = kw.core.Binary("x")
+    y = kw.core.Binary("y")
     arr1 = BinaryExpressionNDArray((2,), dtype=Expression)
     arr2 = BinaryExpressionNDArray((2,), dtype=Expression)
     arr1[0], arr1[1] = x, y
     arr2[0], arr2[1] = y, x
 
     # Test all comparison operators
-    assert str(arr1 < arr2) == '[-y+x<0, -x+y<0,]'
-    assert str(arr1 <= arr2) == '[-y+x<=0, -x+y<=0,]'
-    assert str(arr1 > arr2) == '[-y+x>0, -x+y>0,]'
-    assert str(arr1 >= arr2) == '[-y+x>=0, -x+y>=0,]'
-    assert str(arr1 == arr2) == '[-y+x==0, -x+y==0,]'
+    assert str(arr1 < arr2) == "[-y+x<0, -x+y<0,]"
+    assert str(arr1 <= arr2) == "[-y+x<=0, -x+y<=0,]"
+    assert str(arr1 > arr2) == "[-y+x>0, -x+y>0,]"
+    assert str(arr1 >= arr2) == "[-y+x>=0, -x+y>=0,]"
+    assert str(arr1 == arr2) == "[-y+x==0, -x+y==0,]"
 
 
 def test_binary_expression_array_dot():
     """Test BinaryExpressionArray dot product"""
-    x = kw.core.Binary('x')
-    y = kw.core.Binary('y')
+    x = kw.core.Binary("x")
+    y = kw.core.Binary("y")
     arr1 = BinaryExpressionNDArray((2,), dtype=Expression)
     arr2 = BinaryExpressionNDArray((2,), dtype=Expression)
     arr1[0], arr1[1] = x, y
@@ -94,8 +95,8 @@ def test_binary_expression_array_dot():
 
 def test_binary_expression_array_sum():
     """Test BinaryExpressionArray sum operation"""
-    x = kw.core.Binary('x')
-    y = kw.core.Binary('y')
+    x = kw.core.Binary("x")
+    y = kw.core.Binary("y")
     arr = BinaryExpressionNDArray((2, 2), dtype=Expression)
     arr[0, 0], arr[0, 1], arr[1, 0], arr[1, 1] = x, y, x, y
 
@@ -111,8 +112,8 @@ def test_binary_expression_array_sum():
 
 def test_binary_expression_array_sum_with_out():
     """Test BinaryExpressionArray sum with out parameter"""
-    x = kw.core.Binary('x')
-    y = kw.core.Binary('y')
+    x = kw.core.Binary("x")
+    y = kw.core.Binary("y")
     arr = BinaryExpressionNDArray((2, 2), dtype=Expression)
     arr[0, 0], arr[0, 1], arr[1, 0], arr[1, 1] = x, y, x, y
 
@@ -153,8 +154,8 @@ def test_ndarray_with_parameters():
 
 def test_binary_expression_array_matmul():
     """Test BinaryExpressionArray matrix multiplication operator @"""
-    x = kw.core.Binary('x')
-    y = kw.core.Binary('y')
+    x = kw.core.Binary("x")
+    y = kw.core.Binary("y")
     arr1 = BinaryExpressionNDArray((2,), dtype=Expression)
     arr2 = BinaryExpressionNDArray((2,), dtype=Expression)
     arr1[0], arr1[1] = x, y
