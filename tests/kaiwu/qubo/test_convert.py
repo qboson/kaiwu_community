@@ -5,8 +5,8 @@ from common.config import BASE_DIR
 
 sys.path.insert(0, os.path.join(BASE_DIR, "src"))
 import kaiwu as kw
-from kaiwu.qubo import qubo_matrix_to_qubo_model
-from kaiwu.conversion import qubo_matrix_to_ising_matrix, ising_matrix_to_qubo_matrix
+from kaiwu.core import qubo_matrix_to_qubo_model
+from kaiwu.core import qubo_matrix_to_ising_matrix, ising_matrix_to_qubo_matrix
 
 
 def assert_dict_equality(known_dict, check_dict):
@@ -60,16 +60,16 @@ def test_qubo_to_ising():
 def test_cim_ising_model():
     b1, b2 = kw.core.Binary("b1"), kw.core.Binary("b2")
     q = b1 + b2 + 2 * b1 * b2
-    qubo_model = kw.qubo.QuboModel(q)
-    ci = kw.conversion.qubo_model_to_ising_model(qubo_model)
+    qubo_model = kw.core.QuboModel(q)
+    ci = kw.core.qubo_model_to_ising_model(qubo_model)
 
-    _qubo_model = kw.qubo.QuboModel(q)
+    _qubo_model = kw.core.QuboModel(q)
     _qubo_matrix = _qubo_model.get_matrix()
-    _ising_matrix, _bias = kw.conversion.qubo_matrix_to_ising_matrix(_qubo_matrix)
+    _ising_matrix, _bias = kw.core.qubo_matrix_to_ising_matrix(_qubo_matrix)
     _ci = {
         "cim_ising_matrix": _ising_matrix,
         "bias": _bias,
-        "variables": {"bb1": 0, "bb2": 1, "a__spin__": 2},
+        "variables": {"b1": 0, "b2": 1, "__spin__": 2},
         "qubo_matrix": _qubo_matrix,
     }
     assert_dict_equality(ci, _ci)
@@ -78,12 +78,12 @@ def test_cim_ising_model():
 def test_qubo_model_to_qubo_matrix():
     b1, b2 = kw.core.Binary("b1"), kw.core.Binary("b2")
     q = b1 + b2 + 2 * b1 * b2
-    qubo_model = kw.qubo.QuboModel(q)
+    qubo_model = kw.core.QuboModel(q)
     q_matrix = qubo_model.get_matrix()
     assert (q_matrix == np.array([[1, 2], [0, 1]])).all(), "qubo matrix does not match"
 
     variables = qubo_model.get_variables()
-    assert variables == {"bb1": 0, "bb2": 1}, "variables do not match"
+    assert variables == {"b1": 0, "b2": 1}, "variables do not match"
 
     offset = qubo_model.get_offset()
     assert offset == 0, "offset does not match"
@@ -92,7 +92,7 @@ def test_qubo_model_to_qubo_matrix():
 def test_qubo_matrix_to_qubo_model():
     q_mat = np.array([[0, 1, -11], [0, 0, 2], [0, 0, 0]])
     q_model = qubo_matrix_to_qubo_model(q_mat)
-    ans = {("bb[1]", "bb[2]"): 2, ("bb[0]", "bb[2]"): -11, ("bb[0]", "bb[1]"): 1}
+    ans = {("b[1]", "b[2]"): 2, ("b[0]", "b[2]"): -11, ("b[0]", "b[1]"): 1}
     assert q_model.objective.coefficient == ans
 
     q_mat = np.random.randn(12, 12)
@@ -116,14 +116,14 @@ mat = np.array(
 def test_make():
     b1, b2, b3 = kw.core.Binary("b1"), kw.core.Binary("b2"), kw.core.Binary("b3")
     q = b1 * b2 + b1 * b1 + 3 * b1 + b2 * b2 + 2 * b3
-    qubo_model = kw.qubo.QuboModel(q)
-    ising_model = kw.conversion.qubo_model_to_ising_model(qubo_model)
+    qubo_model = kw.core.QuboModel(q)
+    ising_model = kw.core.qubo_model_to_ising_model(qubo_model)
     assert (ising_model.matrix == mat).all(), "自动make出现问题"
 
 
 def test_make_no_constraint():
     b1, b2, b3 = kw.core.Binary("b1"), kw.core.Binary("b2"), kw.core.Binary("b3")
     q = b1 * b2 + b1 * b1 + 3 * b1 + b2 * b2 + 2 * b3
-    qubo_model = kw.qubo.QuboModel(q)
-    ising_model = kw.conversion.qubo_model_to_ising_model(qubo_model)
+    qubo_model = kw.core.QuboModel(q)
+    ising_model = kw.core.qubo_model_to_ising_model(qubo_model)
     assert (ising_model.matrix == mat).all(), "自动make出现问题"

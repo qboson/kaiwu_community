@@ -8,8 +8,6 @@ import numbers
 import numpy as np
 
 
-# 构造结果字典
-# 输入：结果向量，从ci.get_variables()得到的字典
 def get_sol_dict(solution, vars_dict):
     """根据解向量和变量字典生成结果字典.
 
@@ -28,8 +26,8 @@ def get_sol_dict(solution, vars_dict):
         >>> b = kw.core.Binary("b")
         >>> c = kw.core.Binary("c")
         >>> d = a + 2 * b + 4 * c
-        >>> d = kw.qubo.QuboModel(d)
-        >>> d_ising = kw.conversion.qubo_model_to_ising_model(d)
+        >>> d = kw.core.QuboModel(d)
+        >>> d_ising = kw.core.qubo_model_to_ising_model(d)
         >>> vars = d_ising.get_variables()
         >>> s = np.array([1, -1, 1])
         >>> kw.core.get_sol_dict(s, vars)
@@ -37,8 +35,8 @@ def get_sol_dict(solution, vars_dict):
     """
     # 除了虚拟变量以外，遍历vars_dict字典，对每个键都找到其位置，并在bin_c中取值。
     return dict(
-        (k, (solution[vars_dict[k]] + 1) / 2)
-        for k, _ in vars_dict.items()
+        (k, (solution[index] + 1) / 2)
+        for k, index in vars_dict.items()
         if k != "__spin__"
     )
 
@@ -47,7 +45,7 @@ def get_val(qubo, sol_dict):
     """根据结果字典将spin值带入qubo变量.
 
     Args:
-        qubo (QUBO表达式): QUBO表达式
+        qubo (BinaryExpression or BinaryExpressionNDArray): QUBO表达式
 
         sol_dict (dict): 由get_sol_dict生成的结果字典。
 
@@ -61,8 +59,8 @@ def get_val(qubo, sol_dict):
         >>> b = kw.core.Binary("b")
         >>> c = kw.core.Binary("c")
         >>> d = a + 2 * b + 4 * c
-        >>> qubo_model = kw.qubo.QuboModel(d)
-        >>> d_ising = kw.conversion.qubo_model_to_ising_model(qubo_model)
+        >>> qubo_model = kw.core.QuboModel(d)
+        >>> d_ising = kw.core.qubo_model_to_ising_model(qubo_model)
         >>> ising_vars = d_ising.get_variables()
         >>> s = np.array([1, -1, 1])
         >>> sol_dict = kw.core.get_sol_dict(s, ising_vars)
@@ -71,15 +69,17 @@ def get_val(qubo, sol_dict):
     """
     if isinstance(qubo, numbers.Number):
         return qubo
+    if isinstance(qubo, np.ndarray):
+        return _get_val(qubo, sol_dict)
     value = qubo.offset  # 结果加上offset
     for k, val in qubo.coefficient.items():  # 遍历所有键值对
         for var in k:  # 对于每个键也遍历元组
-            val *= sol_dict.get(var[1:], 0.0)
+            val *= sol_dict.get(var, 0.0)
         value += val  # 累加一项的结果
     return value
 
 
-def get_array_val(array, sol_dict):
+def _get_val(array, sol_dict):
     """根据结果字典将spin值带入qubo数组变量.
 
     Args:
@@ -95,12 +95,12 @@ def get_array_val(array, sol_dict):
         >>> import numpy as np
         >>> x = kw.core.ndarray((2, 2), "x", kw.core.Binary)
         >>> y = x.sum()
-        >>> y = kw.qubo.QuboModel(y)
-        >>> y_ising = kw.conversion.qubo_model_to_ising_model(y)
+        >>> y = kw.core.QuboModel(y)
+        >>> y_ising = kw.core.qubo_model_to_ising_model(y)
         >>> ising_vars = y_ising.get_variables()
         >>> s = np.array([1, -1, 1, -1])
         >>> sol_dict = kw.core.get_sol_dict(s, ising_vars)
-        >>> kw.core.get_array_val(x, sol_dict)
+        >>> kw.core.get_val(x, sol_dict)
         array([[1., 0.],
                [1., 0.]])
     """

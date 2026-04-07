@@ -4,13 +4,13 @@
 
 功能: ising模型及其转化
 """
-from kaiwu.core import Expression
+from kaiwu.core._expression import Expression
 
 
 def _dict_variables(var_dict):
     var_list = [0] * len(var_dict)
     for var in var_dict:
-        var_list[var_dict[var]] = var[1:]
+        var_list[var_dict[var]] = var
     return str(tuple(var_list)).replace("'", "")[1:-1]
 
 
@@ -45,7 +45,7 @@ class IsingModel(dict):
 
     def get_variables(self):
         """获取模型中的变量"""
-        return dict(zip((key[1:] for key in self.variables), self.variables.values()))
+        return dict(zip((key for key in self.variables), self.variables.values()))
 
     def get_matrix(self):
         """获取Ising矩阵"""
@@ -82,13 +82,12 @@ class Spin(IsingExpression):
 
     Examples:
         >>> import kaiwu as kw
-        >>> s = kw.ising.Spin("s")
+        >>> s = kw.core.Spin("s")
         >>> s
         2*s-1
     """
 
     def __init__(self, name: str = ""):
-        name = "s" + name
         super().__init__(linear={tuple({name}): 2}, bias=-1)
         self.name = name
 

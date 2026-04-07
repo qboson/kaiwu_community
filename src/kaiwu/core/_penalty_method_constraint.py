@@ -7,14 +7,13 @@
 import logging
 from kaiwu.core._binary_expression import Integer
 from kaiwu.core._get_val import get_val
-from kaiwu.core._constraint import ConstraintDefinition
+from kaiwu.core._constraint import Constraint
 
 logger = logging.getLogger(__name__)
 
 
 class PenaltyMethodConstraint:
     """有约束转无约束的penalty method方法
-
     Args:
         expr (Expression): 编译后的约束项表达式
 
@@ -32,9 +31,7 @@ class PenaltyMethodConstraint:
         self._parent_model = parent_model
 
     @classmethod
-    def from_constraint_definition(
-        cls, name, constraint: ConstraintDefinition, parent_model
-    ):
+    def from_constraint_definition(cls, name, constraint: Constraint, parent_model):
         """Prepare QUBO expression for the given constraint, automatically determining slack variables if needed.
 
         Args:
@@ -46,15 +43,23 @@ class PenaltyMethodConstraint:
 
         """
 
-        if constraint.relation == "==":
-            # 等式约束直接平方处理
-            expr = constraint.left_operand - constraint.expected_value
+        if constraint.relation is None:
+            # 非表达式约束直接平方处理
+            expr = constraint.left_operand
+        elif constraint.relation == "==":
+            expr = (constraint.left_operand) ** 2
         else:
             # 处理不等式约束的方向
             diff_qubo = _adjust_inequality_direction(constraint)
-            slack_expr = _create_slack_variable(name, diff_qubo, constraint.relation)
+            if constraint.slack_var_expr is not None:
+                # 如果用户提供了松弛变量表达式，直接使用
+                slack_expr = constraint.slack_var_expr
+            else:
+                slack_expr = _create_slack_variable(
+                    name, diff_qubo, constraint.relation
+                )
             # 构建最终的约束表达式（等式平方形式）
-            expr = diff_qubo + slack_expr - constraint.expected_value
+            expr = diff_qubo + slack_expr
             expr = expr**2
 
         logger.debug("Constraint expression: %s", expr)
@@ -84,7 +89,7 @@ class PenaltyMethodConstraint:
         self.set_penalty((self.previous_penalty + self.penalty) / 2)
 
     def __str__(self):
-        return f"penalty={self.penalty}, constraint_expr={self.constraint_expr}"
+        return f"Constraint(penalty={self.penalty}, constraint_expr={self.constraint_expr})"
 
     def __repr__(self) -> str:
         return self.__str__()

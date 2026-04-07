@@ -7,6 +7,7 @@ from typing import Union, Tuple, List
 import numpy as np
 from kaiwu.core._binary_expression import quicksum
 from kaiwu.core._expression import Expression
+from kaiwu.core._get_val import get_val
 
 
 def dot(mat_left, mat_right):
@@ -90,20 +91,26 @@ class BinaryExpressionNDArray(np.ndarray):
     该容器支持各种 numpy 原生的向量化运算
     """
 
+    is_array_less = np.vectorize(_is_less)
+    is_array_less_equal = np.vectorize(_is_less_equal)
+    is_array_greater = np.vectorize(_is_greater)
+    is_array_greater_equal = np.vectorize(_is_greater_equal)
+    is_array_equal = np.vectorize(_is_equal)
+
     def __lt__(self, other):
-        return np.vectorize(_is_less)(self, other)
+        return BinaryExpressionNDArray.is_array_less(self, other)
 
     def __le__(self, other):
-        return np.vectorize(_is_less_equal)(self, other)
+        return BinaryExpressionNDArray.is_array_less_equal(self, other)
 
     def __gt__(self, other):
-        return np.vectorize(_is_greater)(self, other)
+        return BinaryExpressionNDArray.is_array_greater(self, other)
 
     def __ge__(self, other):
-        return np.vectorize(_is_greater_equal)(self, other)
+        return BinaryExpressionNDArray.is_array_greater_equal(self, other)
 
     def __eq__(self, other):
-        return np.vectorize(_is_equal)(self, other)
+        return BinaryExpressionNDArray.is_array_equal(self, other)
 
     def __matmul__(self, other):
         return self.dot(other)
@@ -114,8 +121,7 @@ class BinaryExpressionNDArray(np.ndarray):
         Args:
             b (BinaryExpressionNDArray): 另一个矩阵
 
-            out: 可选输出数组，用于存储结果。需与预期输出形状一致。
-
+            out：可选输出数组，用于存储结果。需与预期输出形状一致。
         Returns:
             BinaryExpressionNDArray: 乘积
         """
@@ -125,24 +131,24 @@ class BinaryExpressionNDArray(np.ndarray):
             return out
         return dot(self, b)
 
-    # pylint: disable=W0613, R0917
+    # pylint: disable=W0613
     def sum(
         self, axis=None, dtype=None, out=None, keepdims=False, initial=0, where=True
     ):
         """使用quicksum的求和方法
 
         Args:
-            axis: 指定求和的轴（维度）。默认为 None，表示对所有元素求和；若为整数或元组，则沿指定轴求和。
+            axis：指定求和的轴（维度）。默认为 None，表示对所有元素求和；若为整数或元组，则沿指定轴求和。
 
-            dtype: 指定输出数据类型。若未提供，则默认使用输入数组的 dtype，但整数类型可能提升为平台整数精度。暂不支持。
+            dtype：指定输出数据类型。若未提供，则默认使用输入数组的 dtype，但整数类型可能提升为平台整数精度。暂不支持。
 
-            out: 可选输出数组，用于存储结果。需与预期输出形状一致。
+            out：可选输出数组，用于存储结果。需与预期输出形状一致。
 
-            keepdims: 布尔值。若为 True，则保留被求和的轴作为长度为1的维度。暂不支持 。
+            keepdims：布尔值。若为 True，则保留被求和的轴作为长度为1的维度。暂不支持 。
 
-            initial: 求和的初始值（标量），默认为0。暂不支持。
+            initial：求和的初始值（标量），默认为0。暂不支持。
 
-            where: 布尔数组，指定哪些元素参与求和（NumPy 1.20+支持）。暂不支持。
+            where：布尔数组，指定哪些元素参与求和（NumPy 1.20+支持）。暂不支持。
 
         Returns:
             BinaryExpressionNDArray: 乘积
@@ -175,6 +181,56 @@ class BinaryExpressionNDArray(np.ndarray):
         if not result.shape:
             result = result.tolist()
         return result
+
+    def get_val(self, sol_dict):
+        """根据结果字典将spin值带入qubo数组变量.
+
+        Args:
+            array (QUBOArray): QUBO数组
+
+            sol_dict (dict): 由get_sol_dict生成的结果字典。
+
+        Returns:
+            np.ndarray: 带入qubo数组后所得的值数组
+
+        Examples:
+            >>> import kaiwu as kw
+            >>> import numpy as np
+            >>> x = kw.core.ndarray((2, 2), "x", kw.core.Binary)
+            >>> y = x.sum()
+            >>> y_vars = y.get_variables()
+            >>> s = np.array([1, -1, 1, -1])
+            >>> sol_dict = kw.core.get_sol_dict(s, y_vars)
+            >>> x.get_val(sol_dict)
+            array([[1., 0.],
+                   [1., 0.]])
+        """
+        val_array = np.zeros(self.shape)  # 创建与qubo数组相同形状的空数组
+        for index in np.ndindex(self.shape):  # 遍历数组的所有下标
+            val_array[index] = get_val(self[index], sol_dict)  # 每个下标都调用get_val
+        return val_array
+
+
+def zeros(shape) -> BinaryExpressionNDArray:
+    """创建一个与输入数组形状相同的零数组。
+
+    Args:
+        shape (tuple): 矩阵维度
+
+    Returns:
+        QUBOArray: 形状相同但所有元素为 0 的数组。
+
+    Examples:
+        >>> import kaiwu as kw
+        >>> Z = zeros((2, 3))
+        >>> Z
+        BinaryExpressionNDArray([[0, 0, 0],
+                                 [0, 0, 0]], dtype=object)
+    """
+    # 创建一个形状相同的数组，直接填充 0
+    zeros_arr = BinaryExpressionNDArray(shape, dtype=Expression)
+    zeros_arr.fill(0)
+    return zeros_arr
 
 
 def ndarray(

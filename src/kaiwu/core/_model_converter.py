@@ -5,7 +5,7 @@
 功能: QUBO模型和Ising模型转换
 """
 import numpy as np
-from kaiwu.ising import IsingModel, IsingExpression
+from kaiwu.core._ising import IsingModel, IsingExpression
 
 
 def _to_ising(qubo_expr):
@@ -58,8 +58,8 @@ def qubo_model_to_ising_model(qubo_model):
         >>> import kaiwu as kw
         >>> b1, b2 = kw.core.Binary("b1"), kw.core.Binary("b2")
         >>> q = b1 + b2 + b1*b2
-        >>> q_model = kw.qubo.QuboModel(q)
-        >>> ci = kw.conversion.qubo_model_to_ising_model(q_model)
+        >>> q_model = kw.core.QuboModel(q)
+        >>> ci = kw.core.qubo_model_to_ising_model(q_model)
         >>> print(str(ci))
         CIM Ising Details:
           CIM Ising Matrix:
@@ -76,7 +76,7 @@ def qubo_model_to_ising_model(qubo_model):
     variable_index = dict(
         zip(ising_expression.variables, range(len(ising_expression.variables)))
     )
-    variable_index["a__spin__"] = len(ising_expression.variables)
+    variable_index["__spin__"] = len(ising_expression.variables)
     cim_matrix = np.zeros(
         (len(ising_expression.variables) + 1, len(ising_expression.variables) + 1)
     )

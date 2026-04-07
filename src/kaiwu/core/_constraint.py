@@ -25,9 +25,8 @@ ops = {
 }
 
 
-class ConstraintDefinition:
+class Constraint:
     """约束定义
-
     Args:
         expr_left (Expression): 约束项左算子
 
@@ -36,17 +35,24 @@ class ConstraintDefinition:
         expected_value(float): 约束项右算子， 缺省为0
     """
 
-    def __init__(self, expr_left, relation, expected_value=0):
+    def __init__(
+        self,
+        expr_left,
+        relation=None,
+        penalty=None,
+        expected_value=0,
+        slack_var_expr=None,
+    ):
         self.left_operand = expr_left
         self.relation = relation
         self.expected_value = expected_value
-        self.default_penalty = None
-
-        # 是否需要二次方
-        self.should_prepare = True
+        self.default_penalty = penalty
+        self.slack_var_expr = slack_var_expr
 
     def __str__(self):
-        return f"{self.left_operand}{self.relation}{self.expected_value},"
+        if self.relation is None:
+            return f"{self.left_operand}"
+        return f"{self.left_operand}{self.relation}{self.expected_value}"
 
     def __repr__(self) -> str:
         return self.__str__()
@@ -55,10 +61,11 @@ class ConstraintDefinition:
         """验证约束满足情况"""
         left = float(get_val(self.left_operand, solution_dict))
         right = float(self.expected_value)
-        if self.relation != "==":
-            return ops[self.relation](left, right)
-
-        return abs(left - right) < 1e-5
+        if self.relation is None:
+            return left <= right
+        if self.relation == "==":
+            return abs(left - right) < 1e-5
+        return ops[self.relation](left, right)
 
 
 def get_min_penalty_from_deltas(
@@ -77,11 +84,11 @@ def get_min_penalty_from_deltas(
 
         min_delta_method: 声明在。分别用两种方法寻找最小变化值
                         MIN_DELTA_METHODS = {"diff": _get_constraint_min_deltas_diff,
-                                     "exhaust": _get_constraint_min_deltas_exhaust}
+                        "exhaust": _get_constraint_min_deltas_exhaust}
 
     Examples:
         >>> import kaiwu as kw
-        >>> x = [kw.core.Binary("b"+str(i)) for i in range(3)]
+        >>> x = [kw.core.Binary(f"b{i}") for i in range(3)]
         >>> cons = kw.core.quicksum(x) - 1
         >>> obj = x[1]+2*x[2]
         >>> kw.core.get_min_penalty(obj, cons)
@@ -164,7 +171,7 @@ def get_min_penalty_for_equal_constraint(obj, cons):
 
     Examples：
         >>> import kaiwu as kw
-        >>> x = [kw.core.Binary("b"+str(i)) for i in range(3)]
+        >>> x = [kw.core.Binary(f"b{i}") for i in range(3)]
         >>> cons = kw.core.quicksum(x)-1
         >>> obj = x[1]+2*x[2]
         >>> kw.core.get_min_penalty_for_equal_constraint(obj,cons)
@@ -285,7 +292,7 @@ def get_min_penalty(obj, cons):
 
     Examples：
         >>> import kaiwu as kw
-        >>> x = [kw.core.Binary("b"+str(i)) for i in range(3)]
+        >>> x = [kw.core.Binary(f"b{i}") for i in range(3)]
         >>> cons = kw.core.quicksum(x) - 1
         >>> obj = x[1] + 2 * x[2]
         >>> kw.core.get_min_penalty(obj, cons)

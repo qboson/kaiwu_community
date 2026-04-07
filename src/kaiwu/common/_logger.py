@@ -6,7 +6,7 @@ import logging
 import sys
 
 # 模块级单例初始化（Python保证模块导入时只执行一次）
-_root_logger = logging.getLogger("kaiwu_community")
+_root_logger = logging.getLogger("kaiwu")
 _root_logger.setLevel(logging.INFO)
 _root_logger.propagate = False  # 禁止向上传播
 

@@ -30,7 +30,7 @@ def ising_matrix_to_qubo_matrix(ising_mat, remove_linear_bit=True):
         ...                     [ 0. ,  0. ,  0. ,  1.,   1. ],
         ...                     [ 1. ,  1.,   1. ,  0. ,  1. ],
         ...                     [ 1. ,  1.,   1. ,  1. ,  0. ]])
-        >>> _qubo_mat, _ = kw.conversion.ising_matrix_to_qubo_matrix(matrix)
+        >>> _qubo_mat, _ = kw.core.ising_matrix_to_qubo_matrix(matrix)
         >>> _qubo_mat
         array([[-4.,  8.,  0.,  8.],
                [-0., -4.,  0.,  8.],
@@ -76,7 +76,7 @@ def qubo_matrix_to_ising_matrix(qubo_mat):
         ...                     [-0., -4.,  0.,  8.],
         ...                     [-0., -0., -0.,  8.],
         ...                     [-0., -0., -0., -8.]])
-        >>> _ising_mat, _ = kw.conversion.qubo_matrix_to_ising_matrix(matrix)
+        >>> _ising_mat, _ = kw.core.qubo_matrix_to_ising_matrix(matrix)
         >>> _ising_mat
         array([[-0.,  1., -0.,  1.,  1.],
                [ 1., -0., -0.,  1.,  1.],
