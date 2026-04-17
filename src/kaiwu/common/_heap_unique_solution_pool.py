@@ -6,8 +6,8 @@ import copy
 import heapq
 import numpy as np
 
-from kaiwu.common._json_serializable_mixin import JsonSerializableMixin
-from kaiwu.common._util import hamiltonian
+from ._json_serializable_mixin import JsonSerializableMixin
+from ._util import hamiltonian
 
 
 class HeapUniquePool(JsonSerializableMixin):

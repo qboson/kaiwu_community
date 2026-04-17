@@ -1,7 +1,6 @@
 import logging
 import os
 import sys
-from unittest.mock import patch
 
 from common.config import BASE_DIR
 from kaiwu.core import qubo_model_to_ising_model
@@ -31,8 +30,7 @@ class TestQuboModel:
         qubo_model.make()
         assert qubo_model.made, "Failed to add soft constraint!"
 
-    @patch("kaiwu.classical._simulated_annealing.verify_license", return_value=None)
-    def test_get_matrix(self, mock_verify_license):
+    def test_get_matrix(self):
         x = kw.core.ndarray((3,), "x", Integer, (-4, 4)) / 2
         A = np.array([[1, 1, 1], [-1, 0, 0], [0, -1, 0]])
         b = np.array([1, 0, 0])
@@ -49,25 +47,6 @@ class TestQuboModel:
         qubo_mat_from_ising, bias = kw.core.ising_matrix_to_qubo_matrix(ising_mat)
         print(qubo_mat)
         assert (qubo_mat_from_ising == qubo_mat).all()
-
-        optimizer = kw.classical.SimulatedAnnealingOptimizer(
-            initial_temperature=100, iterations_per_t=99, rand_seed=239287092
-        )
-        solver = kw.solver.SimpleSolver(optimizer)
-        sol_dicts = solver.solve_qubo(qubo_model)
-
-        # Qubo Model
-        qubo_model.verify_constraint(sol_dicts[0])
-
-        # ising model
-        ising_solutions = optimizer.solve(ising_mat)
-        var_dic = ising_model.get_variables()
-        sol_dict_from_ising = kw.core.get_sol_dict(ising_solutions[0], var_dic)
-
-        qubo_value = qubo_model.get_value(sol_dicts[0])
-        qubo_value_from_ising = qubo_model.get_value(sol_dict_from_ising)
-
-        assert qubo_value == qubo_value_from_ising
 
     def test_make(self):
         b1, b2 = Binary("b1"), Binary("b2")

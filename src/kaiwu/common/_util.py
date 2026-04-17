@@ -24,19 +24,14 @@ def hamiltonian(ising_matrix, c_list):
 
     Examples:
         >>> import numpy as np
-        >>> import kaiwu as kw
+        >>> from kaiwu.common import hamiltonian
         >>> ising_matrix = -np.array([[ 0. ,  1. ,  0. ,  1. ,  1. ],
         ...                     [ 1. ,  0. ,  0. ,  1.,   1. ],
         ...                     [ 0. ,  0. ,  0. ,  1.,   1. ],
         ...                     [ 1. ,  1.,   1. ,  0. ,  1. ],
         ...                     [ 1. ,  1.,   1. ,  1. ,  0. ]])
-        >>> rng = np.random.default_rng(10)
-        >>> optimizer = kw.classical.SimulatedAnnealingOptimizer()
-        >>> output = optimizer.solve(ising_matrix)
-        >>> h = kw.common.hamiltonian(ising_matrix, output)
-        >>> h   # doctest: +SKIP
-        array([-0.60179257, -0.60179257, -0.60179257, -0.60179257, -0.60179257,
-               -1.20358514, -0.60179257, -0.60179257, -0.60179257, -1.20358514])
+        >>> c_list = np.array([[1, 1, 1, 1, 1], [1, -1, 1, -1, 1]])
+        >>> h = hamiltonian(ising_matrix, c_list)   # doctest: +SKIP
     """
     # 方法1 by 王勇 邵帅 (最快版)
     return -np.einsum("ij,ij->i", (c_list.dot(ising_matrix)), c_list)

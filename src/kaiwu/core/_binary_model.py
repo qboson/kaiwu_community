@@ -8,12 +8,12 @@ import copy
 from typing import Literal
 import logging
 import numpy as np
-from kaiwu.core._penalty_method_constraint import PenaltyMethodConstraint
-from kaiwu.core._constraint import get_min_penalty_from_min_diff, get_soft_penalty
-from kaiwu.core._get_val import get_val
-from kaiwu.core._error import KaiwuError
-from kaiwu.core._binary_expression import BinaryExpression
-from kaiwu.core._constraint import Constraint
+from ._penalty_method_constraint import PenaltyMethodConstraint
+from ._constraint import get_min_penalty_from_min_diff, get_soft_penalty
+from ._get_val import get_val
+from ._error import KaiwuError
+from ._binary_expression import BinaryExpression
+from ._constraint import Constraint
 
 logger = logging.getLogger(__name__)
 
@@ -77,6 +77,7 @@ class BinaryModel:
         self.objective = copy.deepcopy(objective)
         self._on_objective_change()
 
+    # pylint: disable=too-many-positional-arguments
     def add_constraint(
         self,
         constraint_in,

@@ -5,7 +5,7 @@
 功能: QUBO模型和Ising模型转换
 """
 import numpy as np
-from kaiwu.core._ising import IsingModel, IsingExpression
+from ._ising import IsingModel, IsingExpression
 
 
 def _to_ising(qubo_expr):

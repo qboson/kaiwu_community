@@ -8,8 +8,8 @@ import math
 import numbers
 import numpy as np
 
-from kaiwu.core._expression import Expression, expr_add, expr_neg, expr_mul, expr_pow
-from kaiwu.core._error import KaiwuError
+from ._expression import Expression, expr_add, expr_neg, expr_mul, expr_pow
+from ._error import KaiwuError
 
 
 class BinaryExpression(Expression):

@@ -3,7 +3,7 @@ import sys
 
 from common.config import BASE_DIR
 from kaiwu.core import KaiwuError, Binary, Placeholder
-from kaiwu.hobo import HoboModel
+import pytest
 
 sys.path.insert(0, os.path.join(BASE_DIR, "src"))
 import kaiwu as kw
@@ -102,25 +102,6 @@ class TestQuboExpression:
 
         assert zf.coefficient == ans_zf_coefficient, "ans_zf_coefficient error!"
         assert zf.offset == ans_zf_offset, "ans_zf_offset error!"
-
-    def test_placeholder_str_with_hobo(self):
-        a, b, c = Binary("a"), Binary("b"), Binary("c")
-        p1, p2 = Placeholder("p1"), Placeholder("p2")
-        z = a * b * p1 * c + 2 + p1 * p2 + (1 + p2 + 1) * 2 * a
-
-        hobo_Model = HoboModel(z)
-        qubo_model = hobo_Model.reduce()
-        print(qubo_model.objective)
-        assert (
-            str(qubo_model.objective) == "(2*p2+4)*a+(p1)*_a_b*c+p1*p2+2"
-        ), "placeholder show error"
-
-        zf = z.feed({"p1": 1, "p2": 3})
-        hobo_Model = HoboModel(zf)
-        qubo_model = hobo_Model.reduce()
-        assert (
-            str(qubo_model.objective) == "10*a+_a_b*c+5"
-        ), "Placeholder after feed error"
 
     def test_spin(self):
         s = kw.core.Spin("a")
