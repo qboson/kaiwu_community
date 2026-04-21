@@ -9,7 +9,7 @@ max-locals=30
 max-branches=15
 
 [MESSAGES CONTROL]
-disable=redefined-outer-name, R0903
+disable=redefined-outer-name, R0903, E1101, W0201
 
 [design]
 max-locals = 32

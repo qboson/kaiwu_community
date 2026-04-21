@@ -6,7 +6,7 @@
 
 """
 
-from ._base_solver import IsingSolver, QuboSolver
+from ._base_solver import IsingSolver, QuboSolver, get_sorted_solutions
 from ._error import KaiwuError
 
 from ._constraint import (
@@ -44,6 +44,7 @@ from ._model_converter import qubo_model_to_ising_model
 __all__ = [
     "IsingSolver",
     "QuboSolver",
+    "get_sorted_solutions",
     "KaiwuError",
     "get_min_penalty",
     "get_min_penalty_from_min_diff",

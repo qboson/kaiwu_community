@@ -23,10 +23,10 @@ dynamic = ["dependencies", "version"]
 
 [tool.setuptools]
 package-dir = { "" = "src" }
-include_namespace_packages = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
+namespaces = true
 
 [tool.setuptools.dynamic]
 dependencies = { file = ["requirements.txt"] }
