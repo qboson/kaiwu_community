@@ -4,7 +4,7 @@
 
 功能: ising模型及其转化
 """
-from ._expression import Expression
+from kaiwu.core._expression import Expression
 
 
 def _dict_variables(var_dict):

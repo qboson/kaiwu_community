@@ -4,7 +4,7 @@
 
 import numpy as np
 
-from ._util import hamiltonian
+from kaiwu.common._util import hamiltonian
 
 
 class ArgpartitionUniquePool:

@@ -5,9 +5,9 @@
 功能: 生成基于penalty method的约束项
 """
 import logging
-from ._binary_expression import Integer
-from ._get_val import get_val
-from ._constraint import Constraint
+from kaiwu.core._binary_expression import Integer
+from kaiwu.core._get_val import get_val
+from kaiwu.core._constraint import Constraint
 
 logger = logging.getLogger(__name__)
 

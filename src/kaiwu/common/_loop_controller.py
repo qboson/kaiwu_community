@@ -4,7 +4,7 @@
 """
 import time
 import math
-from ._json_serializable_mixin import JsonSerializableMixin
+from kaiwu.common._json_serializable_mixin import JsonSerializableMixin
 
 
 class BaseTimer:
@@ -41,7 +41,6 @@ class BaseLoopController(JsonSerializableMixin):
         iterate_per_update：每次更新哈密顿量前运行的次数，默认值为5
     """
 
-    # pylint: disable=too-many-positional-arguments
     def __init__(
         self,
         max_repeat_step=math.inf,
@@ -139,7 +138,6 @@ class OptimizerLoopController(BaseLoopController):
         iterate_per_update：每次更新哈密顿量前运行的次数，默认值为5
     """
 
-    # pylint: disable=too-many-positional-arguments
     def __init__(
         self,
         max_repeat_step=math.inf,
@@ -168,7 +166,6 @@ class SolverLoopController(BaseLoopController, JsonSerializableMixin):
         stop_after_feasible_count (int): 找到指定数量的可行解后停止
     """
 
-    # pylint: disable=too-many-positional-arguments
     def __init__(
         self,
         max_repeat_step=math.inf,

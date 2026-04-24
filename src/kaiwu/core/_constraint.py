@@ -8,8 +8,8 @@ import math
 import operator
 import logging
 
-from ._get_val import get_val
-from ._error import KaiwuError
+from kaiwu.core._get_val import get_val
+from kaiwu.core._error import KaiwuError
 
 logger = logging.getLogger(__name__)
 
@@ -35,7 +35,6 @@ class Constraint:
         expected_value(float): 约束项右算子， 缺省为0
     """
 
-    # pylint: disable=too-many-positional-arguments
     def __init__(
         self,
         expr_left,

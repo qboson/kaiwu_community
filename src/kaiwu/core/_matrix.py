@@ -5,9 +5,9 @@
 """
 from typing import Union, Tuple, List
 import numpy as np
-from ._binary_expression import quicksum
-from ._expression import Expression
-from ._get_val import get_val
+from kaiwu.core._binary_expression import quicksum
+from kaiwu.core._expression import Expression
+from kaiwu.core._get_val import get_val
 
 
 def dot(mat_left, mat_right):
@@ -131,7 +131,7 @@ class BinaryExpressionNDArray(np.ndarray):
             return out
         return dot(self, b)
 
-    # pylint: disable=W0613, too-many-positional-arguments
+    # pylint: disable=W0613
     def sum(
         self, axis=None, dtype=None, out=None, keepdims=False, initial=0, where=True
     ):

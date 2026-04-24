@@ -6,10 +6,10 @@
 
 import logging
 import numpy as np
-from ._binary_model import BinaryModel
-from ._binary_expression import Binary, quicksum
-from ._matrix import ndarray
-from ._error import KaiwuError
+from kaiwu.core._binary_model import BinaryModel
+from kaiwu.core._binary_expression import Binary, quicksum
+from kaiwu.core._matrix import ndarray
+from kaiwu.core._error import KaiwuError
 
 logger = logging.getLogger(__name__)
 

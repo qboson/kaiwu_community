@@ -5,11 +5,57 @@
 import logging
 import abc
 import numpy as np
-
-from ._model_converter import qubo_model_to_ising_model
-from ._get_val import get_sol_dict
+from kaiwu.core._get_val import get_sol_dict
+from kaiwu.core._model_converter import qubo_model_to_ising_model
 
 logger = logging.getLogger(__name__)
+
+
+def get_sorted_solutions(matrix, c_set, bias=0.0, negtail_ff=True, sort_solution=True):
+    """最优解采样.
+
+    Args:
+        matrix (np.ndarray): CIM Ising 矩阵.
+
+        c_set (np.ndarray): 变量配置.
+
+        bias (float): 常数项.
+
+        negtail_ff (bool): negtail_flip flag 负尾翻转, Ising模型线性项二次化的矩阵需要负尾翻转.
+
+    Returns:
+        output (np.ndarray, np.ndarray): 按能量排序的变量配置, 能量.
+
+    Examples:
+        >>> import numpy as np
+        >>> import kaiwu as kw
+        >>> matrix = -np.array([[ 0. ,  1. ,  0. ,  1. ,  1. ],
+        ...                     [ 1. ,  0. ,  0. ,  1.,   1. ],
+        ...                     [ 0. ,  0. ,  0. ,  1.,   1. ],
+        ...                     [ 1. ,  1.,   1. ,  0. ,  1. ],
+        ...                     [ 1. ,  1.,   1. ,  1. ,  0. ]])
+        >>> c_set = np.array([[ 1, -1,  1, -1, -1],
+        ...                   [-1, -1,  1, -1, -1],
+        ...                   [-1, -1, -1,  1,  1],
+        ...                   [ 1,  1,  1, -1, -1],
+        ...                   [ 1,  1,  1, -1, -1],
+        ...                   [ 1,  1,  1, -1, -1]])
+        >>> kw.core.get_sorted_solutions(matrix, c_set, 0)
+        (array([[-1, -1, -1,  1,  1],
+               [-1, -1, -1,  1,  1],
+               [-1, -1, -1,  1,  1],
+               [-1, -1, -1,  1,  1],
+               [-1,  1, -1,  1,  1],
+               [ 1,  1, -1,  1,  1]]), array([-8., -8., -8., -8., -4.,  8.]))
+    """
+    hamilton = -np.einsum("ij,ij->i", (c_set.dot(matrix)), c_set) + bias
+    if sort_solution:
+        index = np.argsort(hamilton)
+        c_set = c_set[index]
+        hamilton = hamilton[index]
+    if negtail_ff:
+        c_set = c_set * c_set[:, [-1]]
+    return c_set, hamilton
 
 
 class IsingSolver:
@@ -19,6 +65,7 @@ class IsingSolver:
 
     def __init__(self):
         self.matrix = None
+        self._hamiltonian = None
 
     def set_matrix(self, ising_matrix):
         """设置矩阵并更新相关内容"""
@@ -44,7 +91,6 @@ class IsingSolver:
 
     def solve(self, ising_matrix=None, negtail_flip=True, sort_solutions=False):
         """求解Ising矩阵
-
         Args:
             ising_matrix (np.ndarray): Ising矩阵
 
@@ -65,32 +111,9 @@ class IsingSolver:
     def get_hamiltonian(self):
         """
         Returns:
-            float: 当前Hamiltonian值
+            hamiltonian (np.ndarray): 当前解的哈密顿量值
         """
         return self._hamiltonian
-
-    def _to_ising_matrix(self, qubo_model):
-        ising_model = qubo_model_to_ising_model(qubo_model)
-        ising_mat = ising_model.get_matrix()
-        bias = ising_model.get_bias()
-        vars_dict = ising_model.get_variables()
-        return ising_mat, bias, vars_dict
-
-    def solve_qubo(self, qubo_model):
-        """求解QUBO模型"""
-        if isinstance(self, IsingSolver):
-            ising_mat, bias, vars_dict = self._to_ising_matrix(qubo_model)
-            output = self.solve(ising_mat)
-            if output is None:
-                return None, None
-            solutions, hamiltons = get_sorted_solutions(
-                ising_mat, output, 0, negtail_ff=True, sort_solution=True
-            )
-            solution_dict = get_sol_dict(
-                solutions[0][:-1] * solutions[0][-1], vars_dict
-            )
-            return solution_dict, hamiltons[0] + bias
-        raise NotImplementedError
 
 
 class QuboSolverMeta(abc.ABCMeta):
@@ -117,42 +140,25 @@ class QuboSolver(metaclass=QuboSolverMeta):
         optimizer (IsingSolver): Ising求解器
     """
 
-    def __init__(self, optimizer):
-        self._optimizer = optimizer
+    def _to_ising_matrix(self, qubo_model):
+        ising_model = qubo_model_to_ising_model(qubo_model)
+        ising_mat = ising_model.get_matrix()
+        bias = ising_model.get_bias()
+        vars_dict = ising_model.get_variables()
+        return ising_mat, bias, vars_dict
 
-    @abc.abstractmethod
     def solve_qubo(self, qubo_model):
-        """求解QUBO
-
-        Args:
-            qubo_model (QuboModel): QUBO模型
-
-        Returns:
-            tuple: 元组，包含求解结果信息
-                - dict: 解字典
-                - float: QUBO值
-        """
+        """求解QUBO模型"""
+        if isinstance(self, IsingSolver):
+            ising_mat, bias, vars_dict = self._to_ising_matrix(qubo_model)
+            output = self.solve(ising_mat)
+            if output is None:
+                return None, None
+            solutions, hamiltons = get_sorted_solutions(
+                ising_mat, output, 0, negtail_ff=True, sort_solution=True
+            )
+            solution_dict = get_sol_dict(
+                solutions[0][:-1] * solutions[0][-1], vars_dict
+            )
+            return solution_dict, hamiltons[0] + bias
         raise NotImplementedError
-
-
-def get_sorted_solutions(matrix, c_set, bias=0.0, negtail_ff=True, sort_solution=True):
-    """对解决方案进行排序
-
-    Args:
-        matrix (np.ndarray): CIM Ising 矩阵
-        c_set (np.ndarray): 候选解集合
-        bias (float): 偏置值
-        negtail_ff (bool): 是否进行末尾翻转
-        sort_solution (bool): 是否对结果排序
-
-    Returns:
-        tuple: (sorted_c_set, hamiltonians) 排序后的解集合和对应的哈密顿量值
-    """
-    hamilton = -np.einsum("ij,ij->i", (c_set.dot(matrix)), c_set) + bias
-    if sort_solution:
-        index = np.argsort(hamilton)
-        c_set = c_set[index]
-        hamilton = hamilton[index]
-    if negtail_ff:
-        c_set = c_set * c_set[:, [-1]]
-    return c_set, hamilton

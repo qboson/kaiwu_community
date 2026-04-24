@@ -6,8 +6,8 @@
 """
 import copy
 import numbers
-from ._error import KaiwuError
-from ._constraint import Constraint
+from kaiwu.core._error import KaiwuError
+from kaiwu.core._constraint import Constraint
 
 
 def is_zero(qubo_expr):
