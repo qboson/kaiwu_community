@@ -40,8 +40,8 @@ def find_min_constraint_solutions(cons: BinaryExpression) -> list:
     :param cons: 线性等式约束：cons=0
     :return: dict组成的list。dict中key为binary变量，value为0或1
     """
-    qubo_model = kw.qubo.QuboModel(cons)
-    ising = kw.conversion.qubo_model_to_ising_model(qubo_model)
+    qubo_model = kw.core.QuboModel(cons)
+    ising = kw.core.qubo_model_to_ising_model(qubo_model)
     mat = ising.get_matrix()
 
     res = list()
@@ -86,7 +86,7 @@ def is_local_optimal_equal_constraint(
     for key in obj.coefficient:
         obj_variables.add(key[0])
         if key[0] not in cons_variables:
-            feasible_sol[key[0]] = 1
+            feasible_sol[key[0]] = 1  # todo
         if len(key) == 2:
             obj_variables.add(key[1])
     variables = set(cons_variables) & obj_variables
@@ -135,7 +135,7 @@ def test_get_min_penalty_for_equal_constraint():
 
 def test_get_min_penalty():
     x = [Binary("b" + str(i)) for i in range(4)]
-    v = ["bb" + str(i) for i in range(4)]
+    v = ["b" + str(i) for i in range(4)]
     cons = (x[0] + x[1] + 2 * x[3] - 2) ** 2 + 2 * x[2]
     obj = 3 * (x[0] - x[1]) ** 2 - 2 * x[2]
 
@@ -148,10 +148,11 @@ def test_get_min_penalty():
 
 def test_get_min_penalty_exhaustive():
     x = [Binary("b" + str(i)) for i in range(4)]
-    v = ["bb" + str(i) for i in range(4)]
+    v = ["b" + str(i) for i in range(4)]
     cons = (x[0] + x[1] + 2 * x[3] - 2) ** 2 + 2 * x[2]
     obj = 3 * (x[0] - x[1]) ** 2 - 2 * x[2]
 
+    # penalty = get_min_penalty(obj, cons)
     obj_vars = obj.get_variables()
     neg_delta, pos_delta = obj.get_max_deltas()
     penalty = get_min_penalty_from_deltas(

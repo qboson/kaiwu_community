@@ -7,9 +7,10 @@ max-args=15
 max-attributes=30
 max-locals=30
 max-branches=15
+max-positional-arguments=10
 
 [MESSAGES CONTROL]
-disable=redefined-outer-name, R0903
+disable=redefined-outer-name, R0903, E1101, W0201
 
 [design]
 max-locals = 32

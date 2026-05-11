@@ -5,14 +5,14 @@ export PATH := $(VENV_PATH)/Scripts/:$(PATH)
 all_tests: test_install pylint docs-test pytest
 
 test_install:
-	pip3 install -i https://mirrors.aliyun.com/pypi/simple -r devel.txt
+	python -m pip install -i https://mirrors.aliyun.com/pypi/simple -r devel.txt
 
 pylint:
-	pylint $(CHECK_DIRS)
+	python -m pylint $(CHECK_DIRS)
 
 docs-test:
-	pytest --doctest-modules -o doctest_optionflags=NORMALIZE_WHITESPACE $(CHECK_DIRS)
+	python -m pytest --doctest-modules -o doctest_optionflags=NORMALIZE_WHITESPACE $(CHECK_DIRS)
 
 pytest:
-	coverage run --source=$(CHECK_DIRS) -m pytest tests
-	coverage report
+	python -m coverage run --source=$(CHECK_DIRS) -m pytest tests
+	python -m coverage report

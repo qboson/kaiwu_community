@@ -6,10 +6,18 @@
 
 import logging
 import numpy as np
-from kaiwu.core import BinaryModel, ndarray, Binary, quicksum
-from kaiwu.qubo._repr import _qubo_check, _qubo_details
+from kaiwu.core._binary_model import BinaryModel
+from kaiwu.core._binary_expression import Binary, quicksum
+from kaiwu.core._matrix import ndarray
+from kaiwu.core._error import KaiwuError
 
 logger = logging.getLogger(__name__)
+
+
+def _qubo_check(quadratic):
+    for key in quadratic:
+        if len(key) > 2:
+            raise KaiwuError("Items higher than quadratic.")
 
 
 class QuboModel(BinaryModel):
@@ -27,12 +35,9 @@ class QuboModel(BinaryModel):
         self.variables = None
         self.matrix = None
 
-    def __repr__(self):
-        return f"{self.__class__.__name__}({vars(self)!r})"
-
-    def __str__(self):
-        print_data = _qubo_details(self.objective)
-        return print_data
+    def _on_objective_change(self):
+        """当目标函数发生变化时调用，重置相关状态"""
+        self.invalidate_made_state()
 
     def invalidate_made_state(self):
         """Invalidate the made state when the model changes"""
@@ -42,7 +47,6 @@ class QuboModel(BinaryModel):
 
     def make(self):
         """返回合并后的QUBO表达式
-
         Returns:
             BinaryExpression: 合并的约束表达式
         """
@@ -53,21 +57,9 @@ class QuboModel(BinaryModel):
 
         self.qubo_expr_made = self.objective + quicksum(constraint_list)
 
-        variables_set = self.qubo_expr_made.get_variables()
-        _qubo_check(variables_set, self.qubo_expr_made.coefficient)
+        _qubo_check(self.qubo_expr_made.coefficient)
+        self.variables = self.qubo_expr_made.get_variables()
 
-        self.variables = dict(zip(variables_set, range(len(variables_set))))
-
-        self.matrix = np.zeros((len(variables_set), len(variables_set)))
-        for key in self.qubo_expr_made.coefficient:
-            if len(key) == 2:
-                self.matrix[self.variables[key[0]], self.variables[key[1]]] = (
-                    self.qubo_expr_made.coefficient[key]
-                )
-            else:
-                self.matrix[self.variables[key[0]], self.variables[key[0]]] = (
-                    self.qubo_expr_made.coefficient[key]
-                )
         self.made = True
         return self.qubo_expr_made
 
@@ -80,6 +72,16 @@ class QuboModel(BinaryModel):
         """
         self.compile_constraints()
         self.make()
+        self.matrix = np.zeros((len(self.variables), len(self.variables)))
+        for key in self.qubo_expr_made.coefficient:
+            if len(key) == 2:
+                self.matrix[self.variables[key[0]], self.variables[key[1]]] = (
+                    self.qubo_expr_made.coefficient[key]
+                )
+            else:
+                self.matrix[self.variables[key[0]], self.variables[key[0]]] = (
+                    self.qubo_expr_made.coefficient[key]
+                )
         return self.matrix
 
     def get_variables(self):
@@ -97,7 +99,7 @@ class QuboModel(BinaryModel):
         self.compile_constraints()
         self.make()
         return dict(
-            (k[1:], 1 if qubo_solution[idx] > 0 else 0)
+            (k, 1 if qubo_solution[idx] > 0 else 0)
             for k, idx in self.variables.items()
             if k != "__spin__"
         )
@@ -124,7 +126,7 @@ def calculate_qubo_value(qubo_matrix, offset, binary_configuration):
         ...                    [0., 0., 1.]])
         >>> offset = 1.8
         >>> binary_configuration = np.array([0, 1, 0])
-        >>> qubo_value = kw.qubo.calculate_qubo_value(matrix, offset, binary_configuration)
+        >>> qubo_value = kw.core.calculate_qubo_value(matrix, offset, binary_configuration)
         >>> print(qubo_value)
         2.8
     """
@@ -145,7 +147,7 @@ def qubo_matrix_to_qubo_model(qubo_mat):
         >>> import kaiwu as kw
         >>> matrix = -np.array([[0, 8],
         ...                     [0, 0]])
-        >>> kw.qubo.qubo_matrix_to_qubo_model(matrix).objective
+        >>> kw.core.qubo_matrix_to_qubo_model(matrix).objective
         -8*b[0]*b[1]
     """
     vars_b = ndarray(len(qubo_mat), "b", Binary)

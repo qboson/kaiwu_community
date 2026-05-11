@@ -11,7 +11,6 @@ from numpy.testing import assert_array_equal, assert_array_almost_equal
 from common.config import BASE_DIR
 
 sys.path.insert(0, os.path.join(BASE_DIR, "src"))
-
 import kaiwu as kw
 from kaiwu.core._matrix import BinaryExpressionNDArray, dot, ndarray
 from kaiwu.core import Binary, Expression
@@ -73,11 +72,11 @@ def test_binary_expression_array_comparison():
     arr2[0], arr2[1] = y, x
 
     # Test all comparison operators
-    assert str(arr1 < arr2) == "[-y+x<0, -x+y<0,]"
-    assert str(arr1 <= arr2) == "[-y+x<=0, -x+y<=0,]"
-    assert str(arr1 > arr2) == "[-y+x>0, -x+y>0,]"
-    assert str(arr1 >= arr2) == "[-y+x>=0, -x+y>=0,]"
-    assert str(arr1 == arr2) == "[-y+x==0, -x+y==0,]"
+    assert str(arr1 < arr2) == "[-y+x<0 -x+y<0]"
+    assert str(arr1 <= arr2) == "[-y+x<=0 -x+y<=0]"
+    assert str(arr1 > arr2) == "[-y+x>0 -x+y>0]"
+    assert str(arr1 >= arr2) == "[-y+x>=0 -x+y>=0]"
+    assert str(arr1 == arr2) == "[-y+x==0 -x+y==0]"
 
 
 def test_binary_expression_array_dot():

@@ -11,7 +11,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/files")
 if not os.path.exists(MEDIA_ROOT):
     os.makedirs(MEDIA_ROOT)
 # SDK 版本
-SDK_RELEASE_VERSION = os.getenv("SDK_RELEASE_VERSION", "1.3.0")
+SDK_RELEASE_VERSION = os.getenv("SDK_RELEASE_VERSION", "1.0.4")
 
 try:
     from config_local import *  # noqa

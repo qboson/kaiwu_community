@@ -7,14 +7,7 @@
 import copy
 import numbers
 from kaiwu.core._error import KaiwuError
-from kaiwu.core._constraint import ConstraintDefinition
-
-QUBO_MAINTAINED_KEY = [
-    "hard_constraint",
-    "soft_constraint",
-    "hobo_var_dict",
-    "hobo_constraint",
-]
+from kaiwu.core._constraint import Constraint
 
 
 def is_zero(qubo_expr):
@@ -24,22 +17,11 @@ def is_zero(qubo_expr):
     return len(qubo_expr.coefficient) == 0 and qubo_expr.offset == 0
 
 
-def update_constraint(qubo_origin, qubo_result):
-    """将qexp的约束以及降阶约束信息更新到q"""
-    for key in QUBO_MAINTAINED_KEY:
-        if key in qubo_origin:
-            if key in qubo_result:
-                qubo_result[key].update(qubo_origin[key])
-            else:
-                qubo_result[key] = qubo_origin[key]
-
-
 def expr_add(expr_left, expr_right, expr_result):
     """通用二次表达式相加"""
     if isinstance(expr_right, numbers.Number):
         expr_result.coefficient = expr_left.coefficient.copy()
         expr_result.offset = expr_left.offset + expr_right
-        update_constraint(expr_left, expr_result)
     else:
         expr_result.offset = expr_left.offset + expr_right.offset
         if len(expr_right.coefficient) < len(expr_left.coefficient):
@@ -63,7 +45,6 @@ def expr_neg(expr_origin, expr_result):
     for key in expr_origin.coefficient:
         expr_result.coefficient[key] = -expr_origin.coefficient[key]
     expr_result.offset = -expr_origin.offset
-    update_constraint(expr_origin, expr_result)
 
 
 def _expr_dicts_mul(expr_left, expr_right, expr_result):
@@ -111,7 +92,6 @@ def expr_mul(expr_left, expr_right, expr_result):
             for lkey in expr_left.coefficient:
                 expr_result.coefficient[lkey] = expr_left.coefficient[lkey] * expr_right
             expr_result.offset = expr_left.offset * expr_right
-        update_constraint(expr_left, expr_result)
     else:
         _expr_dicts_mul(expr_left, expr_right, expr_result)
 
@@ -124,14 +104,7 @@ def expr_pow(expr_left, expr_right, expr_result):
     elif expr_right == 2:
         expr_mul(expr_left, expr_left, expr_result)
     else:
-        if len(expr_left.coefficient) == 1 and (
-            list(expr_left.coefficient.keys())[0][0][0] == "b"
-        ):
-            expr_result.offset = expr_left.offset
-            expr_result.coefficient = expr_left.coefficient.copy()
-        else:
-            raise KaiwuError("Items higher than quadratic.")
-    update_constraint(expr_left, expr_result)
+        raise KaiwuError("Items higher than quadratic.")
 
 
 def _check_unit(checked_str):
@@ -156,7 +129,6 @@ class Expression(dict):
         self.offset = offset
 
     def clear(self) -> None:
-        """初始化所有属性"""
         self.coefficient = {}
         self.offset = 0
 
@@ -168,7 +140,7 @@ class Expression(dict):
         for p_key in self.coefficient:
             p_str = ""
             for p_var in p_key:
-                p_str += "*" + p_var[1:]
+                p_str += "*" + p_var
             coe = self.coefficient[p_key]
             if not isinstance(coe, numbers.Number) and len(coe.coefficient) > 0:
                 coe_str = "(" + str(coe) + ")"
@@ -239,40 +211,39 @@ class Expression(dict):
         return q_ret
 
     def __eq__(self, other):
-        return ConstraintDefinition(self - other, "==")
+        return Constraint(self - other, "==")
 
     def __ge__(self, other):
-        return ConstraintDefinition(self - other, ">=")
+        return Constraint(self - other, ">=")
 
     def __le__(self, other):
-        return ConstraintDefinition(self - other, "<=")
+        return Constraint(self - other, "<=")
 
     def __gt__(self, other):
-        return ConstraintDefinition(self - other, ">")
+        return Constraint(self - other, ">")
 
     def __lt__(self, other):
-        return ConstraintDefinition(self - other, "<")
+        return Constraint(self - other, "<")
 
     def get_variables(self):
         """获取变量名集合
 
         Returns:
-            variables: (tuple) 返回构成expression的变量集合
+            dict: 返回构成expression的变量集合
 
         """
         variables = set()  # 放目标函数obj所包含的所有变量
         for key in self.coefficient:
-            variables.add(key[0])
-            if len(key) == 2:
-                variables.add(key[1])
-
-        return tuple(sorted(list(variables)))
+            for var_x in key:
+                variables.add(var_x)
+        variables = tuple(sorted(list(variables)))
+        return dict(zip(variables, range(len(variables))))
 
     def get_max_deltas(self):
         """求出每个变量翻转引起目标函数变化的上界
         返回值negative_delta，positive_delta分别为该变量1->0和0->1所引起的最大变化量
         """
-        obj_variables = self.get_variables()
+        obj_variables = list(self.get_variables().keys())
         positive_delta = {var_x: 0 for var_x in obj_variables}
         negative_delta = {var_x: 0 for var_x in obj_variables}
         for var_tuple in self.coefficient.keys():
@@ -298,3 +269,32 @@ class Expression(dict):
             coe_sum += abs(coe)
             num_item += 1
         return coe_sum / num_item
+
+    def get_val(self, sol_dict):
+        """根据结果字典将spin值带入qubo变量.
+
+        Args:
+            qubo (QUBO表达式): QUBO表达式
+
+            sol_dict (dict): 由get_sol_dict生成的结果字典。
+
+        Returns:
+            float: 带入qubo后所得的值
+
+        Examples:
+            >>> import kaiwu as kw
+            >>> import numpy as np
+            >>> a = kw.core.Binary("a")
+            >>> b = kw.core.Binary("b")
+            >>> c = kw.core.Binary("c")
+            >>> d = a + 2 * b + 4 * c
+            >>> sol_dict = {"a": 1, "b": 0, "c": 1}
+            >>> d.get_val(sol_dict)
+            5
+        """
+        value = self.offset  # 结果加上offset
+        for k, val in self.coefficient.items():  # 遍历所有键值对
+            for var in k:  # 对于每个键也遍历元组
+                val *= sol_dict.get(var, 0.0)
+            value += val  # 累加一项的结果
+        return value

@@ -6,27 +6,19 @@
 
 """
 
-from kaiwu.core._optimizer_base import OptimizerBase
-from kaiwu.core._solver_base import SolverBase
+from kaiwu.core._base_solver import IsingSolver, QuboSolver, get_sorted_solutions
 from kaiwu.core._error import KaiwuError
 
 from kaiwu.core._constraint import (
-    ConstraintDefinition,
     get_min_penalty,
     get_min_penalty_from_min_diff,
     get_min_penalty_for_equal_constraint,
     get_min_penalty_from_deltas,
 )
 from kaiwu.core._penalty_method_constraint import PenaltyMethodConstraint
-from kaiwu.core._get_val import get_sol_dict, get_array_val, get_val
-from kaiwu.core._expression import (
-    update_constraint,
-    Expression,
-    expr_add,
-    expr_mul,
-    expr_neg,
-    expr_pow,
-)
+from kaiwu.core._get_val import get_sol_dict, get_val
+from kaiwu.core._expression import Expression
+
 from kaiwu.core._binary_model import BinaryModel
 from kaiwu.core._binary_expression import (
     BinaryExpression,
@@ -35,27 +27,33 @@ from kaiwu.core._binary_expression import (
     Placeholder,
     Integer,
 )
-from kaiwu.core._matrix import ndarray, dot, BinaryExpressionNDArray
+from kaiwu.core._matrix import ndarray, zeros, dot, BinaryExpressionNDArray
+from kaiwu.core._ising import IsingModel, Spin, IsingExpression
+from kaiwu.core._qubo_model import (
+    QuboModel,
+    calculate_qubo_value,
+    qubo_matrix_to_qubo_model,
+)
+from kaiwu.core._matrix_converter import (
+    ising_matrix_to_qubo_matrix,
+    qubo_matrix_to_ising_matrix,
+)
+from kaiwu.core._model_converter import qubo_model_to_ising_model
+
 
 __all__ = [
-    "OptimizerBase",
-    "SolverBase",
+    "IsingSolver",
+    "QuboSolver",
+    "get_sorted_solutions",
     "KaiwuError",
-    "ConstraintDefinition",
     "get_min_penalty",
     "get_min_penalty_from_min_diff",
     "get_min_penalty_for_equal_constraint",
     "get_min_penalty_from_deltas",
     "PenaltyMethodConstraint",
     "get_sol_dict",
-    "get_array_val",
     "get_val",
-    "update_constraint",
     "Expression",
-    "expr_add",
-    "expr_mul",
-    "expr_neg",
-    "expr_pow",
     "BinaryModel",
     "BinaryExpression",
     "Binary",
@@ -63,6 +61,16 @@ __all__ = [
     "Placeholder",
     "Integer",
     "ndarray",
+    "zeros",
     "dot",
     "BinaryExpressionNDArray",
+    "IsingModel",
+    "IsingExpression",
+    "Spin",
+    "QuboModel",
+    "calculate_qubo_value",
+    "qubo_matrix_to_qubo_model",
+    "ising_matrix_to_qubo_matrix",
+    "qubo_matrix_to_ising_matrix",
+    "qubo_model_to_ising_model",
 ]

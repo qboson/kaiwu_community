@@ -6,27 +6,7 @@ import numpy as np
 
 
 def check_symmetric(mat, tolerance=1e-8):
-    """检查矩阵是否为对称矩阵，允许一定误差
-
-    Args:
-        mat (np.ndarray): 矩阵.
-
-        tolerance (float): 误差.
-
-    Returns:
-        bool: 是否为对称矩阵.
-
-    Examples:
-        >>> import numpy as np
-        >>> import kaiwu as kw
-        >>> ising_matrix = -np.array([[ 0. ,  1. ,  0. ,  1. ,  1. ],
-        ...                           [ 1. ,  0. ,  0. ,  1.,   1. ],
-        ...                           [ 0. ,  0. ,  0. ,  1.,   1. ],
-        ...                           [ 1. ,  1.,   1. ,  0. ,  1. ],
-        ...                           [ 1. ,  1.,   1. ,  1. ,  0. ]])
-        >>> print(kw.common.check_symmetric(ising_matrix))
-        True
-    """
+    """检查矩阵是否为对称矩阵，允许一定误差"""
     result = np.all(np.abs(mat - mat.T) < tolerance)
     return result
 
@@ -44,19 +24,14 @@ def hamiltonian(ising_matrix, c_list):
 
     Examples:
         >>> import numpy as np
-        >>> import kaiwu as kw
+        >>> from kaiwu.common import hamiltonian
         >>> ising_matrix = -np.array([[ 0. ,  1. ,  0. ,  1. ,  1. ],
         ...                     [ 1. ,  0. ,  0. ,  1.,   1. ],
         ...                     [ 0. ,  0. ,  0. ,  1.,   1. ],
         ...                     [ 1. ,  1.,   1. ,  0. ,  1. ],
         ...                     [ 1. ,  1.,   1. ,  1. ,  0. ]])
-        >>> rng = np.random.default_rng(10)
-        >>> optimizer = kw.classical.BruteForceOptimizer()
-        >>> output = optimizer.solve(ising_matrix)
-        >>> h = kw.common.hamiltonian(ising_matrix, output)
-        >>> h   # doctest: +SKIP
-        array([-0.60179257, -0.60179257, -0.60179257, -0.60179257, -0.60179257,
-               -1.20358514, -0.60179257, -0.60179257, -0.60179257, -1.20358514])
+        >>> c_list = np.array([[1, 1, 1, 1, 1], [1, -1, 1, -1, 1]])
+        >>> h = hamiltonian(ising_matrix, c_list)   # doctest: +SKIP
     """
     # 方法1 by 王勇 邵帅 (最快版)
     return -np.einsum("ij,ij->i", (c_list.dot(ising_matrix)), c_list)

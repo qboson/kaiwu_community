@@ -73,8 +73,8 @@ def test_relation():
     mat1 = kc.ndarray((arr_len, arr_len), "x", Binary)
     mat2 = kc.ndarray((arr_len, arr_len), "y", Binary)
     print(mat1 < mat2)
-    import re
-
-    clean = lambda s: re.sub(r"\s+", "", s)
-    ineq = "[[-y[0][0]+x[0][0]<0,-y[0][1]+x[0][1]<0,][-y[1][0]+x[1][0]<0,-y[1][1]+x[1][1]<0,]]"
-    assert clean(str(mat1 < mat2)) == clean(ineq)
+    ineq = (
+        "[[-y[0][0]+x[0][0]<0 -y[0][1]+x[0][1]<0]\n"
+        " [-y[1][0]+x[1][0]<0 -y[1][1]+x[1][1]<0]]"
+    )
+    assert str(mat1 < mat2) == ineq
