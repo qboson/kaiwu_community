@@ -6,7 +6,7 @@
 
 """
 
-from kaiwu.core._base_solver import IsingSolver, QuboSolver
+from kaiwu.core._base_solver import IsingSolver, QuboSolver, get_sorted_solutions
 from kaiwu.core._error import KaiwuError
 
 from kaiwu.core._constraint import (
@@ -44,6 +44,7 @@ from kaiwu.core._model_converter import qubo_model_to_ising_model
 __all__ = [
     "IsingSolver",
     "QuboSolver",
+    "get_sorted_solutions",
     "KaiwuError",
     "get_min_penalty",
     "get_min_penalty_from_min_diff",

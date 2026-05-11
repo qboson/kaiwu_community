@@ -3,16 +3,14 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "kaiwu_community"
+name = "kaiwu-community"
 description = "An SDK for CIM or QUBO."
 readme = "README.md"
 requires-python = ">=3.10"
-authors = [
-    { name = "Qboson Inc" }
-]
+authors = [{ name = "Qboson Inc" }]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "Operating System :: OS Independent"
+    "Operating System :: OS Independent",
 ]
 
 # 依赖写在 requirements.txt 时，这里通过动态方式加载
@@ -28,7 +26,26 @@ package-dir = { "" = "src" }
 
 [tool.setuptools.packages.find]
 where = ["src"]
+namespaces = true
 
 [tool.setuptools.dynamic]
 dependencies = { file = ["requirements.txt"] }
 version = { attr = "kaiwu.__version__" }
+
+[tool.coverage.run]
+source = ["src"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "--cov=kaiwu --cov-report=term-missing"

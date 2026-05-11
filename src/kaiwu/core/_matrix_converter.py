@@ -8,13 +8,15 @@ from decimal import Decimal
 import numpy as np
 
 
-def ising_matrix_to_qubo_matrix(ising_mat, remove_linear_bit=True):
+def ising_matrix_to_qubo_matrix(ising_mat, remove_linear_bit=True, decimal=False):
     """Ising矩阵转QUBO矩阵
 
     Args:
         ising_mat (np.ndarray): Ising矩阵
 
         remove_linear_bit (bool): QUBO转Ising时会增加一个辅助变量表示线性项。是否移除最后一个自旋变量。默认为True。
+
+        decimal (bool): 是否使用Decimal进行高精度计算，默认为False。
 
     Returns:
         tuple: QUBO矩阵和bias
@@ -37,9 +39,9 @@ def ising_matrix_to_qubo_matrix(ising_mat, remove_linear_bit=True):
                [-0., -0., -0.,  8.],
                [-0., -0., -0., -8.]])
     """
-    # 计算前转Decimal以防精度损失
-    ising_mat = np.vectorize(str)(ising_mat)
-    ising_mat = np.vectorize(Decimal)(ising_mat)
+    if decimal:
+        ising_mat = np.vectorize(str)(ising_mat)
+        ising_mat = np.vectorize(Decimal)(ising_mat)
 
     ising_mat = (ising_mat + ising_mat.T) / 2
     ising_mat_linear = None
@@ -58,11 +60,13 @@ def ising_matrix_to_qubo_matrix(ising_mat, remove_linear_bit=True):
     return -qubo_mat, -float(bias)
 
 
-def qubo_matrix_to_ising_matrix(qubo_mat):
+def qubo_matrix_to_ising_matrix(qubo_mat, decimal=False):
     """QUBO矩阵转Ising矩阵
 
     Args:
         qubo_mat (np.ndarray): QUBO矩阵
+
+        decimal (bool): 是否使用Decimal进行高精度计算，默认为False。
 
     Returns:
         tuple: Ising矩阵和bias
@@ -84,9 +88,9 @@ def qubo_matrix_to_ising_matrix(qubo_mat):
                [ 1.,  1.,  1., -0.,  1.],
                [ 1.,  1.,  1.,  1., -0.]])
     """
-    # 计算前转Decimal以防精度损失
-    qubo_mat = np.vectorize(str)(qubo_mat)
-    qubo_mat = np.vectorize(Decimal)(qubo_mat)
+    if decimal:
+        qubo_mat = np.vectorize(str)(qubo_mat)
+        qubo_mat = np.vectorize(Decimal)(qubo_mat)
 
     ising_size = qubo_mat.shape[0] + 1
     ising_mat = np.zeros((ising_size, ising_size))
