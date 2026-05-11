@@ -1,3 +1,14 @@
-## v1.3.0
-1. keep synced with enterprise. 
-2. part of enterprise SDK
+## v1.0.4
+
+### Changed
+- Rename the public source namespace from `kaiwu_community` to `kaiwu` and update related packaging, docs, examples, and test imports.
+- Consolidate `qubo`, `ising`, and conversion-related implementation into `kaiwu.core` to simplify the package structure.
+- Refactor top-level exports and import paths to make the SDK layout more consistent with the current codebase.
+
+### Added
+- Add common utility modules including checkpoint helpers, loop controller, JSON serialization mixin, and unique solution pool implementations.
+- Add namespace-based loading for optional `kaiwu-enterprise` extension modules such as `cim`, `classical`, `hybrid`, and `sampler`.
+- Add `get_sorted_solutions` support and improve `IsingSolver` / `QuboSolver` solve flows.
+
+### Notes
+- This release is based on the commits after `v1.0.3` and aligns the local package metadata for the next PyPI release.
