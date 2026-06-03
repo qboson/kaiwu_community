@@ -71,21 +71,21 @@ You can extend SDK functionality, such as new solver implementations, classical 
 
 Quickly extend functionality by inheriting base classes:
 
+
 ```python
-from kaiwu.core import OptimizerBase, SolverBase
+from kaiwu.core import IsingSolver, QuboSolver
 import kaiwu
 
 # Custom optimizer
-class CustomOptimizer(OptimizerBase):
+class CustomOptimizer(IsingSolver):
     def solve(self, ising_matrix=None):
         # Implement custom optimization logic
         pass
 
 # Custom solver
-class CustomSolver(SolverBase):
+class CustomSolver(QuboSolver):
     def solve_qubo(self, model):
         # Implement custom solver logic
-        self._optimizer.solve()
         pass
 
 # Modeling

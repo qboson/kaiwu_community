@@ -72,20 +72,19 @@ Kaiwu SDK 适用于:
 通过继承基类快速扩展功能:
 
 ```python
-from kaiwu.core import OptimizerBase, SolverBase
+from kaiwu.core import IsingSolver, QuboSolver
 import kaiwu
 
 # Custom optimizer
-class CustomOptimizer(OptimizerBase):
+class CustomOptimizer(IsingSolver):
     def solve(self, ising_matrix=None):
         # Implement custom optimization logic
         pass
 
 # Custom solver
-class CustomSolver(SolverBase):
+class CustomSolver(QuboSolver):
     def solve_qubo(self, model):
         # Implement custom solver logic
-        self._optimizer.solve()
         pass
 
 # Modeling
