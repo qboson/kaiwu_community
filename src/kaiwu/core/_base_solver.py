@@ -34,13 +34,13 @@ def get_sorted_solutions(matrix, solutions, bias=0.0, negtail_ff=True, sort_solu
         ...                     [ 0. ,  0. ,  0. ,  1.,   1. ],
         ...                     [ 1. ,  1.,   1. ,  0. ,  1. ],
         ...                     [ 1. ,  1.,   1. ,  1. ,  0. ]])
-        >>> c_set = np.array([[ 1, -1,  1, -1, -1],
+        >>> solutions = np.array([[ 1, -1,  1, -1, -1],
         ...                   [-1, -1,  1, -1, -1],
         ...                   [-1, -1, -1,  1,  1],
         ...                   [ 1,  1,  1, -1, -1],
         ...                   [ 1,  1,  1, -1, -1],
         ...                   [ 1,  1,  1, -1, -1]])
-        >>> kw.core.get_sorted_solutions(matrix, c_set, 0)
+        >>> kw.core.get_sorted_solutions(matrix, solutions, 0)
         (array([[-1, -1, -1,  1,  1],
                [-1, -1, -1,  1,  1],
                [-1, -1, -1,  1,  1],
@@ -150,7 +150,18 @@ class QuboSolver(metaclass=QuboSolverMeta):
         return ising_mat, bias, vars_dict
 
     def solve_qubo(self, qubo_model, sort_solutions=False):
-        """求解QUBO模型"""
+        """求解QUBO模型
+        Args:
+            qubo_model (QuboModel): QUBO模型
+
+            sort_solutions (bool): 是否对解进行排序
+
+        Returns:
+            tuple: QUBO解与哈密顿量
+                dict: 解字典
+
+                float: 当前解的哈密顿量值
+        """
         if isinstance(self, IsingSolver):
             ising_mat, bias, vars_dict = self._to_ising_matrix(qubo_model)
             output = self.solve(ising_mat)
