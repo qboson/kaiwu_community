@@ -11,7 +11,7 @@ from kaiwu.core._model_converter import qubo_model_to_ising_model
 logger = logging.getLogger(__name__)
 
 
-def get_sorted_solutions(matrix, solutions, bias=0.0, negtail_ff=True, sort_solution=True):
+def get_sorted_solutions(matrix, solutions, bias=0.0, negtail_ff=True, sort_solutions=True):
     """最优解采样.
 
     Args:
@@ -49,7 +49,7 @@ def get_sorted_solutions(matrix, solutions, bias=0.0, negtail_ff=True, sort_solu
                [ 1,  1, -1,  1,  1]]), array([-8., -8., -8., -8., -4.,  8.]))
     """
     hamilton = -np.einsum("ij,ij->i", (solutions.dot(matrix)), solutions) + bias
-    if sort_solution:
+    if sort_solutions:
         index = np.argsort(hamilton)
         solutions = solutions[index]
         hamilton = hamilton[index]
