@@ -11,13 +11,13 @@ from kaiwu.core._model_converter import qubo_model_to_ising_model
 logger = logging.getLogger(__name__)
 
 
-def get_sorted_solutions(matrix, c_set, bias=0.0, negtail_ff=True, sort_solution=True):
+def get_sorted_solutions(matrix, solutions, bias=0.0, negtail_ff=True, sort_solution=True):
     """最优解采样.
 
     Args:
         matrix (np.ndarray): CIM Ising 矩阵.
 
-        c_set (np.ndarray): 变量配置.
+        solutions (np.ndarray): 变量配置.
 
         bias (float): 常数项.
 
@@ -48,14 +48,14 @@ def get_sorted_solutions(matrix, c_set, bias=0.0, negtail_ff=True, sort_solution
                [-1,  1, -1,  1,  1],
                [ 1,  1, -1,  1,  1]]), array([-8., -8., -8., -8., -4.,  8.]))
     """
-    hamilton = -np.einsum("ij,ij->i", (c_set.dot(matrix)), c_set) + bias
+    hamilton = -np.einsum("ij,ij->i", (solutions.dot(matrix)), solutions) + bias
     if sort_solution:
         index = np.argsort(hamilton)
-        c_set = c_set[index]
+        solutions = solutions[index]
         hamilton = hamilton[index]
     if negtail_ff:
-        c_set = c_set * c_set[:, [-1]]
-    return c_set, hamilton
+        solutions = solutions * solutions[:, [-1]]
+    return solutions, hamilton
 
 
 class IsingSolver:
@@ -103,6 +103,8 @@ class IsingSolver:
         """
         self.set_matrix(ising_matrix)
         solutions = self._solve(self.matrix)
+        if solutions is None:
+            return None
         solutions, self._hamiltonian = get_sorted_solutions(
             self.matrix, solutions, 0, negtail_flip, sort_solutions
         )
@@ -147,7 +149,7 @@ class QuboSolver(metaclass=QuboSolverMeta):
         vars_dict = ising_model.get_variables()
         return ising_mat, bias, vars_dict
 
-    def solve_qubo(self, qubo_model):
+    def solve_qubo(self, qubo_model, sort_solutions=False):
         """求解QUBO模型"""
         if isinstance(self, IsingSolver):
             ising_mat, bias, vars_dict = self._to_ising_matrix(qubo_model)
@@ -155,7 +157,7 @@ class QuboSolver(metaclass=QuboSolverMeta):
             if output is None:
                 return None, None
             solutions, hamiltons = get_sorted_solutions(
-                ising_mat, output, 0, negtail_ff=True, sort_solution=True
+                ising_mat, output, 0, negtail_ff=True, sort_solutions=sort_solutions
             )
             solution_dict = get_sol_dict(
                 solutions[0][:-1] * solutions[0][-1], vars_dict

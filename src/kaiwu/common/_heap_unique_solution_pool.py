@@ -48,12 +48,8 @@ class HeapUniquePool(JsonSerializableMixin):
 
     def get_solutions(self):
         """返回维护的解，个数为self.size_limit"""
-        c_set = np.array([x[1] for x in self.minheap_opt])
-        hamilton = hamiltonian(self.mat, c_set)
-        index = np.argsort(hamilton)
-        c_sorted = c_set[index]
-        c_sorted[c_sorted[:, -1] <= 0, :] *= -1
-        return c_sorted
+        solutions = np.array([x[1] for x in self.minheap_opt])
+        return solutions
 
     def clear(self):
         """清空解集"""
