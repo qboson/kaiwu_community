@@ -149,7 +149,7 @@ class QuboSolver(metaclass=QuboSolverMeta):
         vars_dict = ising_model.get_variables()
         return ising_mat, bias, vars_dict
 
-    def solve_qubo(self, qubo_model, sort_solutions=False):
+    def solve_qubo(self, qubo_model, sort_solutions=True):
         """求解QUBO模型
         Args:
             qubo_model (QuboModel): QUBO模型
