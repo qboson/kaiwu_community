@@ -91,6 +91,7 @@ class IsingSolver:
 
     def solve(self, ising_matrix=None, negtail_flip=True, sort_solutions=False):
         """求解Ising矩阵
+
         Args:
             ising_matrix (np.ndarray): Ising矩阵
 
@@ -151,6 +152,7 @@ class QuboSolver(metaclass=QuboSolverMeta):
 
     def solve_qubo(self, qubo_model, sort_solutions=True):
         """求解QUBO模型
+
         Args:
             qubo_model (QuboModel): QUBO模型
 
