@@ -106,18 +106,17 @@ class BinaryModel:
             slack_var_expr (BinaryExpression, optional): 松弛变量表达式，仅在不等式约束中使用,
                 默认为自动生成
 
-        Examples:
-            >>> # 类型1: 单个 BinaryExpression
+        Example1 (单个 BinaryExpression):
             >>> import kaiwu as kw
             >>> model = kw.core.QuboModel()
             >>> x = [kw.core.Binary(f"x{i}") for i in range(3)]
             >>> model.add_constraint(kw.core.quicksum(x) - 1)
 
-            >>> # 类型2: 单个 Constraint 对象 (带关系运算符)
+        Example2 (带关系运算符的单个 Constraint 对象):
             >>> from kaiwu.core._constraint import Constraint
             >>> model.add_constraint(Constraint(kw.core.quicksum(x) - 1, "==", 1))
 
-            >>> # 类型3: 多个约束 (list/tuple)
+        Example3 (多个约束):
             >>> constraints = [x[i] - 1 for i in range(3)]
             >>> model.add_constraint(constraints, name="my_constraints")
         """
