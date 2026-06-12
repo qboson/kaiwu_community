@@ -11,7 +11,9 @@ from kaiwu.core._model_converter import qubo_model_to_ising_model
 logger = logging.getLogger(__name__)
 
 
-def get_sorted_solutions(matrix, solutions, bias=0.0, negtail_ff=True, sort_solutions=True):
+def get_sorted_solutions(
+    matrix, solutions, bias=0.0, negtail_ff=True, sort_solutions=True
+):
     """最优解采样.
 
     Args:
