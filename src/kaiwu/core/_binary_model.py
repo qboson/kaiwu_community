@@ -107,17 +107,17 @@ class BinaryModel:
                 默认为自动生成
 
         Examples:
-            # 类型1: 单个 BinaryExpression
+            >>> # 类型1: 单个 BinaryExpression
             >>> import kaiwu as kw
             >>> model = kw.core.QuboModel()
             >>> x = [kw.core.Binary(f"x{i}") for i in range(3)]
             >>> model.add_constraint(kw.core.quicksum(x) - 1)
 
-            # 类型1: 单个 Constraint 对象 (带关系运算符)
+            >>> # 类型2: 单个 Constraint 对象 (带关系运算符)
             >>> from kaiwu.core._constraint import Constraint
             >>> model.add_constraint(Constraint(kw.core.quicksum(x) - 1, "==", 1))
 
-            # 类型2: 多个约束 (list/tuple)
+            >>> # 类型3: 多个约束 (list/tuple)
             >>> constraints = [x[i] - 1 for i in range(3)]
             >>> model.add_constraint(constraints, name="my_constraints")
         """
