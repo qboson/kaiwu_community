@@ -4,6 +4,7 @@
 
 功能: QUBO及Ising表达式运算类
 """
+
 import copy
 import numbers
 from kaiwu.core._error import KaiwuError
@@ -116,7 +117,7 @@ def _check_unit(checked_str):
     return checked_str
 
 
-class Expression(dict):
+class Expression:
     """QUBO/Ising 通用表达式基类（提供默认二次表达式实现）"""
 
     def __init__(self, coefficient: dict = None, offset: float = 0):
