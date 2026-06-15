@@ -4,6 +4,7 @@
 
 功能: ising模型及其转化
 """
+
 from kaiwu.core._expression import Expression
 
 
@@ -33,12 +34,12 @@ class IsingModel(dict):
             序列化后的模型(字符串形式）
         """
         print_data = ""
-        print_data += "CIM Ising Details:\n"
-        print_data += "  CIM Ising Matrix:\n"
+        print_data += "Ising Details:\n"
+        print_data += "  Ising Matrix:\n"
         print_data += "    " + str(self.matrix).replace("\n", "\n    ") + "\n"
-        print_data += "  CIM Ising Bias: " + str(self.bias) + "\n"
+        print_data += "  Ising Bias: " + str(self.bias) + "\n"
         print_data += (
-            "  CIM Ising Variables" + ": " + _dict_variables(self.variables) + "\n"
+            "  Ising Variables" + ": " + _dict_variables(self.variables) + "\n"
         )
 
         return print_data

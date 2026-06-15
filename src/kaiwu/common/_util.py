@@ -15,7 +15,7 @@ def hamiltonian(ising_matrix, c_list):
     """计算哈密顿量.
 
     Args:
-        ising_matrix (np.ndarray): CIM Ising 矩阵.
+        ising_matrix (np.ndarray): Ising 矩阵.
 
         c_list (np.ndarray): 要计算哈密顿量的变量组合集合.
 

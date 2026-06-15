@@ -17,7 +17,7 @@ def get_sorted_solutions(
     """最优解采样.
 
     Args:
-        matrix (np.ndarray): CIM Ising 矩阵.
+        matrix (np.ndarray): Ising 矩阵.
 
         solutions (np.ndarray): 变量配置.
 
