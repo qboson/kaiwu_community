@@ -56,7 +56,7 @@ def test_qubo_solver_returns_best_solution_and_energy():
     qubo_model = kw.core.QuboModel(x)
     solver = RecordingQuboSolver([[-1, 1], [1, 1]])
 
-    solution, hamiltonian = solver.solve_qubo(qubo_model, sort_solutions=True)
+    solution, hamiltonian = solver.solve_qubo(qubo_model)
 
     # QUBO x is minimized by x=0, and the converted Ising bias shifts energy to 0.
     assert solution == {"x": 0.0}

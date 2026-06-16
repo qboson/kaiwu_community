@@ -27,5 +27,5 @@ def test_quicksum():
 
     try:
         x = quicksum(Binary("x"))
-    except KaiwuError:
+    except TypeError:
         pass

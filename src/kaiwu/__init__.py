@@ -4,6 +4,7 @@ kaiwu-community: 基础版 SDK
 """
 
 import pkgutil
+
 import importlib
 
 # 支持跨目录加载 kaiwu 命名空间下的其他包 (如 enterprise 中的 cim, classical 等)
@@ -11,12 +12,11 @@ __path__ = pkgutil.extend_path(__path__, __name__)
 
 __version__ = "1.0.4"
 
-# 1. 加载 Community 自身的基础模块 (由 Enterprise 同步而来)
-from .core import *
-from .common import *
 
-# 2. 显式尝试加载 Enterprise 的扩展模块
+# 显式尝试加载 Enterprise 的扩展模块
 _EXT_MODULES = [
+    "core",
+    "common",
     "cim",
     "classical",
     "hobo",
@@ -24,6 +24,7 @@ _EXT_MODULES = [
     "license",
     "preprocess",
     "sampler",
+    "torch_plugin",
 ]
 
 for _mod_name in _EXT_MODULES:

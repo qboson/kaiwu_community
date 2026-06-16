@@ -164,7 +164,7 @@ def quicksum(qubo_expr_list: list):
         if isinstance(single_q, numbers.Number):
             qsum.offset += single_q
             continue
-        if not isinstance(single_q, dict):
+        if not isinstance(single_q, Expression):
             raise KaiwuError("qubo_expr_list should be a list of QUBO Expression")
 
         qsum.offset += single_q.offset

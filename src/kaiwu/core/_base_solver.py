@@ -11,11 +11,13 @@ from kaiwu.core._model_converter import qubo_model_to_ising_model
 logger = logging.getLogger(__name__)
 
 
-def get_sorted_solutions(matrix, solutions, bias=0.0, negtail_ff=True, sort_solutions=True):
+def get_sorted_solutions(
+    matrix, solutions, bias=0.0, negtail_ff=True, sort_solutions=True
+):
     """最优解采样.
 
     Args:
-        matrix (np.ndarray): CIM Ising 矩阵.
+        matrix (np.ndarray): Ising 矩阵.
 
         solutions (np.ndarray): 变量配置.
 
@@ -91,6 +93,7 @@ class IsingSolver:
 
     def solve(self, ising_matrix=None, negtail_flip=True, sort_solutions=False):
         """求解Ising矩阵
+
         Args:
             ising_matrix (np.ndarray): Ising矩阵
 
@@ -149,8 +152,9 @@ class QuboSolver(metaclass=QuboSolverMeta):
         vars_dict = ising_model.get_variables()
         return ising_mat, bias, vars_dict
 
-    def solve_qubo(self, qubo_model, sort_solutions=True):
+    def solve_qubo(self, qubo_model):
         """求解QUBO模型
+
         Args:
             qubo_model (QuboModel): QUBO模型
 
@@ -168,7 +172,7 @@ class QuboSolver(metaclass=QuboSolverMeta):
             if output is None:
                 return None, None
             solutions, hamiltons = get_sorted_solutions(
-                ising_mat, output, 0, negtail_ff=True, sort_solutions=sort_solutions
+                ising_mat, output, 0, negtail_ff=True, sort_solutions=True
             )
             solution_dict = get_sol_dict(
                 solutions[0][:-1] * solutions[0][-1], vars_dict

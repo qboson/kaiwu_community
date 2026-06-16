@@ -4,6 +4,7 @@
 
 功能: QUBO模型和Ising模型转换
 """
+
 import numpy as np
 from kaiwu.core._ising import IsingModel, IsingExpression
 
@@ -46,13 +47,13 @@ def _to_ising(qubo_expr):
 
 
 def qubo_model_to_ising_model(qubo_model):
-    """QUBO转CIM Ising模型.
+    """QUBO转Ising模型.
 
     Args:
         qubo_model (QuboModel): QUBO Model.
 
     Returns:
-        CimIsing: CIM Ising模型.
+        CimIsing: Ising模型.
 
     Examples:
         >>> import kaiwu as kw
@@ -61,13 +62,13 @@ def qubo_model_to_ising_model(qubo_model):
         >>> q_model = kw.core.QuboModel(q)
         >>> ci = kw.core.qubo_model_to_ising_model(q_model)
         >>> print(str(ci))
-        CIM Ising Details:
-          CIM Ising Matrix:
+        Ising Details:
+          Ising Matrix:
             [[-0.    -0.125 -0.375]
              [-0.125 -0.    -0.375]
              [-0.375 -0.375 -0.   ]]
-          CIM Ising Bias: 1.25
-          CIM Ising Variables: b1, b2, __spin__
+          Ising Bias: 1.25
+          Ising Variables: b1, b2, __spin__
         <BLANKLINE>
     """
     qubo_model.compile_constraints()
