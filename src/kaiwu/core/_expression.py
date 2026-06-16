@@ -5,7 +5,6 @@
 功能: QUBO及Ising表达式运算类
 """
 
-import copy
 import numbers
 from kaiwu.core._error import KaiwuError
 from kaiwu.core._constraint import Constraint
@@ -130,6 +129,7 @@ class Expression:
         self.offset = offset
 
     def clear(self) -> None:
+        """表达式置为0"""
         self.coefficient = {}
         self.offset = 0
 
@@ -172,9 +172,7 @@ class Expression:
         return self.__add__(other)
 
     def __add__(self, other):
-        q_ret = copy.copy(self)
-        q_ret.clear()
-
+        q_ret = self.__class__()
         expr_add(self, other, q_ret)
         return q_ret
 
@@ -188,9 +186,7 @@ class Expression:
         return self.__mul__(other)
 
     def __mul__(self, other):
-        q_ret = copy.copy(self)
-        q_ret.clear()
-
+        q_ret = self.__class__()
         expr_mul(self, other, q_ret)
         return q_ret
 
@@ -198,16 +194,12 @@ class Expression:
         return self.__mul__(1 / other)
 
     def __pow__(self, other):
-        q_ret = copy.copy(self)
-        q_ret.clear()
-
+        q_ret = self.__class__()
         expr_pow(self, other, q_ret)
         return q_ret
 
     def __neg__(self):
-        q_ret = copy.copy(self)
-        q_ret.clear()
-
+        q_ret = self.__class__()
         expr_neg(self, q_ret)
         return q_ret
 
