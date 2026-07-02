@@ -3,6 +3,7 @@
 时间: 2021-07-07
 作者: wangyong@boseq.com
 """
+
 from typing import Union, Tuple, List
 import numpy as np
 from kaiwu.core._binary_expression import quicksum
@@ -222,7 +223,7 @@ def zeros(shape) -> BinaryExpressionNDArray:
 
     Examples:
         >>> import kaiwu as kw
-        >>> Z = zeros((2, 3))
+        >>> Z = kw.core.zeros((2, 3))
         >>> Z
         BinaryExpressionNDArray([[0, 0, 0],
                                  [0, 0, 0]], dtype=object)
