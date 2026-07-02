@@ -10,7 +10,7 @@ import importlib
 # 支持跨目录加载 kaiwu 命名空间下的其他包 (如 enterprise 中的 cim, classical 等)
 __path__ = pkgutil.extend_path(__path__, __name__)
 
-__version__ = "1.0.5"
+__version__ = "1.0.6"
 
 
 # 显式尝试加载 Enterprise 的扩展模块
