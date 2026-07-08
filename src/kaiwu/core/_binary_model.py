@@ -96,15 +96,13 @@ class BinaryModel:
                 2. 多个约束: list/tuple/np.ndarray，自动遍历逐个添加
                    例如: ``[constraint1, constraint2, constraint3]``
 
-            name (str or list, optional): 约束名称，默认自动命名。当为多个约束时，
-                若传入字符串则为公共前缀，若传入字符串列表则需与约束数量一致。
+            name (str or list, optional): 约束名称，默认自动命名。当为多个约束时，若传入字符串则为公共前缀，若传入字符串列表则需与约束数量一致。
 
             penalty (float, optional): 缺省惩罚系数
 
             constr_type (str, optional): 约束类型，可以设置为"soft"或"hard"，默认为"hard"
 
-            slack_var_expr (BinaryExpression, optional): 松弛变量表达式，仅在不等式约束中使用,
-                默认为自动生成
+            slack_var_expr (BinaryExpression, optional): 松弛变量表达式，仅在不等式约束中使用，默认为自动生成
 
         Example1 (单个 BinaryExpression):
             >>> import kaiwu as kw
