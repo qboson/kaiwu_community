@@ -69,9 +69,6 @@ jobs:
       (contains(github.ref_name, 'a') ||
       contains(github.ref_name, 'b') ||
       contains(github.ref_name, 'rc')))
-    environment:
-      name: testpypi
-      url: https://test.pypi.org/p/kaiwu_community
 
     permissions:
       id-token: write  # IMPORTANT: mandatory for trusted publishing
