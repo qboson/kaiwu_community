@@ -1,3 +1,13 @@
+## v1.0.7
+update for 1.4.1
+update comment for `sphinx.ext.napoleon`
+
+## v1.0.6
+remove doc directory
+
+## v1.0.5
+update for kaiwu 1.4.0
+
 ## v1.0.4
 
 ### Changed

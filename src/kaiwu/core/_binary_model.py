@@ -88,7 +88,7 @@ class BinaryModel:
         """添加约束项，支持单个或多个约束
 
         Args:
-            constraint_in: 约束表达式，支持两种输入类型：
+            constraint_in: 约束表达式，支持两种输入类型:
 
                 1. 单个约束: BinaryExpression 或 Constraint 对象
                    例如: ``quicksum(x) - 1`` 或 ``Constraint(quicksum(x) - 1, "==", 1)``
@@ -96,29 +96,28 @@ class BinaryModel:
                 2. 多个约束: list/tuple/np.ndarray，自动遍历逐个添加
                    例如: ``[constraint1, constraint2, constraint3]``
 
-            name (str or list, optional): 约束名称，默认自动命名。当为多个约束时，
-                若传入字符串则为公共前缀，若传入字符串列表则需与约束数量一致。
+            name (str or list, optional): 约束名称，默认自动命名。当为多个约束时，若传入字符串则为公共前缀，若传入字符串列表则需与约束数量一致。
 
             penalty (float, optional): 缺省惩罚系数
 
             constr_type (str, optional): 约束类型，可以设置为"soft"或"hard"，默认为"hard"
 
-            slack_var_expr (BinaryExpression, optional): 松弛变量表达式，仅在不等式约束中使用,
-                默认为自动生成
+            slack_var_expr (BinaryExpression, optional): 松弛变量表达式，仅在不等式约束中使用，默认为自动生成
 
-        Example1 (单个 BinaryExpression):
-            >>> import kaiwu as kw
-            >>> model = kw.core.QuboModel()
-            >>> x = [kw.core.Binary(f"x{i}") for i in range(3)]
-            >>> model.add_constraint(kw.core.quicksum(x) - 1)
+        Examples:
+            Example1 (单个 BinaryExpression):
+                >>> import kaiwu as kw
+                >>> model = kw.core.QuboModel()
+                >>> x = [kw.core.Binary(f"x{i}") for i in range(3)]
+                >>> model.add_constraint(kw.core.quicksum(x) - 1)
 
-        Example2 (带关系运算符的单个 Constraint 对象):
-            >>> from kaiwu.core._constraint import Constraint
-            >>> model.add_constraint(Constraint(kw.core.quicksum(x) - 1, "==", 1))
+            Example2 (带关系运算符的单个 Constraint 对象):
+                >>> from kaiwu.core._constraint import Constraint
+                >>> model.add_constraint(Constraint(kw.core.quicksum(x) - 1, "==", 1))
 
-        Example3 (多个约束):
-            >>> constraints = [x[i] - 1 for i in range(3)]
-            >>> model.add_constraint(constraints, name="my_constraints")
+            Example3 (多个约束):
+                >>> constraints = [x[i] - 1 for i in range(3)]
+                >>> model.add_constraint(constraints, name="my_constraints")
         """
         if constr_type not in ["hard", "soft"]:
             raise KaiwuError(f"No such type {constr_type}")

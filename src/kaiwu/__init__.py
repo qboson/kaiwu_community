@@ -10,7 +10,7 @@ import importlib
 # 支持跨目录加载 kaiwu 命名空间下的其他包 (如 enterprise 中的 cim, classical 等)
 __path__ = pkgutil.extend_path(__path__, __name__)
 
-__version__ = "1.0.6"
+__version__ = "1.0.7"
 
 
 # 显式尝试加载 Enterprise 的扩展模块
@@ -31,7 +31,7 @@ for _mod_name in _EXT_MODULES:
     try:
         # 使用绝对导入触发命名空间查找
         _mod = importlib.import_module(f"kaiwu.{_mod_name}")
-        # 关键修复：确保 kaiwu.classical 这种属性访问在 kw.classical 中生效
+        # 关键修复: 确保 kaiwu.classical 这种属性访问在 kw.classical 中生效
         globals()[_mod_name] = _mod
         # 同时将非私有成员提取到顶层命名空间 (保持扁平化访问支持)
         for _k, _v in _mod.__dict__.items():

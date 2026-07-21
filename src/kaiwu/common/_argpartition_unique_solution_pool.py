@@ -13,7 +13,7 @@ class ArgpartitionUniquePool:
     def __init__(self, mat, size, size_limit):
         """
         初始化
-        输入：
+        输入:
             mat: ising矩阵
             size: 矩阵维度
             size_limit: 保留解的个数

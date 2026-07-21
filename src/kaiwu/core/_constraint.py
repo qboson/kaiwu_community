@@ -4,6 +4,7 @@
 
 功能: 提供约束项基础定义类
 """
+
 import math
 import operator
 import logging
@@ -73,8 +74,8 @@ def get_min_penalty_from_deltas(
 ):
     """返回约束项cons对应的最小惩罚系数，惩罚项优先满足
 
-    Args：
-        cons：约束项的qubo表达式
+    Args:
+        cons: 约束项的qubo表达式
 
         neg_delta: 各个变量1变为0时最大变化量的dict
 
@@ -158,18 +159,18 @@ def get_min_penalty_from_min_diff(cons, negative_delta, positive_delta):
 
 
 def get_min_penalty_for_equal_constraint(obj, cons):
-    """返回一次等式约束项cons对应的最小惩罚系数：把满足这个约束的解的某一位比特翻转一下的最坏情况。
+    """返回一次等式约束项cons对应的最小惩罚系数: 把满足这个约束的解的某一位比特翻转一下的最坏情况。
     这个惩罚系数有效是指能够保证原问题的可行解是目标函数的局部最优（在一位比特翻转的局部意义下）。
 
-    Args：
+    Args:
         obj: 原目标函数的qubo表达式。
 
-        cons：线性的等式约束cons=0中的线性表达式。
+        cons: 线性的等式约束cons=0中的线性表达式。
 
     Returns:
         float: 一次等式约束项cons对应的最小惩罚系数.
 
-    Examples：
+    Examples:
         >>> import kaiwu as kw
         >>> x = [kw.core.Binary(f"b{i}") for i in range(3)]
         >>> cons = kw.core.quicksum(x)-1
@@ -285,12 +286,12 @@ def get_min_penalty(obj, cons):
     Args:
         obj: 原目标函数的qubo表达式。
 
-        cons：约束项的qubo表达式
+        cons: 约束项的qubo表达式
 
     Returns:
         float: 返回约束项cons对应的最小惩罚系数.
 
-    Examples：
+    Examples:
         >>> import kaiwu as kw
         >>> x = [kw.core.Binary(f"b{i}") for i in range(3)]
         >>> cons = kw.core.quicksum(x) - 1
