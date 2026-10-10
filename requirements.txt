@@ -1,2 +1,20 @@
-numpy==2.2.6
-pandas==2.2.3
+# kaiwu-community 运行时依赖
+#
+# 本分支（multi_version）的目标：让 kaiwu-community 支持多个 numpy 版本，
+# 不再把 numpy / pandas 硬钉成单一版本——硬钉会导致上游（kaiwu-sdk-enterprise）
+# 无法在缺少对应 wheel 的 Python 版本上完成依赖解析（典型：numpy==2.2.6 无 cp314 wheel，
+# 于是 Python 3.14 上 pip 直接 ResolutionImpossible）。
+#
+# 改用 PEP 508 Environment Marker 声明区间：
+#   - 下界由「该 Python 版本上实际存在 cp3XX wheel 的最低版本」决定
+#   - 上界用主版本护栏 <3.0，避免 numpy 3.0 发布时被自动拉入未验证的大版本
+#   - 中间版本全部开放，由上游的 CI 测试矩阵逐个验证
+
+# numpy：3.10 / 3.12 支持 1.26 起（1.26 是最后一个提供 cp310/cp312 wheel 的 1.x 系列）；
+#        3.14 上 1.x 与 2.0~2.2 均无 wheel，最低 2.3.2
+numpy>=1.26.4,<3.0; python_version < "3.14"
+numpy>=2.3.2,<3.0; python_version >= "3.14"
+
+# pandas：<3.14 维持 2.2.3 起；2.2.3 无 cp314 wheel，3.14 需 2.3.3 起
+pandas>=2.2.3,<3.0; python_version < "3.14"
+pandas>=2.3.3,<3.0; python_version >= "3.14"
