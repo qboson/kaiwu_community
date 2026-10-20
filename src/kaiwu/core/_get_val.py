@@ -4,6 +4,7 @@
 
 功能: QUBO还原变量值
 """
+
 import numbers
 import numpy as np
 
@@ -30,8 +31,9 @@ def get_sol_dict(solution, vars_dict):
         >>> d_ising = kw.core.qubo_model_to_ising_model(d)
         >>> vars = d_ising.get_variables()
         >>> s = np.array([1, -1, 1])
-        >>> kw.core.get_sol_dict(s, vars)
-        {'a': np.float64(1.0), 'b': np.float64(0.0), 'c': np.float64(1.0)}
+        >>> sol_dict = kw.core.get_sol_dict(s, vars)
+        >>> {name: float(value) for name, value in sol_dict.items()}
+        {'a': 1.0, 'b': 0.0, 'c': 1.0}
     """
     # 除了虚拟变量以外，遍历vars_dict字典，对每个键都找到其位置，并在bin_c中取值。
     return dict(
@@ -64,8 +66,8 @@ def get_val(qubo, sol_dict):
         >>> ising_vars = d_ising.get_variables()
         >>> s = np.array([1, -1, 1])
         >>> sol_dict = kw.core.get_sol_dict(s, ising_vars)
-        >>> kw.core.get_val(d, sol_dict)
-        np.float64(5.0)
+        >>> float(kw.core.get_val(d, sol_dict))
+        5.0
     """
     if isinstance(qubo, numbers.Number):
         return qubo
