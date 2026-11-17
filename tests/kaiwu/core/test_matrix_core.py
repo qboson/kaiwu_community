@@ -16,13 +16,24 @@ from kaiwu.core._matrix import BinaryExpressionNDArray, dot, ndarray
 from kaiwu.core import Binary, Expression
 
 
+def _value_array(arr):
+    """Convert an array of constant expressions into a plain numeric ndarray.
+
+    dot() returns a modeling array whose elements are BinaryExpression, and
+    BinaryExpression.__eq__ is overloaded to build a Constraint instead of
+    returning a bool, so assert_array_equal on the modeling array is always a
+    false positive. Extract the constant terms to compare real numbers.
+    """
+    return np.array([item.offset for item in arr.flatten()]).reshape(arr.shape)
+
+
 def test_dot_basic():
     """Test basic matrix dot product"""
     mat1 = np.array([[1, 2], [3, 4]])
     mat2 = np.array([[5, 6], [7, 8]])
     result = dot(mat1, mat2)
     expected = np.array([[19, 22], [43, 50]])
-    assert_array_equal(result, expected)
+    assert_array_equal(_value_array(result), expected)
 
 
 def test_dot_vector():
@@ -30,7 +41,7 @@ def test_dot_vector():
     vec1 = np.array([1, 2, 3])
     vec2 = np.array([4, 5, 6])
     result = dot(vec1, vec2)
-    assert result == 32  # 1*4 + 2*5 + 3*6
+    assert result.offset == 32  # 1*4 + 2*5 + 3*6
 
 
 def test_dot_matrix_vector():
@@ -39,7 +50,7 @@ def test_dot_matrix_vector():
     vec = np.array([5, 6])
     result = dot(mat, vec)
     expected = np.array([17, 39])
-    assert_array_equal(result, expected)
+    assert_array_equal(_value_array(result), expected)
 
 
 def test_dot_invalid_input():
