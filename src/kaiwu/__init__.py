@@ -31,7 +31,7 @@ for _mod_name in _EXT_MODULES:
     try:
         # 使用绝对导入触发命名空间查找
         _mod = importlib.import_module(f"kaiwu.{_mod_name}")
-        # 关键修复：确保 kaiwu.classical 这种属性访问在 kw.classical 中生效
+        # 关键修复: 确保 kaiwu.classical 这种属性访问在 kw.classical 中生效
         globals()[_mod_name] = _mod
         # 同时将非私有成员提取到顶层命名空间 (保持扁平化访问支持)
         for _k, _v in _mod.__dict__.items():

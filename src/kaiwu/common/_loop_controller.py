@@ -2,6 +2,7 @@
 """
 循环控制器等一些辅助求解工具
 """
+
 import time
 import math
 from kaiwu.common._json_serializable_mixin import JsonSerializableMixin
@@ -34,11 +35,11 @@ class BaseLoopController(JsonSerializableMixin):
     Args:
         max_repeat_step: 最大步数，默认值为math.inf
 
-        target_objective：目标优化函数，达到即停止，默认值为-math.inf
+        target_objective: 目标优化函数，达到即停止，默认值为-math.inf
 
-        no_improve_limit：收敛条件，指定更新次数没有改进则停止，默认值为math.inf
+        no_improve_limit: 收敛条件，指定更新次数没有改进则停止，默认值为math.inf
 
-        iterate_per_update：每次更新哈密顿量前运行的次数，默认值为5
+        iterate_per_update: 每次更新哈密顿量前运行的次数，默认值为5
     """
 
     def __init__(
@@ -131,11 +132,11 @@ class OptimizerLoopController(BaseLoopController):
     Args:
         max_repeat_step: 最大步数，默认值为math.inf
 
-        target_objective：目标优化函数，达到即停止，默认值为-math.inf
+        target_objective: 目标优化函数，达到即停止，默认值为-math.inf
 
-        no_improve_limit：收敛条件，指定更新次数没有改进则停止，默认值为20000
+        no_improve_limit: 收敛条件，指定更新次数没有改进则停止，默认值为20000
 
-        iterate_per_update：每次更新哈密顿量前运行的次数，默认值为5
+        iterate_per_update: 每次更新哈密顿量前运行的次数，默认值为5
     """
 
     def __init__(

@@ -267,8 +267,6 @@ class Expression:
         """根据结果字典将spin值带入qubo变量.
 
         Args:
-            qubo (QUBO表达式): QUBO表达式
-
             sol_dict (dict): 由get_sol_dict生成的结果字典。
 
         Returns:
